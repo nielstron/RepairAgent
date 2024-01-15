@@ -3,6 +3,7 @@ from __future__ import annotations
 import re
 from abc import ABCMeta, abstractmethod
 from typing import TYPE_CHECKING, Any, Literal, Optional
+import json
 
 if TYPE_CHECKING:
     from autogpt.config import AIConfig, Config
@@ -19,7 +20,6 @@ from autogpt.prompts.prompt import DEFAULT_TRIGGERING_PROMPT
 CommandName = str
 CommandArgs = dict[str, str]
 AgentThoughts = dict[str, Any]
-
 
 class BaseAgent(metaclass=ABCMeta):
     """Base class for all Auto-GPT agents."""
@@ -91,6 +91,221 @@ class BaseAgent(metaclass=ABCMeta):
             max_summary_tlength=summary_max_tlength or self.send_token_limit // 6,
         )
 
+        # These are new attributes used to construct the prompt
+        """
+        {
+            "file_path":
+                    {
+                        (XX, YY): [...]
+                    }
+                
+        }
+        """
+        self.read_files = {}
+
+        """
+        {
+            "file_path": [
+                {
+                    "lines_range": (XX, YY),
+                    "lines_list": [...]
+                }
+            ]
+        }
+        """
+        self.suggested_fixes = {}
+
+        """
+        [
+            {
+                "query": [... list of search keywords],
+                "result": dictionary of search result
+            }
+        ]
+        """
+        self.search_queries = []
+
+
+        """
+        {
+            "get_info": "...",
+            "run_tests":
+        }
+        """
+        self.bug_report = {}
+        self.commands_history = []
+        self.human_feedback = []
+        self.ask_chatgpt = None
+        self.current_state = ""
+
+    def construct_read_files(self, command_name = "read_range"):
+        skip_next = False
+        read_files = {}
+        messages_history = [msg for _, msg in enumerate(self.history)]
+        for i in range(len(messages_history)):
+            if skip_next:
+                continue
+            skip_next = False
+            msg = messages_history[i]
+            if msg.role == "assistant":
+                command_dict = json.loads(msg.content)
+                if command_dict["command"]["name"] == command_name:
+                    lines_range=(
+                        command_dict["command"]["args"]["startline"],
+                        command_dict["command"]["args"]["endline"])
+                    file_path = command_dict["command"]["args"]["filepath"]
+                    if i < len(messages_history) - 1:
+                        j = i + 1
+                        next_msg = messages_history[j]
+                        if next_msg.role == "system":
+                            if "Command {} returned:".format(command_name) in next_msg.content:
+                                read_result = next_msg.content
+                                skip_next= True
+                            else:
+                                read_result = None
+                                skip_next = False
+                    if read_result:
+                        if file_path in read_files:
+                            read_files[file_path][lines_range] = read_result
+                        else:
+                            read_files[file_path] = {
+                                lines_range: read_result
+                            }
+                    else:
+                        skip_next = False
+                else:
+                    skip_next = False
+        self.read_files = read_files
+
+    def construct_commands_history(self):
+        messages_history = [msg for _, msg in enumerate(self.history)]
+        commands_history = []
+        for i in range(len(messages_history)):
+            msg = messages_history[i]
+            if msg.role == "assistant":
+                command_dict = json.loads(msg.content)
+                commands_history.append(command_dict["command"]["name"] + " , your reason for executing this command was: '{}'".format(
+                            command_dict["thoughts"]["text"]
+                        )
+                    )
+
+        self.commands_history = commands_history
+
+    def construct_suggested_fixes(self, command_name = "write_range"):
+        skip_next = False
+        suggested_fixes = {}
+        messages_history = [msg for _, msg in enumerate(self.history)]
+        for i in range(len(messages_history)):
+            if skip_next:
+                continue
+            skip_next = False
+            msg = messages_history[i]
+            if msg.role == "assistant":
+                command_dict = json.loads(msg.content)
+                if command_dict["command"]["name"] == command_name:
+                    lines_range=(
+                        command_dict["command"]["args"]["startline"],
+                        command_dict["command"]["args"]["endline"])
+                    file_path = command_dict["command"]["args"]["filepath"]
+                    lines_list = command_dict["command"]["args"]["lines_list"]
+                    
+                    if file_path in suggested_fixes:
+                        suggested_fixes[file_path].append({
+                            "lines_range": lines_range,
+                            "lines_list": lines_list
+                        })
+                    else:
+                        suggested_fixes[file_path] = [{
+                            "lines_range": lines_range,
+                            "lines_list": lines_list
+                        }]
+        self.suggested_fixes = suggested_fixes
+ 
+    def construct_human_feedback(self):
+        human_feedback = []
+        messages_history = [msg for _, msg in enumerate(self.history)]
+        for i in range(len(messages_history)):
+            msg = messages_history[i]
+            if msg.role == "system":
+                if msg.content.startswith("Human feedback"):
+                    human_feedback.append(msg.content)
+        self.human_feedback = human_feedback
+
+        
+    def construct_search_queries(self, command_name="search_code_base"):
+        skip_next = False
+        search_queries = []
+        search_result = None
+        messages_history = [msg for _, msg in enumerate(self.history)]
+        for i in range(len(messages_history)):
+            if skip_next:
+                continue
+            skip_next = False
+            msg = messages_history[i]
+            if msg.role == "assistant":
+                command_dict = json.loads(msg.content)
+                if command_dict["command"]["name"] == command_name:
+                    key_words = command_dict["command"]["args"]["key_words"]
+                    if i < len(messages_history) - 1:
+                        j = i + 1
+                        next_msg = messages_history[j]
+                        if next_msg.role == "system":
+                            if "Command {} returned:".format(command_name) in next_msg.content:
+                                search_result = next_msg.content
+                                skip_next= True
+                            else:
+                                search_result = None
+                    if search_result:
+                        search_queries.append({
+                            "query": key_words,
+                            "result": search_result
+                        })
+        self.search_queries = search_queries
+
+    def construct_bug_report(self):
+        get_info = ""
+        run_tests = ""
+        failing_test_code = ""
+        messages_history = [msg for _, msg in enumerate(self.history)]
+        for i in range(len(messages_history)):
+            msg = messages_history[i]
+            if msg.role == "assistant":
+                command_dict = json.loads(msg.content)
+                if command_dict["command"]["name"] == "get_info":
+                    if i < len(messages_history) - 1:
+                        j = i + 1
+                        next_msg = messages_history[j]
+                        get_info = next_msg.content
+                        break
+
+        for i in range(len(messages_history)):
+            msg = messages_history[i]
+            if msg.role == "assistant":
+                command_dict = json.loads(msg.content)
+                if command_dict["command"]["name"] == "run_tests":
+                    if i < len(messages_history) - 1:
+                        j = i + 1
+                        next_msg = messages_history[j]
+                        run_tests = next_msg.content
+                        break
+
+        failing_test_code = ""
+        for i in range(len(messages_history)):
+            msg = messages_history[i]    
+            if msg.role == "assistant":
+                command_dict = json.loads(msg.content)
+                if command_dict["command"]["name"] == "extract_test_code":
+                    if i < len(messages_history) - 1:
+                        j = i + 1
+                        next_msg = messages_history[j]
+                        failing_test_code += "Extracting test code from file {} returned: ".format(command_dict["command"]["args"]["test_file_path"]) + next_msg.content + "\n"
+
+        if get_info or run_tests or failing_test_code:
+            self.bug_report = {"get_info": get_info, "run_tests": run_tests, "failing_test_code": failing_test_code}
+
+
+    def construct_state(self):
+        pass
     def think(
         self,
         instruction: Optional[str] = None,
@@ -109,6 +324,15 @@ class BaseAgent(metaclass=ABCMeta):
 
         prompt: ChatSequence = self.construct_prompt(instruction, thought_process_id)
         prompt = self.on_before_think(prompt, thought_process_id, instruction)
+        ## This is a line added by me to save prompts at each step
+        prompt_text = prompt.dump()
+        start_i = prompt_text.find("Locate the bug within the project")
+        end_i = prompt_text.find("),running test cases will help you to achieve this first goal")
+        in_between = prompt_text[start_i:end_i]
+        project_name, bug_index= in_between.replace("Locate the bug within the project \"", "").replace('" (index of bug = ', " ").replace(")", "").split(" ")[:2]
+
+        with open("prompt_history_{}_{}".format(project_name, bug_index), "a+") as patf:
+            patf.write(prompt.dump())
         raw_response = create_chat_completion(
             prompt,
             self.config,
@@ -163,7 +387,68 @@ class BaseAgent(metaclass=ABCMeta):
             [Message("system", self.system_prompt)] + prepend_messages,
         )
 
-        # Reserve tokens for messages to be appended later, if any
+        ## added this part to change the prompt structure
+        self.construct_read_files()
+        self.construct_suggested_fixes()
+        self.construct_search_queries()
+        self.construct_bug_report()
+        self.construct_commands_history()
+        self.construct_human_feedback()
+
+        context_prompt = "What follows are sections of the most important information you gathered so far about the current bug.\
+        Use the following info to suggest a fix for the buggy code:\n"
+        read_files_section = "## Read lines:\n"
+        if self.read_files:
+            for f in self.read_files:
+                for r in self.read_files[f]:
+                    read_files_section += "Lines {} to {} from file: {}\n{}\n\n".format(r[0], r[1], f, self.read_files[f][r])
+        else:
+            read_files_section+="No files have been read so far.\n"
+
+        suggested_fixes_section = "## Suggested fixes:\n"+"This is the list of suggested fixes so far but none of them worked:\n"
+        if self.suggested_fixes:
+            for f in self.suggested_fixes:
+                for fx in self.suggested_fixes[f]:
+                    suggested_fixes_section += "###Fix:\nLines {} to {} from file {} were replaced with the following:\n{}\n\n".format(
+                        fx["lines_range"][0],
+                        fx["lines_range"][1],
+                        f,
+                        fx["lines_list"])
+        else:
+            suggested_fixes_section += "No fixes were suggested yet.\n"
+
+
+        search_queries = "## Executed search queries within the code base:\n"
+        if self.search_queries:
+            for s in self.search_queries:
+                search_queries += "Searching keywords: {}, returned the following results:\n{}\n\n".format(s["query"], s["result"])
+        else:
+            search_queries += "No search queries executed so far.\n"
+
+        bug_report = "## Info about the bug (bug report summary):\n"
+
+        if self.bug_report:
+            bug_report += ("### Bug info:\n" if self.bug_report["get_info"] else "") + self.bug_report["get_info"] + "\n" +\
+            ("### Test cases results:\n" if self.bug_report["run_tests"] else "") + self.bug_report["run_tests"] +"\n" +\
+            ("### The code of the failing test cases:\n" if self.bug_report["failing_test_code"] else "")+ self.bug_report["failing_test_code"]+"\n"
+        else:
+            bug_report += "No info was collected about the bug so far. You can get more info about the bug by running the commands: get_info and run_tests.\n"
+        
+        commands_history = "## The list of commands you have executed so far:\n"
+        if self.commands_history:
+            commands_history += "\n".join(self.commands_history)
+
+        human_feedback = "## The list of human feedbacks:\n"
+        if self.human_feedback:
+            human_feedback += "\n".join(self.human_feedback)
+        context_prompt += read_files_section + "\n" + suggested_fixes_section + "\n" + search_queries + "\n" +\
+            bug_report + "\n" + commands_history + "\n" + human_feedback +\
+            "\n" + "## THE END OF ALL COLLECTED INFO SECTIONS, AFTER THIS YOU WILL SEE THE LAST EXECUTED COMMAND AND ITS RESULT, CONTINUE YOUR REASONING FROM THERE ##"
+        prompt.append(Message("system", context_prompt))
+        
+        ## The following is the original code, uncomment when needed to roll back
+        """
+       # Reserve tokens for messages to be appended later, if any
         reserve_tokens += self.history.max_summary_tlength
         if append_messages:
             reserve_tokens += count_message_tokens(append_messages, self.llm.name)
@@ -174,10 +459,17 @@ class BaseAgent(metaclass=ABCMeta):
         trimmed_history = add_history_upto_token_limit(
             prompt, self.history, self.send_token_limit - reserve_tokens
         )
+        
         if trimmed_history:
             new_summary_msg, _ = self.history.trim_messages(list(prompt), self.config)
             prompt.insert(history_start_index, new_summary_msg)
 
+        """
+        if len(self.history) > 2:
+            last_command = self.history[-2]
+            command_result = self.history[-1]
+            last_command_section = "## The last command you executed was:\n {}\n## The result of executing the last command is:\n {}".format(last_command.content, command_result.content)
+            append_messages.append(Message("system", last_command_section))
         if append_messages:
             prompt.extend(append_messages)
 

@@ -37,8 +37,8 @@ OpenAIChatParser = Callable[[str], dict]
 
 class OpenAIModelName(str, enum.Enum):
     ADA = "text-embedding-ada-002"
-    GPT3 = "gpt-3.5-turbo-0613"
-    GPT3_16K = "gpt-3.5-turbo-16k-0613"
+    GPT3 = "gpt-3.5-turbo-1106"
+    GPT3_16K = "gpt-3.5-turbo-1106"
     GPT4 = "gpt-4-0613"
     GPT4_32K = "gpt-4-32k-0613"
 

@@ -44,7 +44,6 @@ PLAN_PROMPT_CONSTRAINTS = (
 )
 
 PLAN_PROMPT_RESOURCES = (
-    "Internet access for searches and information gathering.",
     "Long-term memory management.",
     "File output.",
 )

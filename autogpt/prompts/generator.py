@@ -37,9 +37,11 @@ class PromptGenerator:
     def __init__(self):
         self.constraints = []
         self.commands = []
-        self.resources = []
         self.best_practices = []
         self.command_registry = None
+        self.simple_patterns = []
+        self.debugging_hints = []
+        self.work_plan = []
 
     def add_constraint(self, constraint: str) -> None:
         """
@@ -49,6 +51,15 @@ class PromptGenerator:
             constraint (str): The constraint to be added.
         """
         self.constraints.append(constraint)
+
+    def add_simple_pattern(self, pattern: str) -> None:
+        self.simple_patterns.append(pattern)
+
+    def add_debugging_hint(self, hint:str) -> None:
+        self.debugging_hints.append(hint)
+
+    def add_work_plan(self, step:str) -> None:
+        self.work_plan.append(step)
 
     def add_command(
         self,
@@ -81,15 +92,6 @@ class PromptGenerator:
             )
         )
 
-    def add_resource(self, resource: str) -> None:
-        """
-        Add a resource to the resources list.
-
-        Args:
-            resource (str): The resource to be added.
-        """
-        self.resources.append(resource)
-
     def add_best_practice(self, best_practice: str) -> None:
         """
         Add an item to the list of best practices.
@@ -116,8 +118,10 @@ class PromptGenerator:
         self,
         *,
         additional_constraints: list[str] = [],
-        additional_resources: list[str] = [],
         additional_best_practices: list[str] = [],
+        additional_debugging_hints: list[str] = [],
+        additional_simple_patterns: list[str] = [],
+        additional_work_plan: list[str] = []
     ) -> str:
         """
         Generate a prompt string based on the constraints, commands, resources,
@@ -134,11 +138,17 @@ class PromptGenerator:
             "## Commands\n"
             "You have access to the following commands:\n"
             f"{self._generate_commands()}\n\n"
-            "## Resources\n"
-            "You can leverage access to the following resources:\n"
-            f"{self._generate_numbered_list(self.resources + additional_resources)}\n\n"
             "## Best practices\n"
-            f"{self._generate_numbered_list(self.best_practices + additional_best_practices)}"
+            f"{self._generate_numbered_list(self.best_practices + additional_best_practices)}\n\n"
+            "## Debugging hints\n"
+            "Here are some general debugging tips that you can benefit from:\n"
+            f"{self._generate_numbered_list(self.debugging_hints + additional_debugging_hints)}\n\n"
+            "## Simple Bugs patterns\n"
+            "Here is a list of some frequent simple bugs patterns:\n"
+            f"{self._generate_numbered_list(self.simple_patterns + additional_simple_patterns)}\n\n"
+            "## Initial plan of work\n"
+            "The following is a generic initial plan that you can start from and customize accordingly:\n"
+            f"{self._generate_numbered_list(self.work_plan + additional_work_plan)}\n"
         )
 
     def _generate_commands(self) -> str:

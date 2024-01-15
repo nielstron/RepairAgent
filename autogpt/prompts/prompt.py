@@ -36,4 +36,12 @@ def build_default_prompt_generator(config: Config) -> PromptGenerator:
     for best_practice in prompt_config.best_practices:
         prompt_generator.add_best_practice(best_practice)
 
+    for hint in prompt_config.debugging_hints:
+        prompt_generator.add_debugging_hint(hint)
+
+    for pattern in prompt_config.simple_patterns:
+        prompt_generator.add_simple_pattern(pattern)
+
+    for step in prompt_config.work_plan:
+        prompt_generator.add_work_plan(step)
     return prompt_generator

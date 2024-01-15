@@ -114,7 +114,11 @@ Latest Development:
                 logger.debug(
                     f"Invalid item in message history: {err}; Messages: {messages[i-1:i+2]}"
                 )
-
+        prompt = MessageHistory.SUMMARIZATION_PROMPT.format(
+            summary=self.summary, new_events=["NO EVENTS"]
+        )
+        with open("debug_prompt_summary_file.txt", "a+") as dbmp:
+            dbmp.write(prompt)
     def summary_message(self) -> Message:
         return Message(
             "system",

@@ -45,3 +45,6 @@ class PromptConfig:
         self.constraints = config_params.get("constraints", [])
         self.resources = config_params.get("resources", [])
         self.best_practices = config_params.get("best_practices", [])
+        self.debugging_hints = config_params.get("debugging_hints", [])
+        self.simple_patterns = config_params.get("simple_patterns", [])
+        self.work_plan = config_params.get("work_plan", [])
