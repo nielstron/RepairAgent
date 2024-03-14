@@ -1,0 +1,21 @@
+{
+    "com/fasterxml/jackson/core/JsonPointer.java#193": "char c = str.charAt(i++) - '0';"
+}{
+  "193": "if (i >= str.length()) { break; }"
+}{
+    "193": "if (c < '0' || c > '9') { return -1; }"
+}{
+    "193": "if (c > '9' || c < '0') { return -1; }"
+}{
+  "193": "return NumberInput.parseInt(str);"
+}{
+  "193": "return NumberInput.parseInt(str);"
+}{
+  "193": "return NumberInput.parseInt(str);"
+}{
+    "com/fasterxml/jackson/core/JsonPointer.java#193": "return NumberInput.parseInt(str);"
+}{
+    "193": "return NumberInput.parseInt(str);"
+}{
+	"com/fasterxml/jackson/core/JsonPointer.java#193": "return NumberInput.parseInt(str);"
+}

@@ -1,0 +1,21 @@
+{
+  "731": "if (last == NUMBER_CHAR_DIGIT && fitsInLong && (value != Long.MIN_VALUE || (negative && peekDigit() != 0))) {"
+}{
+    "731": "if (last == NUMBER_CHAR_DIGIT && fitsInLong && (value != Long.MIN_VALUE || negative) && buffer[peek] != 'e' && buffer[peek] != 'E') {"
+}{
+    "731": "if (last == NUMBER_CHAR_DIGIT && fitsInLong && (value != Long.MIN_VALUE || (value == 0 && negative))) {"
+}{
+  "731": "    if (last == NUMBER_CHAR_DIGIT && fitsInLong && (value != Long.MIN_VALUE || negative || !lenient)) {"
+}{
+  "731": "if (last == NUMBER_CHAR_DIGIT && fitsInLong && (value != Long.MIN_VALUE || negative) && peeked != PEEKED_NUMBER) {"
+}{
+    "731": "if (last == NUMBER_CHAR_DIGIT && fitsInLong && (value != Long.MIN_VALUE || negative) && peeked != PEEKED_NUMBER) {"
+}{
+    "731": "if (last == NUMBER_CHAR_DIGIT && fitsInLong && (value != Long.MIN_VALUE || negative) && peeked != PEEKED_NUMBER) {"
+}{
+    "731": "if (last == NUMBER_CHAR_DIGIT && fitsInLong && (value != Long.MIN_VALUE || negative) && peeked != PEEKED_NUMBER) {"
+}{
+    "731": "if (last == NUMBER_CHAR_DIGIT && fitsInLong && (value != Long.MIN_VALUE || negative) && peeked != PEEKED_NUMBER) {"
+}{
+    "731": "if (last == NUMBER_CHAR_DIGIT && fitsInLong && (value != Long.MIN_VALUE || negative) && peeked != PEEKED_NUMBER) {"
+}

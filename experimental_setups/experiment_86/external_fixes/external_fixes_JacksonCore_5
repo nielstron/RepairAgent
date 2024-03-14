@@ -1,0 +1,21 @@
+{
+  "193": "// Fixing the parsing of index by using Double.parseDouble instead of Integer.parseInt to support scientific notation like '1e0'\n            char c = str.charAt(i++);"
+}
+{  
+    "193": "            char c = i < str.length() ? str.charAt(i++) : 0;"
+}{
+            "193": "if (c != '1' || len != 3 || str.charAt(i) != '0') { return -1; }"
+}
+{ "193": "char c = str.charAt(i);" }
+{ "193": "char c = str.charAt(i);" }{
+    "fix1": {
+        "193": "char c = str.charAt(i);"
+    },
+    "fix2": {
+        "193": "// char c = str.charAt(i++); // Commented out the original line causing the issue"
+    }
+}
+{ "193": "char c = str.charAt(i);" }
+{ "193": "char c = str.charAt(i);" }
+{ "193": "char c = str.charAt(i);" }
+{ "193": "if (c > '9' || c < '0' && c != 'e' && c != 'E') { return -1; }" }

@@ -1,0 +1,27 @@
+{
+  "org/apache/commons/codec/binary/Base64.java#225": "this(true);"
+}
+{ 
+  "org/apache/commons/codec/binary/Base64.java#225#": "        this(true);"
+}
+{
+  "org/apache/commons/codec/binary/Base64.java#225": "this(true);"
+}{
+  "1": {
+    "225": "this(true)"
+  }
+}{
+  "1": {
+    "file": "org/apache/commons/codec/binary/Base64.java",
+    "line": 225,
+    "original": "this(false);",
+    "fixes": [
+      {
+        "this(false);": "this(true);"
+      },
+      {
+        "this(false);": "// this(false); // Commenting out the incorrect initialization"
+      }
+    ]
+  }
+}

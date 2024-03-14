@@ -1,0 +1,74 @@
+{
+    "file_name": "org/apache/commons/codec/binary/Base64.java",
+    "modifications": [
+        {
+            "line_number": 225,
+            "modified_line": "        this(true);"
+        }
+    ]
+}
+{
+    "file_name": "org/apache/commons/codec/binary/Base64.java",
+    "modifications": [
+        {
+            "line_number": 224,
+            "modified_line": "    public Base64(boolean urlSafe) {"
+        }
+    ]
+}
+{
+    "file_name": "org/apache/commons/codec/binary/Base64.java",
+    "insertions": [],
+    "deletions": [],
+    "modifications": [
+        {
+            "line_number": 225,
+            "modified_line": "this(true);"
+        }
+    ]
+}
+{
+    "suggested_fixes": [
+        {
+            "file_name": "org/apache/commons/codec/binary/Base64.java",
+            "insertions": [],
+            "deletions": [],
+            "modifications": [
+                {
+                    "line_number": 225,
+                    "modified_line": "this(true);"
+                }
+            ]
+        }
+    ]
+}
+{
+    "suggested_fixes": [
+        {
+            "file_name": "org/apache/commons/codec/binary/Base64.java",
+            "insertions": [],
+            "deletions": [],
+            "modifications": [
+                {
+                    "line_number": 225,
+                    "modified_line": "this(true);"
+                }
+            ]
+        }
+    ]
+}
+{
+    "suggested_fixes": [
+        {
+            "file_name": "org/apache/commons/codec/binary/Base64.java",
+            "insertions": [],
+            "deletions": [],
+            "modifications": [
+                {
+                    "line_number": 225,
+                    "modified_line": "this(true);"
+                }
+            ]
+        }
+    ]
+}

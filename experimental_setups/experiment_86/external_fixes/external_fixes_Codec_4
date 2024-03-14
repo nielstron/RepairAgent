@@ -1,0 +1,22 @@
+{
+    "225": "// this(false); // Commented out the line causing the issue"
+}{
+    "225": "this(true);"
+}{
+    "org/apache/commons/codec/binary/Base64.java#225": "this(true);"
+}
+{ "225": "this(true)" }{
+	"fix1": {
+		"225": "this(true)"
+	},
+	"fix2": {
+		"225": "this()"
+	},
+	"fix3": {
+		"225": "// this(false);"
+	}
+}
+{
+    "225": "this(true)"
+}
+{ "225": "this(true)" }{ "225": "this(true)" }{ "225": "this(true)" }{ "225": "this(true)" }

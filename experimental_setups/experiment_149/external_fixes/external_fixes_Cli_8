@@ -1,0 +1,181 @@
+
+{
+    "file_name": "org/apache/commons/cli/HelpFormatter.java",
+    "modifications": [
+        {
+            "line_number": 812,
+            "modified_line": "            pos = findWrapPos(text, width, 0);"
+        }
+    ]
+}
+{
+    "file_name": "org/apache/commons/cli/HelpFormatter.java",
+    "modifications": [
+        {
+            "line_number": 812,
+            "modified_line": "            int pos = findWrapPos(text, width, nextLineTabStop);"
+        }
+    ]
+}
+{
+    "file_name": "org/apache/commons/cli/HelpFormatter.java",
+    "modifications": [
+        {
+            "line_number": 812,
+            "modified_line": "            pos = findWrapPos(text, width, nextLineTabStop, startPos);"
+        }
+    ]
+}
+{
+    "file_name": "org/apache/commons/cli/HelpFormatter.java",
+    "modifications": [
+        {
+            "line_number": 812,
+            "modified_line": "pos = findWrapPos(text, width, nextLineTabStop, true);"
+        }
+    ]
+}
+{
+    "file_name": "org/apache/commons/cli/HelpFormatter.java",
+    "modifications": [
+        {
+            "line_number": 812,
+            "modified_line": "pos = findWrapPos(text, width, nextLineTabStop + 1);"
+        }
+    ]
+}
+  {
+    "file_name": "org/apache/commons/cli/HelpFormatter.java",
+    "insertions": [],
+    "deletions": [],
+    "modifications": [
+      {
+        "line_number": 809,
+        "modified_line": "while (pos != -1)"
+      }
+    ]
+  }
+ 
+    {
+        "file_name": "org/apache/commons/cli/HelpFormatter.java",
+        "insertions": [],
+        "deletions": [],
+        "modifications": [
+            {
+                "line_number": 812,
+                "modified_line": "pos = findWrapPos(text, width, nextLineTabStop, startPos); // Adjusted the findWrapPos parameters to include startPos"
+            }
+        ]
+    }
+   
+{
+    "file_name": "org/apache/commons/cli/HelpFormatter.java",
+    "insertions": [],
+    "deletions": [],
+    "modifications": [
+        {
+            "line_number": 812,
+            "modified_line": "pos = findWrapPos(text, width, nextLineTabStop, startPos); // Adjusted the findWrapPos parameters to include startPos"
+        }
+    ]
+}
+{
+    "file_name": "org/apache/commons/cli/HelpFormatter.java",
+    "insertions": [],
+    "deletions": [],
+    "modifications": [
+        {
+            "line_number": 812,
+            "modified_line": "pos = findWrapPos(text, width, nextLineTabStop, 0); // Adjusted the findWrapPos parameters to start from 0"
+        }
+    ]
+}
+{
+    "file_name": "org/apache/commons/cli/HelpFormatter.java",
+    "insertions": [],
+    "deletions": [],
+    "modifications": [
+        {
+            "line_number": 812,
+            "modified_line": "pos = findWrapPos(text, width, nextLineTabStop, startPos); // Adjusted the findWrapPos parameters to include startPos"
+        }
+    ]
+}
+{
+    "file_name": "org/apache/commons/cli/HelpFormatter.java",
+    "insertions": [],
+    "deletions": [],
+    "modifications": [
+        {
+            "line_number": 812,
+            "modified_line": "pos = findWrapPos(text, width, nextLineTabStop, startPos); // Adjusted the findWrapPos parameters to include startPos"
+        }
+    ]
+}
+{
+    "file_name": "org/apache/commons/cli/HelpFormatter.java",
+    "insertions": [],
+    "deletions": [],
+    "modifications": [
+        {
+            "line_number": 812,
+            "modified_line": "pos = findWrapPos(text, width, nextLineTabStop, 0); // Adjusted the findWrapPos parameters to start from 0"
+        }
+    ]
+}   
+
+{
+    "file_name": "org/apache/commons/cli/HelpFormatter.java",
+    "insertions": [],
+    "deletions": [],
+    "modifications": [
+        {
+            "line_number": 812,
+            "modified_line": "pos = findWrapPos(text, width, nextLineTabStop, 0); // Adjusted the findWrapPos parameters to start from 0"
+        }
+    ]
+}
+{
+    "file_name": "org/apache/commons/cli/HelpFormatter.java",
+    "insertions": [],
+    "deletions": [],
+    "modifications": [
+        {
+            "line_number": 812,
+            "modified_line": "pos = findWrapPos(text, width, nextLineTabStop, 0); // Adjusted the findWrapPos parameters to start from 0 and include nextLineTabStop"
+        }
+    ]
+}
+{
+    "file_name": "org/apache/commons/cli/HelpFormatter.java",
+    "insertions": [],
+    "deletions": [],
+    "modifications": [
+        {
+            "line_number": 812,
+            "modified_line": "// Modify the renderWrappedText method to address incorrect text wrapping behavior"
+        }
+    ]
+}
+{
+    "file_name": "org/apache/commons/cli/HelpFormatter.java",
+    "insertions": [],
+    "deletions": [],
+    "modifications": [
+        {
+            "line_number": 812,
+            "modified_line": "pos = findWrapPos(text, width, nextLineTabStop, 0); // Adjusted the findWrapPos parameters to start from 0"
+        }
+    ]
+}
+{
+    "file_name": "org/apache/commons/cli/HelpFormatter.java",
+    "insertions": [],
+    "deletions": [],
+    "modifications": [
+        {
+            "line_number": 812,
+            "modified_line": "pos = findWrapPos(text, width, nextLineTabStop, 0); // Adjusted the findWrapPos parameters to start from 0"
+        }
+    ]
+}

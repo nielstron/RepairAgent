@@ -15,12 +15,12 @@ def count_message_tokens(messages: Message, model: str = "gpt-3.5-turbo") -> int
 
 
 @overload
-def count_message_tokens(messages: List[Message], model: str = "gpt-3.5-turbo") -> int:
+def count_message_tokens(messages: List[Message], model: str = "gpt-3.5-turbo-0125") -> int:
     ...
 
 
 def count_message_tokens(
-    messages: Message | List[Message], model: str = "gpt-3.5-turbo"
+    messages: Message | List[Message], model: str = "gpt-3.5-turbo-0125"
 ) -> int:
     """
     Returns the number of tokens used by a list of messages.
@@ -29,7 +29,7 @@ def count_message_tokens(
         messages (list): A list of messages, each of which is a dictionary
             containing the role and content of the message.
         model (str): The name of the model to use for tokenization.
-            Defaults to "gpt-3.5-turbo-0301".
+            Defaults to "gpt-3.5-turbo-0125".
 
     Returns:
         int: The number of tokens used by the list of messages.

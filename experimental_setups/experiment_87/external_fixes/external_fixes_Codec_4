@@ -1,0 +1,18 @@
+
+{ 
+  "org/apache/commons/codec/binary/Base64.java#225": "//this(false);"
+}
+{ 
+    "org/apache/commons/codec/binary/Base64.java#225": "this(true);"
+}
+{  }
+
+{ "225": "this(true);" }
+{ "225": "this(true)" }
+{ "225": "this(true)" }{ "225": "this(true)" }{ "225": "this(CHUNK_SIZE, CHUNK_SEPARATOR, true)" }{ "225": "this(true)" }
+{ "225": "this(true)" }{ "225": "this(true)" }{ "225": "this(CHUNK_SIZE, CHUNK_SEPARATOR, false)" }
+{
+  "225": "this(true)"
+}
+{ "225": "this(true);" }
+{ "225": "this(true)" }

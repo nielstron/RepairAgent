@@ -1,0 +1,77 @@
+
+{
+    "file_name": "org/jfree/chart/renderer/category/AbstractCategoryItemRenderer.java",
+    "modifications": [
+        {
+            "line_number": 1797,
+            "modified_line": "        if (dataset != null && dataset.getRowCount() > 0 && dataset.getColumnCount() > 0) {"
+        }
+    ]
+}
+{
+    "file_name": "org/jfree/chart/renderer/category/AbstractCategoryItemRenderer.java",
+    "modifications": [
+        {
+            "line_number": 1797,
+            "modified_line": "        if (dataset == null) {"
+        }
+    ]
+}
+{
+    "file_name": "org/jfree/chart/renderer/category/AbstractCategoryItemRenderer.java",
+    "modifications": [
+        {
+            "line_number": 1798,
+            "modified_line": "            // return result; // Commented out the premature return to ensure processing continues"
+        }
+    ]
+}
+    {
+        "file_name": "org/jfree/chart/renderer/category/AbstractCategoryItemRenderer.java",
+        "modifications": [
+            {
+                "line_number": 1798,
+                "modified_line": "            // return result; // Commenting out premature return when dataset is null"
+            }
+        ]
+    }
+
+{
+    "file_name": "org/jfree/chart/renderer/category/AbstractCategoryItemRenderer.java",
+    "modifications": [
+        {
+            "line_number": 1798,
+            "modified_line": "            // return result; // Commenting out the premature return"
+        },
+        {
+            "line_number": 1800,
+            "modified_line": "        if (dataset == null) { // Adding a check to handle null dataset"
+        }
+    ]
+}
+{
+    "file_name": "org/jfree/chart/renderer/category/AbstractCategoryItemRenderer.java",
+    "modifications": [
+        {
+            "line_number": 1798,
+            "modified_line": "            // return result; // Commenting out the premature return"
+        },
+        {
+            "line_number": 1800,
+            "modified_line": "        if (dataset == null) { // Adding a check to handle null dataset"
+        }
+    ]
+}
+{
+    "file_name": "org/jfree/chart/renderer/category/AbstractCategoryItemRenderer.java",
+    "modifications": [
+        {
+            "line_number": 1798,
+            "modified_line": "            // return result; // Commenting out the premature return"
+        },
+        {
+            "line_number": 1800,
+            "modified_line": "        if (dataset == null) { // Adding a check to handle null dataset"
+        }
+    ]
+}

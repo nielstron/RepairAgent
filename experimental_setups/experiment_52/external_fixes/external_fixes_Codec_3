@@ -1,0 +1,21 @@
+{
+  "org/apache/commons/codec/language/DoubleMetaphone.java#455#": "            } else if (contains(value, index + 1, 4, \"IER\") && !contains(value, index - 2, 6, \"EISLER\")) {"
+}{
+    "org/apache/commons/codec/language/DoubleMetaphone.java#455": "            } else if (contains(value, index + 1, 4, \"IER\") && !contains(value, index - 1, 1, \"G\")) {"
+}{
+    "455": "            } else if (contains(value, index + 1, 3, \"IER\")) {"
+}{
+  "org/apache/commons/codec/language/DoubleMetaphone.java#455": "            } else if (contains(value, index + 1, 3, \"IER\")) {"
+}{
+    "455": "            } else if (contains(value, index + 1, 3, 'IER')) {"
+}{
+    "455": "            } else if (contains(value, index + 1, 3, 'IER')) {"
+}{
+    "455": "            } else if (contains(value, index + 1, 3, 'IER')) {"
+}{
+    "455": "            } else if (contains(value, index + 1, 3, 'IER')) {"
+}{
+    "455": "            } else if (contains(value, index + 1, 3, 'IER')) {"
+}{
+    "455": "            } else if (contains(value, index + 1, 3, 'IER')) {"
+}

@@ -1,0 +1,8 @@
+{
+    "731": "if (last == NUMBER_CHAR_DIGIT && fitsInLong && (value != Long.MIN_VALUE || negative || value == 0)) {"
+}
+{  
+    "731": "if (last == NUMBER_CHAR_DIGIT && fitsInLong && (value != Long.MIN_VALUE || negative) && peeked != PEEKED_NONE) {"
+}{  }
+{ "731": "if (last == NUMBER_CHAR_DIGIT && fitsInLong && (value != Long.MIN_VALUE || (negative && value != 0)))" }
+{ "731": "if (last == NUMBER_CHAR_DIGIT && fitsInLong && (value != 0 || (negative && value != Long.MIN_VALUE)))" }

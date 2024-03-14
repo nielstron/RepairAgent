@@ -1,0 +1,21 @@
+{
+  "org/apache/commons/cli/HelpFormatter.java#825": "nextLineTabStop = width - 1 + indent;"
+}{
+    "825": "nextLineTabStop = width - 2;"
+}{
+    "org/apache/commons/cli/HelpFormatter.java#825": "nextLineTabStop = width - 2;"
+}{
+  "825": "nextLineTabStop = width / 2;"
+}{
+	"825": "nextLineTabStop = width - 10;"
+}{
+    "825": "nextLineTabStop = width / 2;"
+}{
+    "825": "nextLineTabStop = width / 2;"
+}{
+    "825": "nextLineTabStop = width / 2;"
+}{
+    "825": "nextLineTabStop = width - 10;"
+}{
+    "825": "nextLineTabStop = width / 2;"
+}

@@ -1,0 +1,11 @@
+{
+"thoughts": "Based on the failing test case and the location of the bug in the HelpFormatter.java file, it seems like the issue might be related to the findWrapPos method in the renderWrappedText method. To understand the bug better, we should extract the code of the failing test case.",
+"command": {
+"name": "extract_test_code",
+"args": {
+"project_name": "Cli",
+"bug_index": 8,
+"test_file_path": "org.apache.commons.cli.HelpFormatterTest::testPrintWrapped"
+}
+}
+}

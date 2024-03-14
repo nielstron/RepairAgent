@@ -1,0 +1,6 @@
+{
+    "812": "            pos = findWrapPos(text, width, nextLineTabStop, 0);"
+}
+{ 
+                                                                                                       
+{ "org/apache/commons/cli/HelpFormatter.java#812#": "pos = findWrapPos(text, width, nextLineTabStop + 1);" }

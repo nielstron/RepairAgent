@@ -1,0 +1,69 @@
+{  }
+{
+	"org/apache/commons/cli/HelpFormatter.java#812": "pos = findWrapPos(text, width, nextLineTabStop) - 1;"
+}{
+    "org/apache/commons/cli/HelpFormatter.java#812": "pos = findWrapPos(text, width, nextLineTabStop) - 1;"
+}{ "org/apache/commons/cli/HelpFormatter.java#812": "pos = findWrapPos(text, width, nextLineTabStop) - 1;" }{
+	"org/apache/commons/cli/HelpFormatter.java#812": "pos = findWrapPos(text, width, nextLineTabStop); // Adjusting the wrap position calculation"
+}{
+  "1": {
+    "file_name": "org/apache/commons/cli/HelpFormatter.java",
+    "insertions": [],
+    "deletions": [],
+    "modifications": [
+      {
+        "line_number": 807,
+        "modified_line": "        final String padding = createPadding(nextLineTabStop + 1);"
+      }
+    ]
+  }
+}
+{ "org/apache/commons/cli/HelpFormatter.java#807": "        final String padding = createPadding(nextLineTabStop + 1);" }{ "812": "            pos = findWrapPos(text, width, nextLineTabStop + 1);" }
+    {
+        "org/apache/commons/cli/HelpFormatter.java#807": "        final String padding = createPadding(nextLineTabStop + 1);"
+    }
+{
+  "file_name": "org/apache/commons/cli/HelpFormatter.java",
+  "insertions": [],
+  "deletions": [],
+  "modifications": [
+    {
+      "line_number": 807,
+      "modified_line": "        final String padding = createPadding(nextLineTabStop + 1);"
+    }
+  ]
+}{ "1": "No suggested fix available based on the provided information." }
+{
+  "1": {
+    "file_name": "org/apache/commons/cli/HelpFormatter.java",
+    "insertions": [],
+    "deletions": [],
+    "modifications": [
+      {
+        "line_number": 812,
+        "modified_line": "            pos = findWrapPos(text, width, nextLineTabStop + 1);"
+      }
+    ]
+  }
+}
+{
+  "file_name": "org/apache/commons/cli/HelpFormatter.java",
+  "insertions": [],
+  "deletions": [],
+  "modifications": [
+    {
+      "line_number": 807,
+      "modified_line": "        final String padding = createPadding(nextLineTabStop + 1);"
+    },
+    {
+      "line_number": 812,
+      "modified_line": "            pos = findWrapPos(text, width, nextLineTabStop + 1);"
+    }
+  ]
+}{
+  "Fix 1": [
+    {
+      "org/apache/commons/cli/HelpFormatter.java#807": "        final String padding = createPadding(nextLineTabStop + 1);"
+    }
+  ]
+}

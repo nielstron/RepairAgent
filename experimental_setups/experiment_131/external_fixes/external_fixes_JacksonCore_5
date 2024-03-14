@@ -1,0 +1,39 @@
+
+{
+    "file_name": "com/fasterxml/jackson/core/JsonPointer.java",
+    "modifications": [
+        {
+            "line_number": 193,
+            "modified_line": "            char c = (i < str.length()) ? str.charAt(i++) : 0;"
+        }
+    ]
+}
+{
+    "file_name": "com/fasterxml/jackson/core/JsonPointer.java",
+    "modifications": [
+        {
+            "line_number": 194,
+            "modified_line": "            if (c > '9' || c < '0' && c != 'e' && c != 'E') {"
+        }
+    ]
+}
+{
+    "file_name": "com/fasterxml/jackson/core/JsonPointer.java",
+    "modifications": [
+        {
+            "line_number": 194,
+            "modified_line": "            if (c > '9' || c < '0' && c != 'e' && c != '-') {"
+        }
+    ]
+}
+{
+    "file_name": "com/fasterxml/jackson/core/JsonPointer.java",
+    "insertions": [],
+    "deletions": [],
+    "modifications": [
+        {
+            "line_number": 194,
+            "modified_line": "            if (c > '9' || c < '0' && c != 'e' && c != 'E') {"
+        }
+    ]
+}

@@ -1,0 +1,2 @@
+### PLAUSIBLE FIX
+{'file_name': '/workspace/Auto-GPT/auto_gpt_workspace/math_57_buggy/src/main/java/org/apache/commons/math/stat/clustering/KMeansPlusPlusClusterer.java', 'insertions': [], 'deletions': [], 'modifications': [{'line_number': 175, 'modified_line': '            int sum = -1;'}]}

@@ -1,0 +1,6 @@
+{ "1797": "// if (dataset != null) {" }{  }
+{
+	"1797": "// Add a null check for dataset before proceeding further\n        if (dataset != null && dataset.getRowCount() > 0 && dataset.getColumnCount() > 0) {"
+}{
+    "org/jfree/chart/renderer/category/AbstractCategoryItemRenderer.java#1797#        if (dataset != null) {": "        if (dataset != null && dataset.getRowCount() > 0 && dataset.getColumnCount() > 0) {"
+}

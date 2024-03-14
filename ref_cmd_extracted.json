@@ -1,0 +1,1 @@
+{"name": "write_fix", "args": {"project_name": "Chart", "bug_index": 1, "filepath": "org/jfree/chart/renderer/category/AbstractCategoryItemRenderer.java", "changed_lines": {"1798": "return result;"}}}

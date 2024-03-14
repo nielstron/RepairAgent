@@ -1,0 +1,11 @@
+
+{  
+    "1797": "// if (dataset != null) { \n // Add a condition check for dataset being null before further processing \n if (dataset != null) {"
+}{
+  "1797": "if (dataset != null && dataset.getRowCount() > 0 && dataset.getColumnCount() > 0) {"
+}
+{  }{  }{
+    "1797": "// Add a null check for dataset\n        if (dataset != null && dataset.getRowCount() > 0) {"
+}{
+    "1797": "//if (dataset != null) { // commented out the condition check"
+}

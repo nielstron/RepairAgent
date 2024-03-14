@@ -1,0 +1,10 @@
+
+{
+    "file_name": "org/apache/commons/cli/HelpFormatter.java",
+    "modifications": [
+        {
+            "line_number": 812,
+            "modified_line": "            pos = findWrapPos(text, width, nextLineTabStop);"
+        }
+    ]
+}

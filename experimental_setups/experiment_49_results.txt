@@ -1,0 +1,26 @@
+Experiment Results: experiment_49
+
+Number of Bugs: 1
+Correctly fixed bugs: 0
+Total Suggested Fixes: 3
+
+The list of suggested fixes:
+Chart_1
+
+###Fix:
+Lines:['1797'] from file /workspace/Auto-GPT/auto_gpt_workspace/chart_1_buggy/source/org/jfree/chart/renderer/category/AbstractCategoryItemRenderer.java were replaced with the following:
+{'1797': '{LegendItemCollection result = new LegendItemCollection(); if (this.plot == null) { return result; } int index = this.plot.getIndexOf(this); CategoryDataset dataset = this.plot.getDataset(index); if (dataset != null) { return result; } int seriesCount = dataset.getRowCount(); if (plot.getRowRenderingOrder().equals(SortOrder.ASCENDING)) { for (int i = 0; i < seriesCount; i++) { if (isSeriesVisibleInLegend(i)) { LegendItem item = getLegendItem(index, i); if (item != null) { result.add(item); } } } } else { for (int i = seriesCount - 1; i >= 0; i--) { if (isSeriesVisibleInLegend(i)) { LegendItem item = getLegendItem(index, i); if (item != null) { result.add(item); } } } } return result; }'}
+
+###Fix:
+Lines:['1797'] from file org/jfree/chart/renderer/category/AbstractCategoryItemRenderer.java were replaced with the following:
+{'1797': 'if (dataset != null) { return result; } else { int seriesCount = dataset.getRowCount(); if (plot.getRowRenderingOrder().equals(SortOrder.ASCENDING)) { for (int i = 0; i < seriesCount; i++) { if (isSeriesVisibleInLegend(i)) { LegendItem item = getLegendItem(index, i); if (item != null) { result.add(item); } } } } else { for (int i = seriesCount - 1; i >= 0; i--) { if (isSeriesVisibleInLegend(i)) { LegendItem item = getLegendItem(index, i); if (item != null) { result.add(item); } } } } return result; }'}
+
+###Fix:
+Lines:['1797'] from file org/jfree/chart/renderer/category/AbstractCategoryItemRenderer.java were replaced with the following:
+{'1797': 'if (dataset != null) { int seriesCount = dataset.getRowCount(); if (plot.getRowRenderingOrder().equals(SortOrder.ASCENDING)) { for (int i = 0; i < seriesCount; i++) { if (isSeriesVisibleInLegend(i)) { LegendItem item = getLegendItem(index, i); if (item != null) { result.add(item); } } } } else { for (int i = seriesCount - 1; i >= 0; i--) { if (isSeriesVisibleInLegend(i)) { LegendItem item = getLegendItem(index, i); if (item != null) { result.add(item); } } } } } return result;'}
+
++----------+-----------------+-----------------+-------------------+
+| Log File | Correctly Fixed | Suggested Fixes | Number of Queries |
++----------+-----------------+-----------------+-------------------+
+| Chart_1  |        No       |        3        |         13        |
++----------+-----------------+-----------------+-------------------+

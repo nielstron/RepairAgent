@@ -1,0 +1,185 @@
+
+    {
+        "file_name": "org/apache/commons/codec/language/DoubleMetaphone.java",
+        "modifications": [
+            {
+                "line_number": 455,
+                "modified_line": "            } else if (contains(value, index + 1, 4, \"IER\") || contains(value, index - 2, 4, \"IER\")) {"
+            }
+        ]
+    }
+   
+{
+    "file_name": "org/apache/commons/codec/language/DoubleMetaphone.java",
+    "modifications": [
+        {
+            "line_number": 455,
+            "modified_line": "                result.append('J', 'R');"
+        }
+    ]
+}
+{
+    "file_name": "org/apache/commons/codec/language/DoubleMetaphone.java",
+    "modifications": [
+        {
+            "line_number": 455,
+            "modified_line": "                result.append('J', 'R');"
+        }
+    ]
+}
+{
+    "file_name": "org/apache/commons/codec/language/DoubleMetaphone.java",
+    "modifications": [
+        {
+            "line_number": 455,
+            "modified_line": "                result.append('J', 'R');"
+        }
+    ]
+}
+{
+    "file_name": "org/apache/commons/codec/language/DoubleMetaphone.java",
+    "modifications": [
+        {
+            "line_number": 455,
+            "modified_line": "            } else if (contains(value, index + 1, 4, \"IER\")) {"
+        }
+    ]
+}
+{
+    "file_name": "org/apache/commons/codec/language/DoubleMetaphone.java",
+    "modifications": [
+        {
+            "line_number": 455,
+            "modified_line": "            } else if (contains(value, index + 1, 4, \"IER\")) {\n                result.append('J', 'R');"
+        }
+    ]
+}
+{
+    "file_name": "org/apache/commons/codec/language/DoubleMetaphone.java",
+    "modifications": [
+        {
+            "line_number": 455,
+            "modified_line": "            } else if (contains(value, index + 1, 4, \"IER\")) {\n                result.append('J', 'R');"
+        }
+    ]
+}
+{
+    "file_name": "org/apache/commons/codec/language/DoubleMetaphone.java",
+    "modifications": [
+        {
+            "line_number": 455,
+            "modified_line": "            } else if (contains(value, index + 1, 4, \"IER\")) {\n                result.append('J', 'R');"
+        }
+    ]
+}
+{
+    "file_name": "org/apache/commons/codec/language/DoubleMetaphone.java",
+    "modifications": [
+        {
+            "line_number": 455,
+            "modified_line": "            } else if (contains(value, index + 1, 4, \"IER\")) {\n                result.append('J', 'R');"
+        }
+    ]
+}
+{
+    "file_name": "org/apache/commons/codec/language/DoubleMetaphone.java",
+    "modifications": [
+        {
+            "line_number": 455,
+            "modified_line": "            } else if (contains(value, index + 1, 4, \"IER\")) {\n                result.append('J', 'R');"
+        }
+    ]
+}
+{
+    "file_name": "org/apache/commons/codec/language/DoubleMetaphone.java",
+    "modifications": [
+        {
+            "line_number": 455,
+            "modified_line": "            } else if (contains(value, index + 1, 4, \"IER\")) {\n                result.append('J', 'R');"
+        }
+    ]
+}
+{
+    "file_name": "org/apache/commons/codec/language/DoubleMetaphone.java",
+    "modifications": [
+        {
+            "line_number": 455,
+            "modified_line": "            } else if (contains(value, index + 1, 4, \"IER\")) {\n                result.append('J', 'R');"
+        }
+    ]
+}
+{
+    "file_name": "org/apache/commons/codec/language/DoubleMetaphone.java",
+    "modifications": [
+        {
+            "line_number": 455,
+            "modified_line": "            } else if (contains(value, index + 1, 4, \"IER\")) {\n                result.append('J', 'R');"
+        }
+    ]
+}
+{
+    "file_name": "org/apache/commons/codec/language/DoubleMetaphone.java",
+    "modifications": [
+        {
+            "line_number": 455,
+            "modified_line": "            } else if (contains(value, index + 1, 4, \"IER\")) {\n                result.append('J', 'R');"
+        }
+    ]
+}
+{
+    "file_name": "org/apache/commons/codec/language/DoubleMetaphone.java",
+    "modifications": [
+        {
+            "line_number": 455,
+            "modified_line": "            } else if (contains(value, index + 1, 4, \"IER\")) {\n                result.append('J', 'R');"
+        }
+    ]
+}
+    {
+        "file_name": "org/apache/commons/codec/language/DoubleMetaphone.java",
+        "modifications": [
+            {
+                "line_number": 455,
+                "modified_line": "            } else if (contains(value, index + 1, 4, \"IER\")) {\n                result.append('J', 'R');"
+            }
+        ]
+    }
+
+    {
+        "file_name": "org/apache/commons/codec/language/DoubleMetaphone.java",
+        "modifications": [
+            {
+                "line_number": 455,
+                "modified_line": "            } else if (contains(value, index + 1, 4, \"IER\")) {\n                result.append('J', 'R');"
+            }
+        ]
+    }
+
+{
+    "file_name": "org/apache/commons/codec/language/DoubleMetaphone.java",
+    "modifications": [
+        {
+            "line_number": 455,
+            "modified_line": "            } else if (contains(value, index + 1, 4, \"IER\")) {\n                result.append('J', 'R');"
+        }
+    ]
+}
+    {
+        "file_name": "org/apache/commons/codec/language/DoubleMetaphone.java",
+        "modifications": [
+            {
+                "line_number": 455,
+                "modified_line": "            } else if (contains(value, index + 1, 4, \"IER\")) {\n                result.append('J', 'R');"
+            }
+        ]
+    }
+
+    {
+        "file_name": "org/apache/commons/codec/language/DoubleMetaphone.java",
+        "modifications": [
+            {
+                "line_number": 455,
+                "modified_line": "            } else if (contains(value, index + 1, 4, \"IER\")) {\n                result.append('J', 'R');"
+            }
+        ]
+    }

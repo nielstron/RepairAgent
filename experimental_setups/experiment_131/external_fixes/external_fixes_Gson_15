@@ -1,0 +1,133 @@
+
+    {
+        "file_name": "com/google/gson/stream/JsonWriter.java",
+        "modifications": [
+            {
+                "line_number": 495,
+                "modified_line": "    if (Double.isNaN(value) || Double.isInfinite(value) || Double.isFinite(value)) {"
+            }
+        ]
+    }
+   
+    {
+        "file_name": "com/google/gson/stream/JsonWriter.java",
+        "modifications": [
+            {
+                "line_number": 495,
+                "modified_line": "    if (Double.isInfinite(value)) {"
+            }
+        ]
+    }
+   
+{
+    "file_name": "com/google/gson/stream/JsonWriter.java",
+    "modifications": [
+        {
+            "line_number": 495,
+            "modified_line": "    if (Double.isInfinite(value)) {"
+        }
+    ]
+}
+{
+    "file_name": "com/google/gson/stream/JsonWriter.java",
+    "modifications": [
+        {
+            "line_number": 495,
+            "modified_line": "if (Double.isNaN(value)) {"
+        }
+    ]
+}
+{
+    "file_name": "com/google/gson/stream/JsonWriter.java",
+    "modifications": [
+        {
+            "line_number": 495,
+            "modified_line": "if (Double.isNaN(value)) {"
+        }
+    ]
+}
+{
+    "file_name": "com/google/gson/stream/JsonWriter.java",
+    "modifications": [
+        {
+            "line_number": 495,
+            "modified_line": "if (Double.isNaN(value)) {"
+        },
+        {
+            "line_number": 496,
+            "modified_line": "    throw new IllegalArgumentException(\"Numeric values must be finite, but was NaN\");"
+        }
+    ]
+}
+{
+    "file_name": "com/google/gson/stream/JsonWriter.java",
+    "modifications": [
+        {
+            "line_number": 495,
+            "modified_line": "if (Double.isInfinite(value) || Double.isNaN(value)) {"
+        }
+    ]
+}
+{
+    "file_name": "com/google/gson/stream/JsonWriter.java",
+    "modifications": [
+        {
+            "line_number": 495,
+            "modified_line": "  if (Double.isNaN(value)) {"
+        }
+    ]
+}
+{
+    "file_name": "com/google/gson/stream/JsonWriter.java",
+    "modifications": [
+        {
+            "line_number": 495,
+            "modified_line": "  if (Double.isNaN(value)) {"
+        }
+    ]
+}
+{
+    "file_name": "com/google/gson/stream/JsonWriter.java",
+    "modifications": [
+        {
+            "line_number": 495,
+            "modified_line": "  if (Double.isNaN(value) || Double.isInfinite(value)) {"
+        }
+    ]
+}
+{
+    "file_name": "com/google/gson/stream/JsonWriter.java",
+    "modifications": [
+        {
+            "line_number": 495,
+            "modified_line": "  if (Double.isNaN(value) || Double.isInfinite(value)) {"
+        }
+    ]
+}
+{
+    "file_name": "com/google/gson/stream/JsonWriter.java",
+    "modifications": [
+        {
+            "line_number": 495,
+            "modified_line": "  if (Double.isNaN(value)) {"
+        }
+    ]
+}
+{
+    "file_name": "com/google/gson/stream/JsonWriter.java",
+    "modifications": [
+        {
+            "line_number": 495,
+            "modified_line": "if (Double.isNaN(value)) {"
+        }
+    ]
+}
+{
+    "file_name": "com/google/gson/stream/JsonWriter.java",
+    "modifications": [
+        {
+            "line_number": 495,
+            "modified_line": "  if (Double.isNaN(value)) {"
+        }
+    ]
+}

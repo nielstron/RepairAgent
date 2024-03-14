@@ -1,0 +1,7 @@
+
+{ 
+  "com/google/javascript/jscomp/ControlFlowAnalysis.java#767": "// cfa.createEdge(fromNode, Branch.UNCOND, finallyNode); // Commenting out the buggy line for now"
+}{  }{  
+  }
+{ "fix1": { "767": "// cfa.createEdge(fromNode, Branch.UNCOND, finallyNode);" } }
+{ "767": "return computeFollowNode(fromNode, parent, cfa);" }

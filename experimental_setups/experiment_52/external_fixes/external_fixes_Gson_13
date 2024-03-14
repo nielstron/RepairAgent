@@ -1,0 +1,21 @@
+{
+    "731": "if (last == NUMBER_CHAR_DIGIT && fitsInLong && (value != Long.MIN_VALUE || negative) && buffer[pos] != '.') {"
+}{
+    "com/google/gson/stream/JsonReader.java#731#": "if (last == NUMBER_CHAR_DIGIT && fitsInLong && (value != Long.MIN_VALUE || negative) && buffer[peek + i] != 'e' && buffer[peek + i] != 'E')"
+}{
+         "com/google/gson/stream/JsonReader.java#731": "if (last == NUMBER_CHAR_DIGIT && fitsInLong && (value != Long.MIN_VALUE || negative)) { \n \t \t if (negative && value == 0) { \n \t \t \t value = -0L; \n \t \t }"
+}{
+  "731": "if (last == NUMBER_CHAR_DIGIT && fitsInLong && (value != Long.MIN_VALUE || negative || value == 0)) {"
+}{
+  "com/google/gson/stream/JsonReader.java#731": "if (last == NUMBER_CHAR_DIGIT && fitsInLong && (value != Long.MIN_VALUE || negative || value == 0)) {"
+}{
+  "com/google/gson/stream/JsonReader.java#731": "if (last == NUMBER_CHAR_DIGIT && fitsInLong && (value != Long.MIN_VALUE || negative || value == 0)) {"
+}{
+    "731": "if (last == NUMBER_CHAR_DIGIT && fitsInLong && (value != Long.MIN_VALUE || negative || value == 0 || (value == 0 && negative))) {"
+}{
+  "com/google/gson/stream/JsonReader.java#731": "if (last == NUMBER_CHAR_DIGIT && fitsInLong && (value != Long.MIN_VALUE || negative || value == 0)) {"
+}{
+    "com/google/gson/stream/JsonReader.java#731": "if (last == NUMBER_CHAR_DIGIT && fitsInLong && (value != Long.MIN_VALUE || negative || value == 0)) {"
+}{
+    "com/google/gson/stream/JsonReader.java#731": "if (last == NUMBER_CHAR_DIGIT && fitsInLong && (value != Long.MIN_VALUE || negative || value == 0)) {"
+}

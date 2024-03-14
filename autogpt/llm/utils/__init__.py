@@ -120,7 +120,7 @@ def create_chat_completion(
     if max_tokens is None:
         prompt_tlength = prompt.token_length
         max_tokens = (
-            OPEN_AI_CHAT_MODELS[model].max_tokens - prompt_tlength - 1
+            min(OPEN_AI_CHAT_MODELS[model].max_tokens - prompt_tlength - 1, 4000)
         )  # the -1 is just here because we have a bug and we don't know how to fix it. When using gpt-4-0314 we get a token error.
         logger.debug(f"Prompt length: {prompt_tlength} tokens")
         if functions:
@@ -131,10 +131,14 @@ def create_chat_completion(
     logger.debug(
         f"{Fore.GREEN}Creating chat completion with model {model}, temperature {temperature}, max_tokens {max_tokens}{Fore.RESET}"
     )
+    with open("model_logging_temp.txt", "w") as mlt:
+        mlt.write(f"Creating chat completion with model {model}, temperature {temperature}, max_tokens {max_tokens}")
+
     chat_completion_kwargs = {
         "model": model,
         "temperature": temperature,
         "max_tokens": max_tokens,
+        "response_format": { "type": "json_object" }
     }
 
     for plugin in config.plugins:

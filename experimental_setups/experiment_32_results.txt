@@ -1,0 +1,35 @@
+Experiment Results: experiment_32
+
+Number of Bugs: 4
+Correctly fixed bugs: 1
+Total Suggested Fixes: 2
+
+The list of suggested fixes:
+Chart_9
+
+
+
+Chart_1
+
+###Fix:
+Lines:['1798'] from file org/jfree/chart/renderer/category/AbstractCategoryItemRenderer.java were replaced with the following:
+{'1798': 'if (dataset == null) {'}
+
+Cli_8
+
+
+
+Chart_8
+
+###Fix:
+Lines:['175'] from file org/jfree/data/time/Week.java were replaced with the following:
+{'175': 'this(time, zone, Locale.getDefault());'}
+
++----------+-----------------+-----------------+-------------------+
+| Log File | Correctly Fixed | Suggested Fixes | Number of Queries |
++----------+-----------------+-----------------+-------------------+
+| Chart_9  |        No       |        0        |         2         |
+| Chart_1  |        No       |        1        |         18        |
+| Cli_8    |        No       |        0        |         13        |
+| Chart_8  |       Yes       |        1        |         5         |
++----------+-----------------+-----------------+-------------------+

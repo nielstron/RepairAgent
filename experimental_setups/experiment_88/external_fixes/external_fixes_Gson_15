@@ -1,0 +1,9 @@
+{
+  "495": "    if (Double.isNaN(value) || Double.isInfinite(value) || Double.isFinite(value)) {"
+}{
+	"495": "if (Double.isNaN(value) || Double.isInfinite(value) || Double.isFinite(value)) {"
+}
+    {
+      "com/google/gson/stream/JsonWriter.java#495": "    if (Double.isNaN(value) || Double.isInfinite(value) || Double.isNaN(value) || Double.isInfinite(value)) {"
+    }{"/workspace/Auto-GPT/auto_gpt_workspace/gson_15_buggy/gson/src/test/java/com/google/gson/DefaultInetAddressTypeAdapterTest.java#DefaultInetAddressTypeAdapterTest#testInetAddressSerializationAndDeserialization": "Here is the original content of the test method\n// Add a check to handle non-finite double values\n// Example: if (Double.isNaN(value) || Double.isInfinite(value)) {\n//    // Handle the non-finite value here\n//    return;\n// }"}
+{ "com/google/gson/stream/JsonWriter.java#495#": "if (Double.isNaN(value) || Double.isInfinite(value) || Double.isFinite(value)) {" } 

@@ -1,0 +1,185 @@
+
+{
+    "file_name": "org/apache/commons/cli/HelpFormatter.java",
+    "modifications": [
+        {
+            "line_number": 825,
+            "modified_line": "            nextLineTabStop = width - 1;"
+        }
+    ]
+}
+{
+    "file_name": "org/apache/commons/cli/HelpFormatter.java",
+    "modifications": [
+        {
+            "line_number": 825,
+            "modified_line": "            nextLineTabStop = width - 1;"
+        }
+    ]
+}
+    {
+        "file_name": "org/apache/commons/cli/HelpFormatter.java",
+        "modifications": [
+            {
+                "line_number": 825,
+                "modified_line": "            nextLineTabStop = width - (pos == 0 ? 1 : 0);"
+            }
+        ]
+    }
+   
+{
+    "file_name": "/workspace/Auto-GPT/auto_gpt_workspace/cli_25_buggy/src/java/org/apache/commons/cli/HelpFormatter.java",
+    "insertions": [],
+    "deletions": [],
+    "modifications": [
+        {
+            "line_number": 825,
+            "modified_line": "nextLineTabStop = width / 2;"
+        }
+    ]
+} 
+
+  {
+    "file_name": "/workspace/Auto-GPT/auto_gpt_workspace/cli_25_buggy/src/java/org/apache/commons/cli/HelpFormatter.java",
+    "insertions": [],
+    "deletions": [],
+    "modifications": [
+      {
+        "line_number": 825,
+        "modified_line": "nextLineTabStop = width / 2;"
+      }
+    ]
+  }
+  
+    {
+        "file_name": "/workspace/Auto-GPT/auto_gpt_workspace/cli_25_buggy/src/java/org/apache/commons/cli/HelpFormatter.java",
+        "insertions": [],
+        "deletions": [],
+        "modifications": [
+            {
+                "line_number": 825,
+                "modified_line": "nextLineTabStop = width - 2;"
+            }
+        ]
+    }
+   
+{
+    "file_name": "/workspace/Auto-GPT/auto_gpt_workspace/cli_25_buggy/src/java/org/apache/commons/cli/HelpFormatter.java",
+    "insertions": [],
+    "deletions": [],
+    "modifications": [
+        {
+            "line_number": 825,
+            "modified_line": "nextLineTabStop = width - 2;"
+        }
+    ]
+} 
+
+  {
+    "file_name": "/workspace/Auto-GPT/auto_gpt_workspace/cli_25_buggy/src/java/org/apache/commons/cli/HelpFormatter.java",
+    "insertions": [],
+    "deletions": [],
+    "modifications": [
+      {
+        "line_number": 825,
+        "modified_line": "nextLineTabStop = width - 2;"
+      }
+    ]
+  }
+ 
+  {
+    "file_name": "/workspace/Auto-GPT/auto_gpt_workspace/cli_25_buggy/src/java/org/apache/commons/cli/HelpFormatter.java",
+    "insertions": [],
+    "deletions": [],
+    "modifications": [
+      {
+        "line_number": 825,
+        "modified_line": "nextLineTabStop = width / 2;"
+      }
+    ]
+  }
+ 
+    {
+        "file_name": "/workspace/Auto-GPT/auto_gpt_workspace/cli_25_buggy/src/java/org/apache/commons/cli/HelpFormatter.java",
+        "insertions": [],
+        "deletions": [],
+        "modifications": [
+            {
+                "line_number": 825,
+                "modified_line": "nextLineTabStop = width + 1;"
+            }
+        ]
+    }
+
+    {
+        "file_name": "/workspace/Auto-GPT/auto_gpt_workspace/cli_25_buggy/src/java/org/apache/commons/cli/HelpFormatter.java",
+        "insertions": [],
+        "deletions": [],
+        "modifications": [
+            {
+                "line_number": 825,
+                "modified_line": "nextLineTabStop = width - 2;"
+            }
+        ]
+    }
+   
+
+    {
+        "file_name": "/workspace/Auto-GPT/auto_gpt_workspace/cli_25_buggy/src/java/org/apache/commons/cli/HelpFormatter.java",
+        "insertions": [],
+        "deletions": [],
+        "modifications": [
+            {
+                "line_number": 825,
+                "modified_line": "nextLineTabStop = width / 2;"
+            }
+        ]
+    }
+
+{
+    "file_name": "org/apache/commons/cli/HelpFormatter.java",
+    "insertions": [],
+    "deletions": [],
+    "modifications": [
+        {
+            "line_number": 825,
+            "modified_line": "nextLineTabStop = width - 2;"
+        }
+    ]
+}
+  {
+    "file_name": "org/apache/commons/cli/HelpFormatter.java",
+    "insertions": [],
+    "deletions": [],
+    "modifications": [
+      {
+        "line_number": 825,
+        "modified_line": "nextLineTabStop = width / 2;"
+      }
+    ]
+  }
+ 
+  {
+      "file_name": "org/apache/commons/cli/HelpFormatter.java",
+      "insertions": [],
+      "deletions": [],
+      "modifications": [
+          {
+              "line_number": 825,
+              "modified_line": "nextLineTabStop = width / 2;"
+          }
+      ]
+  }
+ 
+    {
+        "file_name": "/workspace/Auto-GPT/auto_gpt_workspace/cli_25_buggy/src/java/org/apache/commons/cli/HelpFormatter.java",
+        "insertions": [],
+        "deletions": [],
+        "modifications": [
+            {
+                "line_number": 825,
+                "modified_line": "nextLineTabStop = width - 2;"
+            }
+        ]
+    }
+   

@@ -1,0 +1,7 @@
+
+{ 
+  "org/jfree/data/time/Week.java#175#": "this(time, RegularTimePeriod.DEFAULT_TIME_ZONE, Locale.getDefault()); // Bug fix: Changed the default time zone to RegularTimePeriod.DEFAULT_TIME_ZONE"
+}{  }{
+  "175": "// this(time, zone, Locale.getDefault());"
+}
+{                                                                                                    

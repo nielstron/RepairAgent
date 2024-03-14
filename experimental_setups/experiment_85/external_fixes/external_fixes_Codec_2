@@ -1,0 +1,65 @@
+
+{ "446": "if (lineLength > 0 && pos < encoded.length) {" }
+{ 
+  "org/apache/commons/codec/binary/Base64.java#446#": "            if (lineLength >= 0) {"
+}
+{       "org/apache/commons/codec/binary/Base64.java#446#": "            if (lineLength >= 0) {"       }
+{ 
+         "org/apache/commons/codec/binary/Base64.java#446": "if (lineLength >= 0) {"
+}{
+	"446": "// Checking if lineLength is greater than 0 before adding line separator"
+}{ "446": "if (lineLength >= 0) {" }{
+	"446": "if (lineLength >= 0) {"
+}{
+    "1": {
+        "446": "if (lineLength > 0) { // Add a comment to explain the purpose of this check"
+    },
+    "2": {
+        "446": "if (lineLength >= 0) { // Fix the comparison operator to include 0 as a valid value"
+    }
+}{ "446": "if (lineLength >= 0) {" }{
+  "1": {
+    "446": "if (lineLength >= 0) {"
+  },
+  "2": {
+    "446": "if (lineLength >= 0) {"
+  }
+}
+{  
+    "Fix 1": {
+        "446": "if (lineLength >= 0) {"
+    },
+    "Fix 2": {
+        "446": "if (lineLength >= 0) { // Adding a comment for clarity"
+    }
+}
+{ "446": "if (lineLength >= 0) { // Updated line to address the calculation or handling of lineLength variable" }{ "446": "if (lineLength >= 0) { // Updated line to address the calculation or handling of lineLength variable" }{ "446": "if (lineLength >= 0) { // Updated condition to handle edge cases correctly" }{
+	"1": {
+		"446": "if (lineLength >= 0) { // Updated condition to handle edge cases correctly"
+	},
+	"2": {
+		"446": "if (lineLength >= 0) { // Updated line to address the calculation or handling of lineLength variable"
+	},
+	"3": {
+		"446": "if (lineLength >= 0) { // Updated condition based on similar 'arraycopy' calls"
+	}
+}
+{ "446": "if (lineLength > 0) { // Updated condition to handle edge cases correctly" }
+{ "446": "if (lineLength >= 0) { // Updated condition to handle edge cases correctly" }
+{ "446": "if (lineLength >= 0) { // Updated condition to handle edge cases correctly" }{ "446": "if (lineLength >= 0) { // Updated condition to handle edge cases correctly" }{
+	"1": {
+		"446": "if (lineLength >= 0) { // Updated condition to handle edge cases correctly"
+	},
+	"2": {
+		"446": "if (lineLength >= 0) { // Updated condition to handle edge cases correctly"
+	},
+	"3": {
+		"446": "if (lineLength >= 0) { // Updated condition to handle edge cases correctly"
+	},
+	"4": {
+		"446": "if (lineLength >= 0) { // Updated condition to handle edge cases correctly"
+	},
+	"5": {
+		"446": "if (lineLength >= 0) { // Updated condition to handle edge cases correctly"
+	}
+}

@@ -1,0 +1,21 @@
+Experiment Results: experiment_25
+
+Number of Bugs: 2
+Correctly fixed bugs: 0
+Total Suggested Fixes: 0
+
+The list of suggested fixes:
+Chart_1
+
+
+
+Cli_8
+
+
+
++----------+-----------------+-----------------+-------------------+
+| Log File | Correctly Fixed | Suggested Fixes | Number of Queries |
++----------+-----------------+-----------------+-------------------+
+| Chart_1  |        No       |        0        |         6         |
+| Cli_8    |        No       |        0        |         13        |
++----------+-----------------+-----------------+-------------------+

@@ -1,0 +1,52 @@
+Experiment Results: experiment_116
+
+Number of Bugs: 3
+Correctly fixed bugs: 0
+Total Suggested Fixes: 10
+
+The list of suggested fixes:
+Chart_1
+
+###Fix:
+[]
+
+###Fix:
+[{'file_name': 'org/jfree/chart/renderer/category/AbstractCategoryItemRenderer.java', 'insertions': [], 'deletions': [], 'modifications': [{'line_number': 1797, 'modified_line': '        if (dataset != null) {'}]}]
+
+###Fix:
+[{'file_name': 'org/jfree/chart/renderer/category/AbstractCategoryItemRenderer.java', 'insertions': [], 'deletions': [], 'modifications': [{'line_number': 1797, 'modified_line': '        if (dataset != null && dataset.getRowCount() > 0) {'}]}]
+
+###Fix:
+[{'file_name': 'org/jfree/chart/renderer/category/AbstractCategoryItemRenderer.java', 'insertions': [], 'deletions': [], 'modifications': [{'line_number': 1797, 'modified_line': '        if (dataset != null && dataset.getRowCount() > 0 && dataset.getColumnCount() > 0) {'}]}]
+
+###Fix:
+[]
+
+###Fix:
+[{'file_name': 'org/jfree/chart/renderer/category/AbstractCategoryItemRenderer.java', 'insertions': [], 'deletions': [], 'modifications': [{'line_number': 1800, 'modified_line': '        if (dataset != null && seriesCount > 0) {'}]}]
+
+###Fix:
+[{'file_name': 'org/jfree/chart/renderer/category/AbstractCategoryItemRenderer.java', 'insertions': [], 'deletions': [], 'modifications': [{'line_number': 1797, 'modified_line': '        if (dataset != null && dataset.getRowCount() > 0) {'}]}]
+
+###Fix:
+[{'file_name': 'org/jfree/chart/renderer/category/AbstractCategoryItemRenderer.java', 'insertions': [], 'deletions': [], 'modifications': [{'line_number': 1797, 'modified_line': '        if (dataset != null && dataset.getRowCount() > 0 && dataset.getColumnCount() > 0) {'}]}]
+
+Cli_8
+
+###Fix:
+[]
+
+###Fix:
+[{'file_name': 'org/apache/commons/cli/HelpFormatter.java', 'insertions': [], 'deletions': [], 'modifications': [{'line_number': 811, 'modified_line': 'text = padding + text.trim();'}]}]
+
+Chart_8
+
+
+
++----------+-----------------+-----------------+-------------------+
+| Log File | Correctly Fixed | Suggested Fixes | Number of Queries |
++----------+-----------------+-----------------+-------------------+
+| Chart_1  |        No       |        8        |         31        |
+| Cli_8    |        No       |        2        |         13        |
+| Chart_8  |        No       |        0        |         3         |
++----------+-----------------+-----------------+-------------------+

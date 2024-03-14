@@ -1,0 +1,16 @@
+Experiment Results: experiment_151
+
+Number of Bugs: 1
+Correctly fixed bugs: 0
+Total Suggested Fixes: 0
+
+The list of suggested fixes:
+Closure_10
+
+
+
++------------+-----------------+-----------------+-------------------+
+| Log File   | Correctly Fixed | Suggested Fixes | Number of Queries |
++------------+-----------------+-----------------+-------------------+
+| Closure_10 |        No       |        0        |         1         |
++------------+-----------------+-----------------+-------------------+

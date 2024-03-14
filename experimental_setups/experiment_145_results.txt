@@ -1,0 +1,31 @@
+Experiment Results: experiment_145
+
+Number of Bugs: 2
+Correctly fixed bugs: 1
+Total Suggested Fixes: 4
+
+The list of suggested fixes:
+Chart_1
+
+###Fix:
+[]
+
+###Fix:
+[{'file_name': 'org/jfree/chart/renderer/category/AbstractCategoryItemRenderer.java', 'insertions': [{'line_number': 1798, 'new_lines': ['if (dataset == null) {', '    return result;', '}']}]}]
+
+###Fix:
+[{'file_name': 'org/jfree/chart/renderer/category/AbstractCategoryItemRenderer.java', 'modifications': [{'line_number': 1797, 'modified_line': '        if (dataset != null) {'}]}]
+
+###Fix:
+[{'file_name': 'org/jfree/chart/renderer/category/AbstractCategoryItemRenderer.java', 'modifications': [{'line_number': 1797, 'modified_line': '        if (dataset == null) {'}]}]
+
+Cli_8
+
+
+
++----------+-----------------+-----------------+-------------------+
+| Log File | Correctly Fixed | Suggested Fixes | Number of Queries |
++----------+-----------------+-----------------+-------------------+
+| Chart_1  |       Yes       |        4        |         20        |
+| Cli_8    |        No       |        0        |         30        |
++----------+-----------------+-----------------+-------------------+

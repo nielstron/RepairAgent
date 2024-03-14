@@ -1,0 +1,247 @@
+
+{
+    "file_name": "org/apache/commons/csv/ExtendedBufferedReader.java",
+    "modifications": [
+        {
+            "line_number": 58,
+            "modified_line": "        if (current == '\\r' || current == '\\n') {"
+        }
+    ]
+} 
+
+{
+    "file_name": "org/apache/commons/csv/ExtendedBufferedReader.java",
+    "modifications": [
+        {
+            "line_number": 58,
+            "modified_line": "        if (current == '\\r') {"
+        }
+    ]
+}
+{
+    "file_name": "org/apache/commons/csv/ExtendedBufferedReader.java",
+    "modifications": [
+        {
+            "line_number": 58,
+            "modified_line": "        if (current == '\\r') {"
+        }
+    ]
+}{
+    "file_name": "org/apache/commons/csv/ExtendedBufferedReader.java",
+    "modifications": [
+        {
+            "line_number": 58,
+            "modified_line": "        if (current == '\\r' || current == '\\n') {"
+        }
+    ]
+}
+{
+    "file_name": "org/apache/commons/csv/CSVParser.java",
+    "modifications": [
+        {
+            "line_number": 135,
+            "modified_line": "CSVRecord getRecord() throws IOException {"
+        },
+        {
+            "line_number": 146,
+            "modified_line": "        record.add(reusableToken.content.toString());"
+        }
+    ]
+}  
+ 
+{
+    "file_name": "org/apache/commons/csv/CSVParser.java",
+    "modifications": [
+        {
+            "line_number": 135,
+            "modified_line": "CSVRecord getRecord() throws IOException {"
+        },
+        {
+            "line_number": 146,
+            "modified_line": "record.add(reusableToken.content.toString().replaceAll(\"\\r\", \"\"));"
+        }
+    ]
+}
+{
+    "file_name": "org/apache/commons/csv/CSVParser.java",
+    "insertions": [],
+    "deletions": [],
+    "modifications": [
+        {
+            "line_number": 135,
+            "modified_line": "    CSVRecord getRecord() throws IOException {"
+        },
+        {
+            "line_number": 160,
+            "modified_line": "        if (!record.isEmpty()) {"
+        }
+    ]
+}
+    {
+        "file_name": "org/apache/commons/csv/CSVParser.java",
+        "insertions": [],
+        "deletions": [],
+        "modifications": [
+            {
+                "line_number": 135,
+                "modified_line": "    CSVRecord getRecord() throws IOException {"
+            },
+            {
+                "line_number": 160,
+                "modified_line": "        if (!record.isEmpty()) {"
+            }
+        ]
+    }
+    
+{
+    "file_name": "org/apache/commons/csv/CSVParser.java",
+    "insertions": [],
+    "deletions": [],
+    "modifications": [
+        {
+            "line_number": 135,
+            "modified_line": "    CSVRecord getRecord() throws IOException {"
+        },
+        {
+            "line_number": 160,
+            "modified_line": "        if (reusableToken.type == EORECORD || reusableToken.type == EOF) {"
+        }
+    ]
+}
+{
+    "file_name": "org/apache/commons/csv/CSVParser.java",
+    "insertions": [],
+    "deletions": [],
+    "modifications": [
+        {
+            "line_number": 135,
+            "modified_line": "    CSVRecord getRecord() throws IOException {"
+        },
+        {
+            "line_number": 160,
+            "modified_line": "        if (reusableToken.type == EORECORD || reusableToken.type == EOF) {"
+        }
+    ]
+}
+    {
+        "file_name": "org/apache/commons/csv/ExtendedBufferedReader.java",
+        "insertions": [],
+        "deletions": [],
+        "modifications": [
+            {
+                "line_number": 58,
+                "modified_line": "        if (current == '\\r' || current == '\\n') {"
+            }
+        ]
+    }
+    
+{
+    "file_name": "org/apache/commons/csv/ExtendedBufferedReader.java",
+    "insertions": [],
+    "deletions": [],
+    "modifications": [
+        {
+            "line_number": 58,
+            "modified_line": "        if (current == '\\r' || current == '\\n') {"
+        }
+    ]
+}
+    {
+        "file_name": "org/apache/commons/csv/ExtendedBufferedReader.java",
+        "insertions": [],
+        "deletions": [],
+        "modifications": [
+            {
+                "line_number": 58,
+                "modified_line": "        if (current == '\\r' || current == '\\n') {"
+            }
+        ]
+    }
+   
+    {
+        "file_name": "org/apache/commons/csv/ExtendedBufferedReader.java",
+        "insertions": [],
+        "deletions": [],
+        "modifications": [
+            {
+                "line_number": 58,
+                "modified_line": "        if (current == '\\r' || current == '\\n' || current == '\\r\\n') {"
+            }
+        ]
+    }
+ 
+    {
+        "file_name": "org/apache/commons/csv/CSVParser.java",
+        "insertions": [],
+        "deletions": [],
+        "modifications": [
+            {
+                "line_number": 135,
+                "modified_line": "    CSVRecord getRecord() throws IOException {"
+            },
+            {
+                "line_number": 160,
+                "modified_line": "        if (!record.isEmpty()) {"
+            }
+        ]
+    }
+   
+    {
+        "file_name": "org/apache/commons/csv/ExtendedBufferedReader.java",
+        "insertions": [],
+        "deletions": [],
+        "modifications": [
+            {
+                "line_number": 58,
+                "modified_line": "        if (current == '\\r' || current == '\\n' || current == '\\r\\n') {"
+            }
+        ]
+    }
+    
+    {
+        "file_name": "org/apache/commons/csv/ExtendedBufferedReader.java",
+        "insertions": [],
+        "deletions": [],
+        "modifications": [
+            {
+                "line_number": 58,
+                "modified_line": "        if (current == '\\r' || current == '\\n' || current == '\\r\\n') {"
+            }
+        ]
+    }
+   
+
+{
+    "file_name": "org/apache/commons/csv/ExtendedBufferedReader.java",
+    "insertions": [],
+    "deletions": [],
+    "modifications": [
+        {
+            "line_number": 58,
+            "modified_line": "        if (current == '\\r' || current == '\\n' || current == '\\r\\n') {"
+        }
+    ]
+}
+{
+    "file_name": "org/apache/commons/csv/ExtendedBufferedReader.java",
+    "insertions": [],
+    "deletions": [],
+    "modifications": [
+        {
+            "line_number": 58,
+            "modified_line": "        if (current == '\\r' || current == '\\n' || current == '\\r\\n') {"
+        }
+    ]
+}
+    {
+        "file_name": "org/apache/commons/csv/CSVParser.java",
+        "insertions": [],
+        "deletions": [],
+        "modifications": [
+            {
+                "line_number": 160,
+                "modified_line": "        if (reusableToken.type == EORECORD || reusableToken.type == EOF) {"
+            }
+        ]
+    }
+   

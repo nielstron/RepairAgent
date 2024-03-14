@@ -1,0 +1,15 @@
+{  
+    "731": "// Fix for bug: ensuring the correct comparison for negative zero\n    if (last == NUMBER_CHAR_DIGIT && fitsInLong && (value != Long.MIN_VALUE || negative || buffer[position] == '0')) {"  
+}
+{ 
+                                                                                                       
+{                                                                                                    {
+     "com/google/gson/stream/JsonReader.java#731": "if (last == NUMBER_CHAR_DIGIT && fitsInLong && (value != Long.MIN_VALUE || negative || value < 0)) {"
+}{
+    "731": "if (last == NUMBER_CHAR_DIGIT && fitsInLong && (value != Long.MIN_VALUE || negative || (value == 0 && negative))) {"
+}{
+    "731": "if (last == NUMBER_CHAR_DIGIT && fitsInLong && (value != Long.MIN_VALUE || negative || (value == 0 && negative))) {"
+}{
+    "1": "Consider adding a condition to handle negative zero values in the if statement at line 731 in 'com/google/gson/stream/JsonReader.java'. For example, you can modify it as follows: 'if (last == NUMBER_CHAR_DIGIT && fitsInLong && (value != Long.MIN_VALUE || negative || (value == 0 && negative))) {'"
+}{ "731": "if (last == NUMBER_CHAR_DIGIT && fitsInLong && (value != Long.MIN_VALUE || negative || (value == 0 && negative))) {" }{ "731": "if (last == NUMBER_CHAR_DIGIT && fitsInLong && (value != Long.MIN_VALUE || negative || (value == 0 && negative))) {" }
+{ "731": "if (last == NUMBER_CHAR_DIGIT && fitsInLong && (value != Long.MIN_VALUE || negative || (value == 0 && negative))) {" }

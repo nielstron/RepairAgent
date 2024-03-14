@@ -1,0 +1,42 @@
+Experiment Results: experiment_39
+
+Number of Bugs: 3
+Correctly fixed bugs: 1
+Total Suggested Fixes: 5
+
+The list of suggested fixes:
+Chart_1
+
+###Fix:
+Lines:['1797'] from file org/jfree/chart/renderer/category/AbstractCategoryItemRenderer.java were replaced with the following:
+{'1797': 'if (dataset == null) {'}
+
+###Fix:
+Lines:['1797'] from file org/jfree/chart/renderer/category/AbstractCategoryItemRenderer.java were replaced with the following:
+{'1797': 'if (dataset == null) {\n            return result;\n        }'}
+
+Cli_8
+
+###Fix:
+Lines:['810', '811', '812', '813', '814', '815'] from file org/apache/commons/cli/HelpFormatter.java were replaced with the following:
+{'810': '        {', '811': '            text = padding + text.substring(pos).trim();', '812': '            pos = findWrapPos(text, width, nextLineTabStop);', '813': '            if (pos == -1) {', '814': '                sb.append(rtrim(text));', '815': '                return sb;'}
+
+###Fix:
+Lines:['812'] from file org/apache/commons/cli/HelpFormatter.java were replaced with the following:
+{'812': "pos = text.indexOf(' ', startPos + width);"}
+
+###Fix:
+Lines:['812'] from file org/apache/commons/cli/HelpFormatter.java were replaced with the following:
+{'812': "pos = text.indexOf(' ', startPos + width);"}
+
+Chart_8
+
+
+
++----------+-----------------+-----------------+-------------------+
+| Log File | Correctly Fixed | Suggested Fixes | Number of Queries |
++----------+-----------------+-----------------+-------------------+
+| Chart_1  |       Yes       |        2        |         9         |
+| Cli_8    |        No       |        3        |         10        |
+| Chart_8  |        No       |        0        |         5         |
++----------+-----------------+-----------------+-------------------+

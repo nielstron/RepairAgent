@@ -1,0 +1,132 @@
+
+{
+    "file_name": "org/jfree/chart/renderer/category/AbstractCategoryItemRenderer.java",
+    "modifications": [
+        {
+            "line_number": 1797,
+            "modified_line": "        if (dataset == null || dataset.getColumnCount() == 0) {"
+        }
+    ]
+}
+    {
+        "file_name": "org/jfree/chart/renderer/category/AbstractCategoryItemRenderer.java",
+        "modifications": [
+            {
+                "line_number": 1797,
+                "modified_line": "        if (dataset == null || dataset.getRowCount() == 0) {"
+            }
+        ]
+    }
+   
+
+    {
+        "file_name": "org/jfree/chart/renderer/category/AbstractCategoryItemRenderer.java",
+        "modifications": [
+            {
+                "line_number": 1797,
+                "modified_line": "        if (dataset == null || dataset.getRowCount() == 0) {"
+            }
+        ]
+    }
+   	
+  {
+    "file_name": "org/jfree/chart/renderer/category/AbstractCategoryItemRenderer.java",
+    "modifications": [
+      {
+        "line_number": 1797,
+        "modified_line": "        if (dataset == null || dataset.getRowCount() == 0) {"
+      }
+    ]
+  }
+  
+{
+    "file_name": "org/jfree/chart/renderer/category/AbstractCategoryItemRenderer.java",
+    "insertions": [
+        {
+            "line_number": 1797,
+            "new_lines": [
+                "        DefaultCategoryDataset dataset = new DefaultCategoryDataset();"
+            ]
+        }
+    ]
+}
+    {
+        "file_name": "org/jfree/chart/renderer/category/AbstractCategoryItemRenderer.java",
+        "insertions": [
+            {
+                "line_number": 1798,
+                "new_lines": [
+                    "            return dataset;"
+                ]
+            }
+        ]
+    }
+
+    {
+        "file_name": "org/jfree/chart/renderer/category/AbstractCategoryItemRenderer.java",
+        "insertions": [
+            {
+                "line_number": 1797,
+                "new_lines": [
+                    "        DefaultCategoryDataset dataset = new DefaultCategoryDataset();"
+                ]
+            }
+        ]
+    }
+   
+    {
+        "file_name": "org/jfree/chart/renderer/category/AbstractCategoryItemRenderer.java",
+        "modifications": [
+            {
+                "line_number": 1797,
+                "modified_line": "        DefaultCategoryDataset dataset = new DefaultCategoryDataset();"
+            }
+        ]
+    }
+
+{
+    "file_name": "org/jfree/chart/renderer/category/AbstractCategoryItemRenderer.java",
+    "modifications": [
+        {
+            "line_number": 1797,
+            "modified_line": "        DefaultCategoryDataset dataset = new DefaultCategoryDataset();"
+        }
+    ]
+}
+{
+    "file_name": "org/jfree/chart/renderer/category/AbstractCategoryItemRenderer.java",
+    "modifications": [
+        {
+            "line_number": 1797,
+            "modified_line": "        if (dataset == null) { dataset = new DefaultCategoryDataset(); }"
+        }
+    ]
+}
+{
+    "file_name": "org/jfree/chart/renderer/category/AbstractCategoryItemRenderer.java",
+    "modifications": [
+        {
+            "line_number": 1797,
+            "modified_line": "        if (dataset == null) { dataset = new DefaultCategoryDataset(); }"
+        }
+    ]
+}
+  {
+    "file_name": "org/jfree/chart/renderer/category/AbstractCategoryItemRenderer.java",
+    "modifications": [
+      {
+        "line_number": 1797,
+        "modified_line": "        if (dataset == null) { dataset = new DefaultCategoryDataset(); }"
+      }
+    ]
+  }
+ 
+{
+    "file_name": "org/jfree/chart/renderer/category/AbstractCategoryItemRenderer.java",
+    "modifications": [
+        {
+            "line_number": 1797,
+            "modified_line": "        if (dataset == null) { dataset = new DefaultCategoryDataset(); }"
+        }
+    ]
+}

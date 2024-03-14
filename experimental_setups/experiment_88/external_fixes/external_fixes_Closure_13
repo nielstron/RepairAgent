@@ -1,0 +1,16 @@
+
+{ 
+  "com/google/javascript/jscomp/PeepholeOptimizationsPass.java#126": "        //traverse(c);",
+  "com/google/javascript/jscomp/PeepholeOptimizationsPass.java#128": "        //FAULT_OF_OMISSION"
+}{ 
+  "126": "traverse(c.getFirstChild());",
+  "128": "//FAULT_OF_OMISSION - This line seems to be causing the issue, consider commenting it out"
+}
+{ 
+   "126": "traverse(c.getFirstChild());"
+}{
+    "1": "com/google/javascript/jscomp/PeepholeOptimizationsPass.java#126#        traverse(root)"
+}
+{    
+    "com/google/javascript/jscomp/PeepholeOptimizationsPass.java#126": "traverse(root)"
+}

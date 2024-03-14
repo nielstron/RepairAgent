@@ -1,0 +1,12 @@
+{
+	"244": "return null; // tais.getNextEntry();",
+	"246": "throw new UnsupportedArchiverException(FAULT_OF_OMISSION);"
+}
+{ 
+    "org/apache/commons/compress/archivers/ArchiveStreamFactory.java#244": "return null;",
+    "org/apache/commons/compress/archivers/ArchiveStreamFactory.java#246": "// Fault of omission fixed manually"
+}
+{ 
+  "org/apache/commons/compress/archivers/ArchiveStreamFactory.java#244": "if (!isArchiveFile()) { throw new ArchiveException(\"No Archiver found\"); }",
+  "org/apache/commons/compress/archivers/ArchiveStreamFactory.java#246": "// catch (Exception e) { // NOPMD"
+}

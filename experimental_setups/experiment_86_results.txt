@@ -1,0 +1,669 @@
+Experiment Results: experiment_86
+
+Number of Bugs: 20
+Correctly fixed bugs: 6
+Total Suggested Fixes: 149
+
+The list of suggested fixes:
+Gson_15
+
+###Fix:
+Lines:['495', '496', '497', '498', '499', '500'] from file com/google/gson/stream/JsonWriter.java were replaced with the following:
+{'495': 'if (Double.isNaN(value) || Double.isInfinite(value)) {', '496': '  // throw new IllegalArgumentException("Numeric values must be finite, but was " + value);', '497': '  if (Double.isNaN(value)) {', '498': '    out.append("NaN");', '499': '  } else if (Double.isInfinite(value)) {', '500': '    out.append(value > 0 ? "Infinity" : "-Infinity");'}
+
+###Fix:
+Lines:['495', '496', '497', '498', '499', '500'] from file com/google/gson/stream/JsonWriter.java were replaced with the following:
+{'495': 'if (Double.isNaN(value) || Double.isInfinite(value)) {', '496': '  // throw new IllegalArgumentException("Numeric values must be finite, but was " + value);', '497': '  if (Double.isNaN(value)) {', '498': '    out.append("NaN");', '499': '  } else if (Double.isInfinite(value)) {', '500': '    out.append(value > 0 ? "Infinity" : "-Infinity");'}
+
+Chart_9
+
+###Fix:
+Lines:['944'] from file org/jfree/data/time/TimeSeries.java were replaced with the following:
+{'944': 'if (endIndex < 0 || startIndex > endIndex) {'}
+
+Codec_4
+
+###Fix:
+Lines:['225'] from file org/apache/commons/codec/binary/Base64.java were replaced with the following:
+{'225': 'this(true)'}
+
+###Fix:
+Lines:['225'] from file org/apache/commons/codec/binary/Base64.java were replaced with the following:
+{'225': 'this(true)'}
+
+###Fix:
+Lines:['225'] from file org/apache/commons/codec/binary/Base64.java were replaced with the following:
+{'225': 'this(CHUNK_SIZE, CHUNK_SEPARATOR, urlSafe)'}
+
+###Fix:
+Lines:['225'] from file org/apache/commons/codec/binary/Base64.java were replaced with the following:
+{'225': 'this(true)'}
+
+###Fix:
+Lines:['225'] from file org/apache/commons/codec/binary/Base64.java were replaced with the following:
+{'225': 'this(false)'}
+
+###Fix:
+Lines:['225'] from file org/apache/commons/codec/binary/Base64.java were replaced with the following:
+{'225': 'this(CHUNK_SIZE, CHUNK_SEPARATOR, urlSafe)'}
+
+###Fix:
+Lines:['225'] from file org/apache/commons/codec/binary/Base64.java were replaced with the following:
+{'225': 'this(true)'}
+
+###Fix:
+Lines:['225'] from file org/apache/commons/codec/binary/Base64.java were replaced with the following:
+{'225': 'this(CHUNK_SIZE, CHUNK_SEPARATOR, false)'}
+
+###Fix:
+Lines:['225'] from file org/apache/commons/codec/binary/Base64.java were replaced with the following:
+{'225': 'this(CHUNK_SIZE, CHUNK_SEPARATOR, true)'}
+
+###Fix:
+Lines:['225'] from file org/apache/commons/codec/binary/Base64.java were replaced with the following:
+{'225': 'this(CHUNK_SIZE, CHUNK_SEPARATOR, !urlSafe)'}
+
+###Fix:
+Lines:['225'] from file org/apache/commons/codec/binary/Base64.java were replaced with the following:
+{'225': 'this(CHUNK_SIZE, CHUNK_SEPARATOR, false)'}
+
+###Fix:
+Lines:['225'] from file org/apache/commons/codec/binary/Base64.java were replaced with the following:
+{'225': 'this(CHUNK_SIZE, CHUNK_SEPARATOR, true)'}
+
+Compress_1
+
+###Fix:
+Lines:['346'] from file org/apache/commons/compress/archivers/cpio/CpioArchiveOutputStream.java were replaced with the following:
+{'346': 'super.close();\ntry {\n    out.close();\n} catch (IOException e) {\n    throw new IOException("Error closing CpioArchiveOutputStream", e);\n}'}
+
+###Fix:
+Lines:['346'] from file org/apache/commons/compress/archivers/cpio/CpioArchiveOutputStream.java were replaced with the following:
+{'346': 'super.close();\ntry {\n    out.close();\n} catch (IOException e) {\n    throw new IOException("Error closing CpioArchiveOutputStream", e);\n}'}
+
+###Fix:
+Lines:['346'] from file org/apache/commons/compress/archivers/cpio/CpioArchiveOutputStream.java were replaced with the following:
+{'346': 'super.close();\ntry {\n    out.close();\n} catch (IOException e) {\n    throw new IOException("Error closing CpioArchiveOutputStream", e);\n}\nfinally {\n    this.closed = true;\n}'}
+
+Chart_1
+
+###Fix:
+Lines:['1798'] from file org/jfree/chart/renderer/category/AbstractCategoryItemRenderer.java were replaced with the following:
+{'1798': 'int seriesCount = dataset.getRowCount();'}
+
+Cli_25
+
+###Fix:
+Lines:['825'] from file org/apache/commons/cli/HelpFormatter.java were replaced with the following:
+{'825': 'nextLineTabStop = width - 2;'}
+
+###Fix:
+Lines:['825'] from file org/apache/commons/cli/HelpFormatter.java were replaced with the following:
+{'825': 'nextLineTabStop = width - 2;'}
+
+###Fix:
+Lines:['825'] from file org/apache/commons/cli/HelpFormatter.java were replaced with the following:
+{'825': 'nextLineTabStop = width - 3;'}
+
+###Fix:
+Lines:['825'] from file org/apache/commons/cli/HelpFormatter.java were replaced with the following:
+{'825': 'nextLineTabStop = width - 4;'}
+
+###Fix:
+Lines:['825'] from file org/apache/commons/cli/HelpFormatter.java were replaced with the following:
+{'825': 'nextLineTabStop = width - 5;'}
+
+###Fix:
+Lines:['825'] from file org/apache/commons/cli/HelpFormatter.java were replaced with the following:
+{'825': 'nextLineTabStop = width - 6;'}
+
+###Fix:
+Lines:['825'] from file org/apache/commons/cli/HelpFormatter.java were replaced with the following:
+{'825': 'nextLineTabStop = width - 7;'}
+
+###Fix:
+Lines:['825'] from file org/apache/commons/cli/HelpFormatter.java were replaced with the following:
+{'825': 'nextLineTabStop = width - 8;'}
+
+###Fix:
+Lines:['825'] from file org/apache/commons/cli/HelpFormatter.java were replaced with the following:
+{'825': 'nextLineTabStop = width - 9;'}
+
+###Fix:
+Lines:['825'] from file org/apache/commons/cli/HelpFormatter.java were replaced with the following:
+{'825': 'nextLineTabStop = width - 10;'}
+
+###Fix:
+Lines:['825'] from file org/apache/commons/cli/HelpFormatter.java were replaced with the following:
+{'825': 'nextLineTabStop = width - 11;'}
+
+###Fix:
+Lines:['825'] from file org/apache/commons/cli/HelpFormatter.java were replaced with the following:
+{'825': 'nextLineTabStop = width - 12;'}
+
+###Fix:
+Lines:['825'] from file org/apache/commons/cli/HelpFormatter.java were replaced with the following:
+{'825': 'nextLineTabStop = width - 13;'}
+
+###Fix:
+Lines:['825'] from file org/apache/commons/cli/HelpFormatter.java were replaced with the following:
+{'825': 'nextLineTabStop = width - 14;'}
+
+###Fix:
+Lines:['825'] from file org/apache/commons/cli/HelpFormatter.java were replaced with the following:
+{'825': 'nextLineTabStop = width - 15;'}
+
+###Fix:
+Lines:['825'] from file org/apache/commons/cli/HelpFormatter.java were replaced with the following:
+{'825': 'nextLineTabStop = width - 16;'}
+
+###Fix:
+Lines:['825'] from file org/apache/commons/cli/HelpFormatter.java were replaced with the following:
+{'825': 'nextLineTabStop = width - 17;'}
+
+###Fix:
+Lines:['825'] from file org/apache/commons/cli/HelpFormatter.java were replaced with the following:
+{'825': 'nextLineTabStop = width - 18;'}
+
+###Fix:
+Lines:['825'] from file org/apache/commons/cli/HelpFormatter.java were replaced with the following:
+{'825': 'nextLineTabStop = width - 19;'}
+
+###Fix:
+Lines:['825'] from file org/apache/commons/cli/HelpFormatter.java were replaced with the following:
+{'825': 'nextLineTabStop = width - 20;'}
+
+###Fix:
+Lines:['825'] from file org/apache/commons/cli/HelpFormatter.java were replaced with the following:
+{'825': 'nextLineTabStop = width - 21;'}
+
+###Fix:
+Lines:['825'] from file org/apache/commons/cli/HelpFormatter.java were replaced with the following:
+{'825': 'nextLineTabStop = width - 22;'}
+
+###Fix:
+Lines:['825'] from file org/apache/commons/cli/HelpFormatter.java were replaced with the following:
+{'825': 'nextLineTabStop = width - 23;'}
+
+###Fix:
+Lines:['825'] from file org/apache/commons/cli/HelpFormatter.java were replaced with the following:
+{'825': 'nextLineTabStop = width - 21;'}
+
+Codec_3
+
+###Fix:
+Lines:['455'] from file org/apache/commons/codec/language/DoubleMetaphone.java were replaced with the following:
+{'455': "result.append('R')"}
+
+###Fix:
+Lines:['455'] from file org/apache/commons/codec/language/DoubleMetaphone.java were replaced with the following:
+{'455': "result.append('R')"}
+
+###Fix:
+Lines:['455'] from file org/apache/commons/codec/language/DoubleMetaphone.java were replaced with the following:
+{'455': "result.append('R')"}
+
+###Fix:
+Lines:['455'] from file org/apache/commons/codec/language/DoubleMetaphone.java were replaced with the following:
+{'455': "result.append('R')"}
+
+###Fix:
+Lines:['455'] from file org/apache/commons/codec/language/DoubleMetaphone.java were replaced with the following:
+{'455': "result.append('R')"}
+
+###Fix:
+Lines:['455'] from file org/apache/commons/codec/language/DoubleMetaphone.java were replaced with the following:
+{'455': "result.append('R')"}
+
+###Fix:
+Lines:['455'] from file org/apache/commons/codec/language/DoubleMetaphone.java were replaced with the following:
+{'455': "result.append('R')"}
+
+###Fix:
+Lines:['455'] from file org/apache/commons/codec/language/DoubleMetaphone.java were replaced with the following:
+{'455': "result.append('R')"}
+
+###Fix:
+Lines:['455'] from file org/apache/commons/codec/language/DoubleMetaphone.java were replaced with the following:
+{'455': "result.append('R')"}
+
+###Fix:
+Lines:['455'] from file org/apache/commons/codec/language/DoubleMetaphone.java were replaced with the following:
+{'455': "result.append('R')"}
+
+###Fix:
+Lines:['455'] from file org/apache/commons/codec/language/DoubleMetaphone.java were replaced with the following:
+{'455': "result.append('R')"}
+
+###Fix:
+Lines:['455'] from file org/apache/commons/codec/language/DoubleMetaphone.java were replaced with the following:
+{'455': "result.append('R')"}
+
+###Fix:
+Lines:['455'] from file org/apache/commons/codec/language/DoubleMetaphone.java were replaced with the following:
+{'455': "result.append('R')"}
+
+###Fix:
+Lines:['455'] from file org/apache/commons/codec/language/DoubleMetaphone.java were replaced with the following:
+{'455': "result.append('R')"}
+
+###Fix:
+Lines:['455'] from file org/apache/commons/codec/language/DoubleMetaphone.java were replaced with the following:
+{'455': "result.append('R')"}
+
+###Fix:
+Lines:['455'] from file org/apache/commons/codec/language/DoubleMetaphone.java were replaced with the following:
+{'455': "result.append('R')"}
+
+###Fix:
+Lines:['455'] from file org/apache/commons/codec/language/DoubleMetaphone.java were replaced with the following:
+{'455': "result.append('R')"}
+
+###Fix:
+Lines:['455'] from file org/apache/commons/codec/language/DoubleMetaphone.java were replaced with the following:
+{'455': "result.append('R')"}
+
+Closure_13
+
+###Fix:
+Lines:['126', '127', '128'] from file /workspace/Auto-GPT/auto_gpt_workspace/closure_13_buggy/src/com/google/javascript/jscomp/PeepholeOptimizationsPass.java were replaced with the following:
+{'126': 'traverse(c);', '127': 'Node next = c.getNext();', '128': 'c = next;'}
+
+###Fix:
+Lines:['126', '127', '128'] from file /workspace/Auto-GPT/auto_gpt_workspace/closure_13_buggy/src/com/google/javascript/jscomp/PeepholeOptimizationsPass.java were replaced with the following:
+{'126': 'traverse(c);', '127': 'Node next = c.getNext();', '128': 'c = next;'}
+
+###Fix:
+Lines:['94', '95'] from file /workspace/Auto-GPT/auto_gpt_workspace/closure_13_buggy/src/com/google/javascript/jscomp/IntegrationTest.java were replaced with the following:
+{'94': 'return true;', '95': 'return false;'}
+
+###Fix:
+Lines:['94', '95'] from file /workspace/Auto-GPT/auto_gpt_workspace/closure_13_buggy/src/com/google/javascript/jscomp/IntegrationTest.java were replaced with the following:
+{'94': 'return true;', '95': 'return false;'}
+
+###Fix:
+Lines:['126', '127', '128'] from file /workspace/Auto-GPT/auto_gpt_workspace/closure_13_buggy/src/com/google/javascript/rhino/Node.java were replaced with the following:
+{'126': 'traverse(c);', '127': 'Node next = c.getNext();', '128': 'c = next;'}
+
+Cli_8
+
+
+
+JacksonCore_8
+
+###Fix:
+Lines:['307'] from file com/fasterxml/jackson/core/util/TextBuffer.java were replaced with the following:
+{'307': 'if (!_hasSegments || _currentSegment == null) return contentsAsArray();'}
+
+###Fix:
+Lines:['307'] from file com/fasterxml/jackson/core/util/TextBuffer.java were replaced with the following:
+{'307': 'if (!_hasSegments || _currentSegment == null) return contentsAsArray();'}
+
+Gson_13
+
+###Fix:
+Lines:['731'] from file src/main/java/com/google/gson/stream/JsonReader.java were replaced with the following:
+{'731': 'if (last == NUMBER_CHAR_DIGIT && fitsInLong && (value != Long.MIN_VALUE || negative || (value == 0 && negative))) {'}
+
+###Fix:
+Lines:['731'] from file src/main/java/com/google/gson/stream/JsonReader.java were replaced with the following:
+{'731': 'if (last == NUMBER_CHAR_DIGIT && fitsInLong && (value != Long.MIN_VALUE || negative || (value == 0 && negative)) {'}
+
+###Fix:
+Lines:['731'] from file src/main/java/com/google/gson/stream/JsonReader.java were replaced with the following:
+{'731': 'if (last == NUMBER_CHAR_DIGIT && fitsInLong && (value != Long.MIN_VALUE || negative || (value == 0 && negative)) {'}
+
+###Fix:
+Lines:['731'] from file src/main/java/com/google/gson/stream/JsonReader.java were replaced with the following:
+{'731': 'if (last == NUMBER_CHAR_DIGIT && fitsInLong && (value != Long.MIN_VALUE || negative || (value == 0 && negative)) {'}
+
+###Fix:
+Lines:['731'] from file src/main/java/com/google/gson/stream/JsonReader.java were replaced with the following:
+{'731': 'if (last == NUMBER_CHAR_DIGIT && fitsInLong && (value != Long.MIN_VALUE || negative || (value == 0 && negative)) {'}
+
+###Fix:
+Lines:['731'] from file src/main/java/com/google/gson/stream/JsonReader.java were replaced with the following:
+{'731': 'if (last == NUMBER_CHAR_DIGIT && fitsInLong && (value != Long.MIN_VALUE || negative || (value == 0 && negative)) {'}
+
+###Fix:
+Lines:['731'] from file src/main/java/com/google/gson/stream/JsonReader.java were replaced with the following:
+{'731': 'if (last == NUMBER_CHAR_DIGIT && fitsInLong && (value != Long.MIN_VALUE || negative || (value == 0 && negative)) {'}
+
+###Fix:
+Lines:['731'] from file src/main/java/com/google/gson/stream/JsonReader.java were replaced with the following:
+{'731': 'if (last == NUMBER_CHAR_DIGIT && fitsInLong && (value != Long.MIN_VALUE || negative || (value == 0 && negative)) {'}
+
+###Fix:
+Lines:['731'] from file src/main/java/com/google/gson/stream/JsonReader.java were replaced with the following:
+{'731': 'if (last == NUMBER_CHAR_DIGIT && fitsInLong && (value != Long.MIN_VALUE || negative || (value == 0 && negative)) {'}
+
+###Fix:
+Lines:['731'] from file src/main/java/com/google/gson/stream/JsonReader.java were replaced with the following:
+{'731': 'if (last == NUMBER_CHAR_DIGIT && fitsInLong && (value != Long.MIN_VALUE || negative || (value == 0 && negative)) {'}
+
+###Fix:
+Lines:['731'] from file src/main/java/com/google/gson/stream/JsonReader.java were replaced with the following:
+{'731': 'if (last == NUMBER_CHAR_DIGIT && fitsInLong && (value != Long.MIN_VALUE || negative || (value == 0 && negative)) {'}
+
+###Fix:
+Lines:['731'] from file /workspace/Auto-GPT/auto_gpt_workspace/gson_13_buggy/gson/src/main/java/com/google/gson/stream/JsonReader.java were replaced with the following:
+{'731': 'if (last == NUMBER_CHAR_DIGIT && fitsInLong && (value != Long.MIN_VALUE || negative || (value == 0 && negative))) {'}
+
+Csv_4
+
+###Fix:
+Lines:['288', '289'] from file /workspace/Auto-GPT/auto_gpt_workspace/csv_4_buggy/src/main/java/org/apache/commons/csv/CSVParser.java were replaced with the following:
+{'288': 'if (this.headerMap == null) { return null; }', '289': 'return new LinkedHashMap<String, Integer>(this.headerMap);'}
+
+###Fix:
+Lines:['288', '289'] from file org/apache/commons/csv/CSVParser.java were replaced with the following:
+{'288': 'if (this.headerMap == null) { return null; }', '289': 'return new LinkedHashMap<String, Integer>(this.headerMap);'}
+
+###Fix:
+Lines:['288', '289'] from file org/apache/commons/csv/CSVParser.java were replaced with the following:
+{'288': 'if (this.headerMap == null) { return null; }', '289': 'return new LinkedHashMap<String, Integer>(this.headerMap);'}
+
+###Fix:
+Lines:['288', '289'] from file org/apache/commons/csv/CSVParser.java were replaced with the following:
+{'288': 'if (this.headerMap == null) { return Collections.emptyMap(); }', '289': 'return new LinkedHashMap<String, Integer>(this.headerMap);'}
+
+###Fix:
+Lines:['288', '289'] from file org/apache/commons/csv/CSVParser.java were replaced with the following:
+{'288': 'if (this.headerMap == null) { return Collections.emptyMap(); }', '289': 'return new LinkedHashMap<String, Integer>(this.headerMap);'}
+
+###Fix:
+Lines:['288', '289'] from file org/apache/commons/csv/CSVParser.java were replaced with the following:
+{'288': 'if (this.headerMap == null) { return Collections.emptyMap(); }', '289': 'return new LinkedHashMap<String, Integer>(this.headerMap);'}
+
+###Fix:
+Lines:['288', '289'] from file org/apache/commons/csv/CSVParser.java were replaced with the following:
+{'288': 'if (this.headerMap == null) { return Collections.emptyMap(); }', '289': 'return new LinkedHashMap<String, Integer>(this.headerMap);'}
+
+###Fix:
+Lines:['288', '289'] from file org/apache/commons/csv/CSVParser.java were replaced with the following:
+{'288': 'if (this.headerMap == null) { return Collections.emptyMap(); }', '289': 'return new LinkedHashMap<String, Integer>(this.headerMap);'}
+
+###Fix:
+Lines:['288', '289'] from file org/apache/commons/csv/CSVParser.java were replaced with the following:
+{'288': 'if (this.headerMap == null) { return null; }', '289': 'return new LinkedHashMap<String, Integer>(this.headerMap);'}
+
+###Fix:
+Lines:['288', '289'] from file org/apache/commons/csv/CSVParser.java were replaced with the following:
+{'288': 'if (this.headerMap == null) { return null; }', '289': 'return new LinkedHashMap<String, Integer>(this.headerMap);'}
+
+###Fix:
+Lines:['288', '289'] from file org/apache/commons/csv/CSVParser.java were replaced with the following:
+{'288': 'if (this.headerMap == null) { return null; }', '289': 'return new LinkedHashMap<String, Integer>();'}
+
+JacksonCore_5
+
+###Fix:
+Lines:['193'] from file com/fasterxml/jackson/core/JsonPointer.java were replaced with the following:
+{'193': 'char c = str.charAt(i);'}
+
+###Fix:
+Lines:['193'] from file com/fasterxml/jackson/core/JsonPointer.java were replaced with the following:
+{'193': 'char c = str.charAt(i);'}
+
+###Fix:
+Lines:['193', '194'] from file com/fasterxml/jackson/core/JsonPointer.java were replaced with the following:
+{'193': 'char c = str.charAt(i);', '194': "if (c > '9' || c < '0' && c != 'e' && c != 'E') { return -1; }"}
+
+###Fix:
+Lines:['193'] from file /workspace/Auto-GPT/auto_gpt_workspace/jacksoncore_5_buggy/src/main/java/com/fasterxml/jackson/core/JsonPointer.java were replaced with the following:
+{'193': 'char c = str.charAt(i);'}
+
+###Fix:
+Lines:['193'] from file /workspace/Auto-GPT/auto_gpt_workspace/jacksoncore_5_buggy/src/main/java/com/fasterxml/jackson/core/JsonPointer.java were replaced with the following:
+{'193': 'char c = str.charAt(i);'}
+
+###Fix:
+Lines:['193'] from file /workspace/Auto-GPT/auto_gpt_workspace/jacksoncore_5_buggy/src/main/java/com/fasterxml/jackson/core/JsonPointer.java were replaced with the following:
+{'193': "char c = str.charAt(i); if (c == 'e' || c == 'E') { return -1; }"}
+
+###Fix:
+Lines:['193'] from file /workspace/Auto-GPT/auto_gpt_workspace/jacksoncore_5_buggy/src/main/java/com/fasterxml/jackson/core/JsonPointer.java were replaced with the following:
+{'193': "char c = str.charAt(i); if (c == 'e' || c == 'E') { return -1; } else if (c > '9' || c < '0') { return -1; }"}
+
+Compress_19
+
+###Fix:
+Lines:['255'] from file org/apache/commons/compress/archivers/zip/Zip64ExtendedInformationExtraField.java were replaced with the following:
+{'255': 'int expectedLength = (hasUncompressedSize ? DWORD : 0) + (hasCompressedSize ? DWORD : 0) + (hasRelativeHeaderOffset ? DWORD : 0) + (hasDiskStart ? WORD : 0);'}
+
+###Fix:
+Lines:['255'] from file org/apache/commons/compress/archivers/zip/Zip64ExtendedInformationExtraField.java were replaced with the following:
+{'255': 'int expectedLength = (hasUncompressedSize ? DWORD : 0) + (hasCompressedSize ? DWORD : 0) + (hasRelativeHeaderOffset ? DWORD : 0) + (hasDiskStart ? WORD : 0);'}
+
+###Fix:
+Lines:['255'] from file org/apache/commons/compress/archivers/zip/Zip64ExtendedInformationExtraField.java were replaced with the following:
+{'255': 'int expectedLength = (hasUncompressedSize ? DWORD : 0) + (hasCompressedSize ? DWORD : 0) + (hasRelativeHeaderOffset ? DWORD : 0) + (hasDiskStart ? DWORD : 0);'}
+
+###Fix:
+Lines:['255'] from file org/apache/commons/compress/archivers/zip/Zip64ExtendedInformationExtraField.java were replaced with the following:
+{'255': 'int expectedLength = (hasUncompressedSize ? DWORD : 0) + (hasCompressedSize ? DWORD : 0) + (hasRelativeHeaderOffset ? DWORD : 0) + (hasDiskStart ? DWORD : 0) + (hasZip64ExtendedInfo ? DWORD : 0);'}
+
+###Fix:
+Lines:['255'] from file org/apache/commons/compress/archivers/zip/Zip64ExtendedInformationExtraField.java were replaced with the following:
+{'255': 'int expectedLength = (hasUncompressedSize ? DWORD : 0) + (hasCompressedSize ? DWORD : 0) + (hasRelativeHeaderOffset ? DWORD : 0) + (hasDiskStart ? DWORD : 0) + (hasZip64ExtendedInfo ? DWORD : 0) + (hasZip64ExtendedInfo2 ? DWORD : 0);'}
+
+###Fix:
+Lines:['255'] from file org/apache/commons/compress/archivers/zip/Zip64ExtendedInformationExtraField.java were replaced with the following:
+{'255': 'int expectedLength = (hasUncompressedSize ? DWORD : 0) + (hasCompressedSize ? DWORD : 0) + (hasRelativeHeaderOffset ? DWORD : 0) + (hasDiskStart ? DWORD : 0);'}
+
+###Fix:
+Lines:['255'] from file org/apache/commons/compress/archivers/zip/Zip64ExtendedInformationExtraField.java were replaced with the following:
+{'255': 'int expectedLength = (hasUncompressedSize ? DWORD : 0) + (hasCompressedSize ? DWORD : 0) + (hasRelativeHeaderOffset ? DWORD : 0) + (hasDiskStart ? WORD : 0);'}
+
+###Fix:
+Lines:['255'] from file org/apache/commons/compress/archivers/zip/Zip64ExtendedInformationExtraField.java were replaced with the following:
+{'255': 'int expectedLength = (hasUncompressedSize ? DWORD : 0) + (hasCompressedSize ? DWORD : 0) + (hasRelativeHeaderOffset ? DWORD : 0) + (hasDiskStart ? DWORD : 0);'}
+
+###Fix:
+Lines:['255'] from file org/apache/commons/compress/archivers/zip/Zip64ExtendedInformationExtraField.java were replaced with the following:
+{'255': 'int expectedLength = (hasUncompressedSize ? DWORD : 0) + (hasCompressedSize ? DWORD : 0) + (hasRelativeHeaderOffset ? DWORD : 0) + (hasDiskStart ? WORD : 0);'}
+
+###Fix:
+Lines:['255'] from file org/apache/commons/compress/archivers/zip/Zip64ExtendedInformationExtraField.java were replaced with the following:
+{'255': 'int expectedLength = (hasUncompressedSize ? DWORD : 0) + (hasCompressedSize ? DWORD : 0) + (hasRelativeHeaderOffset ? DWORD : 0) + (hasDiskStart ? DWORD : 0);'}
+
+###Fix:
+Lines:['255'] from file org/apache/commons/compress/archivers/zip/Zip64ExtendedInformationExtraField.java were replaced with the following:
+{'255': 'int expectedLength = (hasUncompressedSize ? DWORD : 0) + (hasCompressedSize ? DWORD : 0) + (hasRelativeHeaderOffset ? DWORD : 0) + (hasDiskStart ? WORD : 0);'}
+
+###Fix:
+Lines:['255'] from file org/apache/commons/compress/archivers/zip/Zip64ExtendedInformationExtraField.java were replaced with the following:
+{'255': 'int expectedLength = (hasUncompressedSize ? DWORD : 0) + (hasCompressedSize ? DWORD : 0) + (hasRelativeHeaderOffset ? DWORD : 0) + (hasDiskStart ? DWORD : 0);'}
+
+###Fix:
+Lines:['255'] from file org/apache/commons/compress/archivers/zip/Zip64ExtendedInformationExtraField.java were replaced with the following:
+{'255': 'int expectedLength = (hasUncompressedSize ? DWORD : 0) + (hasCompressedSize ? DWORD : 0) + (hasRelativeHeaderOffset ? DWORD : 0) + (hasDiskStart ? DWORD : 0) + (hasZip64ExtendedInfo ? DWORD : 0);'}
+
+###Fix:
+Lines:['255'] from file org/apache/commons/compress/archivers/zip/Zip64ExtendedInformationExtraField.java were replaced with the following:
+{'255': 'int expectedLength = (hasUncompressedSize ? DWORD : 0) + (hasCompressedSize ? DWORD : 0) + (hasRelativeHeaderOffset ? DWORD : 0) + (hasDiskStart ? DWORD : 0) + (hasZip64ExtendedInfo ? DWORD : 0) + (hasZip64ExtendedInfo2 ? DWORD : 0);'}
+
+###Fix:
+Lines:['255'] from file org/apache/commons/compress/archivers/zip/Zip64ExtendedInformationExtraField.java were replaced with the following:
+{'255': 'int expectedLength = (hasUncompressedSize ? DWORD : 0) + (hasCompressedSize ? DWORD : 0) + (hasRelativeHeaderOffset ? DWORD : 0) + (hasDiskStart ? DWORD : 0);'}
+
+Closure_14
+
+###Fix:
+Lines:['767'] from file com/google/javascript/jscomp/ControlFlowAnalysis.java were replaced with the following:
+{'767': 'return cfa.createEdge(fromNode, Branch.UNCOND, finallyNode);'}
+
+###Fix:
+Lines:['767'] from file com/google/javascript/jscomp/ControlFlowAnalysis.java were replaced with the following:
+{'767': 'return cfa.createEdge(fromNode, Branch.UNCOND, finallyNode);'}
+
+###Fix:
+Lines:['767'] from file com/google/javascript/jscomp/ControlFlowAnalysis.java were replaced with the following:
+{'767': 'return cfa.createEdge(fromNode, Branch.UNCOND, finallyNode);'}
+
+###Fix:
+Lines:['767'] from file com/google/javascript/jscomp/ControlFlowAnalysis.java were replaced with the following:
+{'767': 'return cfa.createEdge(fromNode, Branch.UNCOND, finallyNode);'}
+
+###Fix:
+Lines:['767'] from file /workspace/Auto-GPT/auto_gpt_workspace/closure_14_buggy/src/com/google/javascript/jscomp/ControlFlowAnalysis.java were replaced with the following:
+{'767': 'return cfa.createEdge(fromNode, Branch.UNCOND, finallyNode);'}
+
+###Fix:
+Lines:['767'] from file /workspace/Auto-GPT/auto_gpt_workspace/closure_14_buggy/src/com/google/javascript/jscomp/ControlFlowAnalysis.java were replaced with the following:
+{'767': 'return cfa.createEdge(fromNode, Branch.UNCOND, finallyNode);'}
+
+###Fix:
+Lines:['767'] from file /workspace/Auto-GPT/auto_gpt_workspace/closure_14_buggy/src/com/google/javascript/jscomp/ControlFlowAnalysis.java were replaced with the following:
+{'767': 'return null;'}
+
+###Fix:
+Lines:['767'] from file /workspace/Auto-GPT/auto_gpt_workspace/closure_14_buggy/src/com/google/javascript/jscomp/ControlFlowAnalysis.java were replaced with the following:
+{'767': 'return computeFollowNode(fromNode, parent, cfa);'}
+
+###Fix:
+Lines:['767'] from file /workspace/Auto-GPT/auto_gpt_workspace/closure_14_buggy/src/com/google/javascript/jscomp/ControlFlowAnalysis.java were replaced with the following:
+{'767': 'return finallyNode;'}
+
+###Fix:
+Lines:['767'] from file /workspace/Auto-GPT/auto_gpt_workspace/closure_14_buggy/src/com/google/javascript/jscomp/ControlFlowAnalysis.java were replaced with the following:
+{'767': 'return fromNode;'}
+
+###Fix:
+Lines:['767'] from file /workspace/Auto-GPT/auto_gpt_workspace/closure_14_buggy/src/com/google/javascript/jscomp/ControlFlowAnalysis.java were replaced with the following:
+{'767': 'return parent;'}
+
+###Fix:
+Lines:['0'] from file /workspace/Auto-GPT/auto_gpt_workspace/closure_14_buggy_14_buggy/files_index.txt were replaced with the following:
+{'0': 'com/google/javascript/jscomp/ControlFlowAnalysis.java'}
+
+Closure_10
+
+###Fix:
+Lines:['1417'] from file src/com/google/javascript/jscomp/NodeUtil.java were replaced with the following:
+{'1417': 'return mayBeStringHelper(n);'}
+
+###Fix:
+Lines:['1417'] from file src/com/google/javascript/jscomp/NodeUtil.java were replaced with the following:
+{'1417': 'return allResultsMatch(n, MAY_BE_STRING_PREDICATE);'}
+
+###Fix:
+Lines:[] from file src/com/google/javascript/jscomp/NodeUtil.java were replaced with the following:
+{}
+
+###Fix:
+Lines:['1417'] from file src/com/google/javascript/jscomp/NodeUtil.java were replaced with the following:
+{'1417': 'return mayBeStringHelper(n);'}
+
+###Fix:
+Lines:['1417'] from file com/google/javascript/jscomp/NodeUtil.java were replaced with the following:
+{'1417': 'return mayBeStringHelper(n);'}
+
+###Fix:
+Lines:['1417'] from file com/google/javascript/jscomp/NodeUtil.java were replaced with the following:
+{'1417': 'return mayBeStringHelper(n);'}
+
+Compress_16
+
+###Fix:
+Lines:['242'] from file org/apache/commons/compress/archivers/ArchiveStreamFactory.java were replaced with the following:
+{'242': 'return new TarArchiveInputStream(new ByteArrayInputStream(in));'}
+
+###Fix:
+Lines:['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20'] from file org/apache/commons/compress/archivers/ArchiveStreamFactory.java were replaced with the following:
+{'1': 'public ArchiveInputStream createArchiveInputStream(InputStream in) throws ArchiveException {', '2': '    if (in == null) {', '3': '        throw new IllegalArgumentException("Cannot create an ArchiveInputStream from a null input stream");', '4': '    }', '5': '    byte[] signature = new byte[ArchiveStreamFactory.MAX_SIGNATURE_LENGTH];', '6': '    int signatureLength = readArchiveFormat(signature, in);', '7': '    if (signatureLength >= 512) {', '8': '        try {', '9': '            TarArchiveInputStream tais = new TarArchiveInputStream(new ByteArrayInputStream(signature));', '10': '            tais.getNextEntry();', '11': '            return new TarArchiveInputStream(in);', '12': '        } catch (Exception e) { // NOPMD', '13': '            // can generate IllegalArgumentException as well', '14': '            // as IOException', '15': '            // autodetection, simply not a TAR', '16': '            // ignored', '17': '        }', '18': '    }', '19': '    throw new ArchiveException("No Archiver found");', '20': '}'}
+
+###Fix:
+Lines:['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20'] from file org/apache/commons/compress/archivers/ArchiveStreamFactory.java were replaced with the following:
+{'1': 'public ArchiveInputStream createArchiveInputStream(InputStream in) throws ArchiveException {', '2': '    if (in == null) {', '3': '        throw new IllegalArgumentException("Cannot create an ArchiveInputStream from a null input stream");', '4': '    }', '5': '    byte[] signature = new byte[ArchiveStreamFactory.MAX_SIGNATURE_LENGTH];', '6': '    int signatureLength = readArchiveFormat(signature, in);', '7': '    if (signatureLength >= 512) {', '8': '        try {', '9': '            TarArchiveInputStream tais = new TarArchiveInputStream(new ByteArrayInputStream(signature));', '10': '            tais.getNextEntry();', '11': '            return new TarArchiveInputStream(in);', '12': '        } catch (Exception e) { // NOPMD', '13': '            // can generate IllegalArgumentException as well', '14': '            // as IOException', '15': '            // autodetection, simply not a TAR', '16': '            // ignored', '17': '        }', '18': '    }', '19': '    throw new ArchiveException("No Archiver found");', '20': '}'}
+
+###Fix:
+Lines:['9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19'] from file org/apache/commons/compress/archivers/ArchiveStreamFactory.java were replaced with the following:
+{'9': '            TarArchiveInputStream tais = new TarArchiveInputStream(new ByteArrayInputStream(signature));', '10': '            tais.getNextEntry();', '11': '            return new TarArchiveInputStream(in);', '12': '        } catch (Exception e) { // NOPMD', '13': '            // can generate IllegalArgumentException as well', '14': '            // as IOException', '15': '            // autodetection, simply not a TAR', '16': '            // ignored', '17': '        } else {', '18': '            return new ArchiveInputStream(in);', '19': '        }'}
+
+Csv_1
+
+###Fix:
+Lines:['58'] from file org/apache/commons/csv/ExtendedBufferedReader.java were replaced with the following:
+{'58': "if (current == '\\n') { lineCounter++; }"}
+
+Chart_8
+
+###Fix:
+Lines:['175'] from file org/jfree/data/time/Week.java were replaced with the following:
+{'175': 'this(time, zone, Locale.getDefault())'}
+
+###Fix:
+Lines:['175'] from file org/jfree/data/time/Week.java were replaced with the following:
+{'175': 'this(time, RegularTimePeriod.DEFAULT_TIME_ZONE, Locale.getDefault())'}
+
+###Fix:
+Lines:['175'] from file org/jfree/data/time/Week.java were replaced with the following:
+{'175': 'this(time, zone, Locale.getDefault())'}
+
+###Fix:
+Lines:['175'] from file org/jfree/data/time/Week.java were replaced with the following:
+{'175': 'this(time, RegularTimePeriod.DEFAULT_TIME_ZONE, Locale.getDefault()) // Adjusted the week value calculation'}
+
+###Fix:
+Lines:['175'] from file org/jfree/data/time/Week.java were replaced with the following:
+{'175': 'this(time, zone, Locale.getDefault()) // Adjusted the week value calculation'}
+
+Codec_2
+
+###Fix:
+Lines:['446'] from file org/apache/commons/codec/binary/Base64.java were replaced with the following:
+{'446': 'if (lineLength >= 0) {'}
+
+###Fix:
+Lines:['446'] from file org/apache/commons/codec/binary/Base64.java were replaced with the following:
+{'446': 'if (lineLength >= 0) {'}
+
+###Fix:
+Lines:['446'] from file org/apache/commons/codec/binary/Base64.java were replaced with the following:
+{'446': 'if (lineLength == 0) {'}
+
+###Fix:
+Lines:['446'] from file org/apache/commons/codec/binary/Base64.java were replaced with the following:
+{'446': 'if (lineLength > 0) {'}
+
+###Fix:
+Lines:['446'] from file org/apache/commons/codec/binary/Base64.java were replaced with the following:
+{'446': 'if (lineLength > 0) {'}
+
+###Fix:
+Lines:['446'] from file org/apache/commons/codec/binary/Base64.java were replaced with the following:
+{'446': 'if (lineLength == 0) {'}
+
+###Fix:
+Lines:['446'] from file org/apache/commons/codec/binary/Base64.java were replaced with the following:
+{'446': 'if (lineLength >= 0) {'}
+
+###Fix:
+Lines:['446'] from file org/apache/commons/codec/binary/Base64.java were replaced with the following:
+{'446': 'if (lineLength != 0) {'}
+
++---------------+-----------------+-----------------+-------------------+
+| Log File      | Correctly Fixed | Suggested Fixes | Number of Queries |
++---------------+-----------------+-----------------+-------------------+
+| Gson_15       |        No       |        2        |         9         |
+| Chart_9       |       Yes       |        1        |         5         |
+| Codec_4       |        No       |        12       |         20        |
+| Compress_1    |        No       |        3        |         9         |
+| Chart_1       |       Yes       |        1        |         5         |
+| Cli_25        |       Yes       |        24       |         19        |
+| Codec_3       |        No       |        18       |         20        |
+| Closure_13    |        No       |        5        |         20        |
+| Cli_8         |        No       |        0        |         20        |
+| JacksonCore_8 |       Yes       |        2        |         12        |
+| Gson_13       |        No       |        12       |         20        |
+| Csv_4         |        No       |        11       |         20        |
+| JacksonCore_5 |       Yes       |        7        |         20        |
+| Compress_19   |        No       |        15       |         20        |
+| Closure_14    |        No       |        12       |         20        |
+| Closure_10    |       Yes       |        6        |         20        |
+| Compress_16   |        No       |        4        |         17        |
+| Csv_1         |        No       |        1        |         13        |
+| Chart_8       |        No       |        5        |         20        |
+| Codec_2       |        No       |        8        |         20        |
++---------------+-----------------+-----------------+-------------------+

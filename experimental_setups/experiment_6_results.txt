@@ -1,0 +1,233 @@
+Experiment Results: experiment_6
+
+Number of Bugs: 20
+Correctly fixed bugs: 0
+Total Suggested Fixes: 34
+
+The list of suggested fixes:
+Gson_15
+
+###Fix:
+Lines 495 to 495 from file com/google/gson/stream/JsonWriter.java were replaced with the following:
+['if (Double.isNaN(value)) {', '  throw new IllegalArgumentException("Numeric values must be finite, but was NaN");', '}']
+
+###Fix:
+Lines 495 to 495 from file com/google/gson/stream/JsonWriter.java were replaced with the following:
+['if (Double.isNaN(value)) {', '  throw new IllegalArgumentException("Numeric values must be finite, but was NaN");', '}']
+
+###Fix:
+Lines 495 to 496 from file com/google/gson/stream/JsonWriter.java were replaced with the following:
+['if (Double.isNaN(value)) {', '  throw new IllegalArgumentException("Numeric values must be finite, but was " + value);', '}']
+
+###Fix:
+Lines 495 to 495 from file com/google/gson/stream/JsonWriter.java were replaced with the following:
+['if (Double.isNaN(value)) {', '  throw new IllegalArgumentException("Numeric values must be finite, but was NaN");', '}']
+
+###Fix:
+Lines 495 to 496 from file com/google/gson/stream/JsonWriter.java were replaced with the following:
+['if (Double.isNaN(value)) {', '  throw new IllegalArgumentException("Numeric values must be finite, but was NaN");', '}']
+
+###Fix:
+Lines 495 to 495 from file com/google/gson/stream/JsonWriter.java were replaced with the following:
+['if (Double.isNaN(value)) {', '  throw new IllegalArgumentException("Numeric values must be finite, but was NaN");', '}']
+
+Chart_9
+
+###Fix:
+Lines 944 to 946 from file org/jfree/data/time/TimeSeries.java were replaced with the following:
+['emptyRange = endIndex < 0;']
+
+###Fix:
+Lines 944 to 946 from file source/org/jfree/data/time/TimeSeries.java were replaced with the following:
+['emptyRange = endIndex < 0 && endIndex >= -(endIndex + 1);']
+
+Codec_4
+
+
+
+Compress_1
+
+###Fix:
+Lines 82 to 82 from file CpioTestCase.java were replaced with the following:
+['while (in.getNextEntry() != null) {']
+
+###Fix:
+Lines 82 to 82 from file CpioTestCase.java were replaced with the following:
+['while (in.getNextEntry() != null) {']
+
+###Fix:
+Lines 83 to 83 from file CpioTestCase.java were replaced with the following:
+['if (entry != null) {', '    File target = new File(dir, entry.getName());', '}']
+
+Chart_1
+
+###Fix:
+Lines 1797 to 1797 from file org/jfree/chart/renderer/category/AbstractCategoryItemRenderer.java were replaced with the following:
+['if (dataset != null) {', '    result = getLegendItems();', '}']
+
+###Fix:
+Lines 1797 to 1797 from file org/jfree/chart/renderer/category/AbstractCategoryItemRenderer.java were replaced with the following:
+['if (dataset != null) {', '    result = getLegendItems(dataset);', '}']
+
+###Fix:
+Lines 1798 to 1798 from file org/jfree/chart/renderer/category/AbstractCategoryItemRenderer.java were replaced with the following:
+['result = getLegendItems(dataset);']
+
+###Fix:
+Lines 1797 to 1798 from file org/jfree/chart/renderer/category/AbstractCategoryItemRenderer.java were replaced with the following:
+['result = getLegendItems(dataset);']
+
+###Fix:
+Lines 1797 to 1798 from file org/jfree/chart/renderer/category/AbstractCategoryItemRenderer.java were replaced with the following:
+['result = getLegendItems(dataset);']
+
+###Fix:
+Lines 1797 to 1797 from file org/jfree/chart/renderer/category/AbstractCategoryItemRenderer.java were replaced with the following:
+['if (dataset != null) {', '    result = getLegendItems(dataset);', '}']
+
+Cli_25
+
+
+
+Codec_3
+
+
+
+Closure_13
+
+###Fix:
+Lines 126 to 128 from file com/google/javascript/jscomp/PeepholeOptimizationsPass.java were replaced with the following:
+['        if (c != null) {', '            traverse(c);', '            Node next = c.getNext();', '            c = next;', '        }']
+
+###Fix:
+Lines 126 to 128 from file com/google/javascript/jscomp/PeepholeOptimizationsPass.java were replaced with the following:
+['        if (c != null) {', '            traverse(c);', '            Node next = c.getNext();', '            c = next;', '        }']
+
+###Fix:
+Lines 126 to 128 from file com/google/javascript/jscomp/PeepholeOptimizationsPass.java were replaced with the following:
+['        if (c != null) {', '            traverse(c);', '            Node next = c.getNext();', '            c = next;', '        }']
+
+###Fix:
+Lines 123 to 129 from file com/google/javascript/jscomp/PeepholeOptimizationsPass.java were replaced with the following:
+['int visits = 0;', 'while (visits < MAX_VISITS) {', '  Node c = node.getFirstChild();', '  while (c != null) {', '    traverse(c);', '    Node next = c.getNext();', '    c = next;', '  }', '  visits++;', '}']
+
+###Fix:
+Lines 123 to 129 from file com/google/javascript/jscomp/PeepholeOptimizationsPass.java were replaced with the following:
+['int visits = 0;', 'while (visits < MAX_VISITS) {', '  Node c = node.getFirstChild();', '  while (c != null) {', '    traverse(c);', '    Node next = c.getNext();', '    c = next;', '  }', '  visits++;', '}']
+
+###Fix:
+Lines 123 to 129 from file com/google/javascript/jscomp/PeepholeOptimizationsPass.java were replaced with the following:
+['int visits = 0;', 'while (visits < MAX_VISITS) {', '  Node c = node.getFirstChild();', '  while (c != null) {', '    traverse(c);', '    Node next = c.getNext();', '    c = next;', '  }', '  visits++;', '}']
+
+Cli_8
+
+
+
+JacksonCore_8
+
+
+
+Gson_13
+
+
+
+Csv_4
+
+
+
+JacksonCore_5
+
+###Fix:
+Lines 41 to 41 from file TestJsonPointer.java were replaced with the following:
+['        JsonPointer ptr = JsonPointer.compile("1");']
+
+###Fix:
+Lines 41 to 41 from file TestJsonPointer.java were replaced with the following:
+['        JsonPointer ptr = JsonPointer.compile("1.0e0");']
+
+###Fix:
+Lines 41 to 41 from file TestJsonPointer.java were replaced with the following:
+['        JsonPointer ptr = JsonPointer.compile("1.0e0");']
+
+###Fix:
+Lines 41 to 41 from file TestJsonPointer.java were replaced with the following:
+['        JsonPointer ptr = JsonPointer.compile("1.0e0");']
+
+###Fix:
+Lines 41 to 41 from file TestJsonPointer.java were replaced with the following:
+['        JsonPointer ptr = JsonPointer.compile("1.0e0");']
+
+Compress_19
+
+
+
+Closure_14
+
+
+
+Closure_10
+
+
+
+Compress_16
+
+
+
+Csv_1
+
+
+
+Chart_8
+
+
+
+Codec_2
+
+###Fix:
+Lines 446 to 446 from file org/apache/commons/codec/binary/Base64.java were replaced with the following:
+['            if (lineLength > 0 || lineLength == 0) {']
+
+###Fix:
+Lines 446 to 446 from file org/apache/commons/codec/binary/Base64.java were replaced with the following:
+['    if (binaryData.length == 0) {', '        return new byte[0];', '    }']
+
+###Fix:
+Lines 446 to 446 from file org/apache/commons/codec/binary/Base64.java were replaced with the following:
+['    if (binaryData.length == 0) {', '        return new byte[0];', '    }', '    if (lineLength > 0) {', '        // existing code handling non-empty input', '    }']
+
+###Fix:
+Lines 446 to 446 from file org/apache/commons/codec/binary/Base64.java were replaced with the following:
+['    if (binaryData.length == 0) {', '        return new byte[0];', '    }', '// existing code handling non-empty input']
+
+###Fix:
+Lines 446 to 446 from file org/apache/commons/codec/binary/Base64.java were replaced with the following:
+['if (binaryData.length > 0) { // Handle non-empty input', '    if (lineLength > 0) { // existing code handling non-empty input', '} else { // Handle empty input', '    // Add code to handle empty input appropriately']
+
+###Fix:
+Lines 446 to 446 from file org/apache/commons/codec/binary/Base64.java were replaced with the following:
+['if (lineLength > 0 && binaryData.length > 0) { // Handle non-empty input', '    // existing code handling non-empty input', '} else { // Handle empty input', '    // Add code to handle empty input appropriately']
+
++---------------+-----------------+-----------------+-------------------+
+| Log File      | Correctly Fixed | Suggested Fixes | Number of Queries |
++---------------+-----------------+-----------------+-------------------+
+| Gson_15       |        No       |        6        |         20        |
+| Chart_9       |        No       |        2        |         20        |
+| Codec_4       |        No       |        0        |         5         |
+| Compress_1    |        No       |        3        |         15        |
+| Chart_1       |        No       |        6        |         20        |
+| Cli_25        |        No       |        0        |         20        |
+| Codec_3       |        No       |        0        |         3         |
+| Closure_13    |        No       |        6        |         18        |
+| Cli_8         |        No       |        0        |         20        |
+| JacksonCore_8 |        No       |        0        |         20        |
+| Gson_13       |        No       |        0        |         20        |
+| Csv_4         |        No       |        0        |         5         |
+| JacksonCore_5 |        No       |        5        |         20        |
+| Compress_19   |        No       |        0        |         20        |
+| Closure_14    |        No       |        0        |         20        |
+| Closure_10    |        No       |        0        |         5         |
+| Compress_16   |        No       |        0        |         1         |
+| Csv_1         |        No       |        0        |         20        |
+| Chart_8       |        No       |        0        |         20        |
+| Codec_2       |        No       |        6        |         17        |
++---------------+-----------------+-----------------+-------------------+

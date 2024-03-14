@@ -1,0 +1,2 @@
+### PLAUSIBLE FIX
+{'file_name': '/workspace/Auto-GPT/auto_gpt_workspace/math_82_buggy/src/main/java/org/apache/commons/math/optimization/linear/SimplexSolver.java', 'insertions': [], 'deletions': [], 'modifications': [{'line_number': 82, 'modified_line': 'if (MathUtils.compareTo(entry, 0, epsilon) > 0) {'}]}

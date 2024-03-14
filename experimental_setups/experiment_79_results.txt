@@ -1,0 +1,89 @@
+Experiment Results: experiment_79
+
+Number of Bugs: 6
+Correctly fixed bugs: 2
+Total Suggested Fixes: 15
+
+The list of suggested fixes:
+Chart_9
+
+###Fix:
+Lines:['944'] from file org/jfree/data/time/TimeSeries.java were replaced with the following:
+{'944': 'if (endIndex <= 0) {'}
+
+Chart_1
+
+###Fix:
+Lines:['1797'] from file org/jfree/chart/renderer/category/AbstractCategoryItemRenderer.java were replaced with the following:
+{'1797': 'if (dataset != null && dataset.getRowCount() > 0) {'}
+
+Cli_25
+
+###Fix:
+Lines:['825'] from file org/apache/commons/cli/HelpFormatter.java were replaced with the following:
+{'825': 'nextLineTabStop = width - 2;'}
+
+###Fix:
+Lines:['825', '826'] from file org/apache/commons/cli/HelpFormatter.java were replaced with the following:
+{'825': 'nextLineTabStop = width - 2;', '826': '// Adjusting nextLineTabStop calculation to potentially fix long arguments splitting issue'}
+
+Cli_8
+
+###Fix:
+Lines:['838'] from file org/apache/commons/cli/HelpFormatter.java were replaced with the following:
+{'838': "int pos = -1; while (pos >= startPos && ((c = text.charAt(pos)) != ' ') && (c != '\n') && (c != '\r')) { --pos; } if (pos > startPos) { return pos; } pos = startPos + width; while ((pos <= text.length()) && ((c = text.charAt(pos)) != ' ') && (c != '\n') && (c != '\r')) { ++pos; } return (pos == text.length()) ? (-1) : pos;"}
+
+###Fix:
+Lines:['838'] from file org/apache/commons/cli/HelpFormatter.java were replaced with the following:
+{'838': "int pos = -1; while (pos >= startPos && ((c = text.charAt(pos)) != ' ') && (c != '\n') && (c != '\r')) { --pos; } if (pos > startPos) { return pos; } pos = startPos + width; while ((pos <= text.length()) && ((c = text.charAt(pos)) != ' ') && (c != '\n') && (c != '\r')) { ++pos; } return (pos == text.length()) ? (-1) : pos;"}
+
+###Fix:
+Lines:['838'] from file org/apache/commons/cli/HelpFormatter.java were replaced with the following:
+{'838': "int pos = -1; while (pos >= startPos && ((c = text.charAt(pos)) != ' ') && (c != '\\n') && (c != '\\r')) { --pos; } if (pos > startPos) { return pos; } pos = startPos + width; while ((pos <= text.length()) && ((c = text.charAt(pos)) != ' ') && (c != '\\n') && (c != '\\r')) { ++pos; } return (pos == text.length()) ? (-1) : pos;"}
+
+###Fix:
+Lines:['838'] from file org/apache/commons/cli/HelpFormatter.java were replaced with the following:
+{'838': "int pos = -1; while (pos >= startPos && ((c = text.charAt(pos)) != ' ') && (c != '\\n') && (c != '\\r')) { --pos; } if (pos > startPos) { return pos; } pos = startPos + width; while ((pos <= text.length()) && ((c = text.charAt(pos)) != ' ') && (c != '\\n') && (c != '\\r')) { ++pos; } return (pos == text.length()) ? (-1) : pos;"}
+
+###Fix:
+Lines:['838'] from file org/apache/commons/cli/HelpFormatter.java were replaced with the following:
+{'838': "int pos = -1; while (pos >= startPos && ((c = text.charAt(pos)) != ' ') && (c != '\\n') && (c != '\\r')) { --pos; } if (pos > startPos) { return pos; } pos = startPos + width; while ((pos <= text.length()) && ((c = text.charAt(pos)) != ' ') && (c != '\\n') && (c != '\\r')) { ++pos; } return (pos == text.length()) ? (-1) : pos;"}
+
+###Fix:
+Lines:['838'] from file org/apache/commons/cli/HelpFormatter.java were replaced with the following:
+{'838': "int pos = -1; while (pos >= startPos && ((c = text.charAt(pos)) != ' ') && (c != '\\n') && (c != '\\r')) { --pos; } if (pos > startPos) { return pos; } pos = startPos + width; while ((pos <= text.length()) && ((c = text.charAt(pos)) != ' ') && (c != '\\n') && (c != '\\r')) { ++pos; } return (pos == text.length()) ? (-1) : pos;"}
+
+###Fix:
+Lines:['838'] from file org/apache/commons/cli/HelpFormatter.java were replaced with the following:
+{'838': "int pos = -1; while (pos >= startPos && ((c = text.charAt(pos)) != ' ') && (c != '\\n') && (c != '\\r')) { --pos; } if (pos > startPos) { return pos; } pos = startPos + width; while ((pos <= text.length()) && ((c = text.charAt(pos)) != ' ') && (c != '\\n') && (c != '\\r')) { ++pos; } return (pos == text.length()) ? (-1) : pos;"}
+
+Closure_10
+
+###Fix:
+Lines:['1417'] from file com/google/javascript/jscomp/NodeUtil.java were replaced with the following:
+{'1417': 'return allResultsMatch(n, true);'}
+
+###Fix:
+Lines:['1417'] from file com/google/javascript/jscomp/NodeUtil.java were replaced with the following:
+{'1417': 'return allResultsMatch(n, false);'}
+
+###Fix:
+Lines:['1417'] from file com/google/javascript/jscomp/NodeUtil.java were replaced with the following:
+{'1417': 'return mayBeStringHelper(n);'}
+
+Chart_8
+
+###Fix:
+Lines:['175'] from file org/jfree/data/time/Week.java were replaced with the following:
+{'175': 'this(time, zone, Locale.getDefault());'}
+
++------------+-----------------+-----------------+-------------------+
+| Log File   | Correctly Fixed | Suggested Fixes | Number of Queries |
++------------+-----------------+-----------------+-------------------+
+| Chart_9    |        No       |        1        |         5         |
+| Chart_1    |        No       |        1        |         8         |
+| Cli_25     |        No       |        2        |         8         |
+| Cli_8      |        No       |        7        |         40        |
+| Closure_10 |       Yes       |        3        |         10        |
+| Chart_8    |       Yes       |        1        |         6         |
++------------+-----------------+-----------------+-------------------+

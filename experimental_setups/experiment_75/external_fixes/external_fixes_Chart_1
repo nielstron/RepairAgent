@@ -1,0 +1,12 @@
+{
+    "1797": "// if (dataset != null) {"
+}{   "1797": "// if (dataset != null) {" }{
+	"1797": "if (dataset == null) {\\n    return result;\\n}"
+}{
+  "1797": "//if (dataset != null) { // commented out the original line to remove the condition check"
+}{ "1797": "if (dataset == null) { return result; }" }
+{ "1797": "if (dataset == null) { return result; }" }{  }
+
+{ "1797": "if (dataset == null) { return result; }" }{ "1797": "if (dataset == null) { return result; }" }
+{ "1797": "if (dataset == null) { return result; }" }
+{ "1797": "if (dataset == null) { return result; }" }

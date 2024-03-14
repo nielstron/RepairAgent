@@ -1,0 +1,10 @@
+{
+	"495": "if (Double.isNaN(value) || Double.isInfinite(value) || Double.isFinite(value)) {"
+}{
+	"495": "if (Double.isNaN(value) || Double.isInfinite(value) || Double.isInfinite(value) || Double.isInfinite(value)) {"
+}
+{ 
+  "495": "    if (Double.isNaN(value) || Double.isInfinite(value)) { return this; }"
+}
+{ "495": "if (Double.isNaN(value) || Double.isInfinite(value)) {", "496": "  if (Double.isNaN(value)) {", "497": "    out.append(\"NaN\");", "498": "  } else if (Double.isInfinite(value)) {", "499": "    out.append(value > 0 ? \"Infinity\" : \"-Infinity\");", "500": "  }" }
+{ "495": "if (Double.isNaN(value) || Double.isInfinite(value)) {", "496": "  out.append(Double.isNaN(value) ? \"NaN\" : (value > 0 ? \"Infinity\" : \"-Infinity\"));", "497": "  return this;" }

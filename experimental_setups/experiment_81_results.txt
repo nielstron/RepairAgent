@@ -1,0 +1,29 @@
+Experiment Results: experiment_81
+
+Number of Bugs: 2
+Correctly fixed bugs: 1
+Total Suggested Fixes: 3
+
+The list of suggested fixes:
+Chart_1
+
+###Fix:
+Lines:['1800'] from file org/jfree/chart/renderer/category/AbstractCategoryItemRenderer.java were replaced with the following:
+{'1800': 'if (dataset != null) {'}
+
+###Fix:
+Lines:['1800'] from file org/jfree/chart/renderer/category/AbstractCategoryItemRenderer.java were replaced with the following:
+{'1800': 'if (dataset != null) {'}
+
+Cli_8
+
+###Fix:
+Lines:['812'] from file /workspace/Auto-GPT/auto_gpt_workspace/cli_8_buggy/src/java/org/apache/commons/cli/HelpFormatter.java were replaced with the following:
+{'812': 'pos = findWrapPos(text, width, nextLineTabStop); // Update the wrap position calculation logic'}
+
++----------+-----------------+-----------------+-------------------+
+| Log File | Correctly Fixed | Suggested Fixes | Number of Queries |
++----------+-----------------+-----------------+-------------------+
+| Chart_1  |       Yes       |        2        |         11        |
+| Cli_8    |        No       |        1        |         33        |
++----------+-----------------+-----------------+-------------------+

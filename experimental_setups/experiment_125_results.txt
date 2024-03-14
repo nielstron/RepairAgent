@@ -1,0 +1,22 @@
+Experiment Results: experiment_125
+
+Number of Bugs: 2
+Correctly fixed bugs: 1
+Total Suggested Fixes: 1
+
+The list of suggested fixes:
+Chart_1
+
+###Fix:
+[{'file_name': 'org/jfree/chart/renderer/category/AbstractCategoryItemRenderer.java', 'insertions': [], 'deletions': [], 'modifications': [{'line_number': 1797, 'modified_line': '        if (dataset == null) {'}]}]
+
+Cli_8
+
+
+
++----------+-----------------+-----------------+-------------------+
+| Log File | Correctly Fixed | Suggested Fixes | Number of Queries |
++----------+-----------------+-----------------+-------------------+
+| Chart_1  |       Yes       |        1        |         8         |
+| Cli_8    |        No       |        0        |         21        |
++----------+-----------------+-----------------+-------------------+

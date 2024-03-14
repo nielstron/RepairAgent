@@ -24,24 +24,12 @@ def build_default_prompt_generator(config: Config) -> PromptGenerator:
     # Initialize the PromptConfig object and load the file set in the main config (default: prompts_settings.yaml)
     prompt_config = PromptConfig(config.prompt_settings_file)
 
-    # Add constraints to the PromptGenerator object
-    for constraint in prompt_config.constraints:
-        prompt_generator.add_constraint(constraint)
+    for guideline in prompt_config.general_guidelines:
+        prompt_generator.add_general_guidelines(guideline)
 
-    # Add resources to the PromptGenerator object
-    for resource in prompt_config.resources:
-        prompt_generator.add_resource(resource)
+    #for pattern in prompt_config.simple_patterns:
+    #    prompt_generator.add_simple_pattern(pattern)
 
-    # Add best practices to the PromptGenerator object
-    for best_practice in prompt_config.best_practices:
-        prompt_generator.add_best_practice(best_practice)
-
-    for hint in prompt_config.debugging_hints:
-        prompt_generator.add_debugging_hint(hint)
-
-    for pattern in prompt_config.simple_patterns:
-        prompt_generator.add_simple_pattern(pattern)
-
-    for step in prompt_config.work_plan:
-        prompt_generator.add_work_plan(step)
+    #for step in prompt_config.work_plan:
+    #    prompt_generator.add_work_plan(step)
     return prompt_generator

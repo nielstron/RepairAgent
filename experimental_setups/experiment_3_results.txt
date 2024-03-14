@@ -1,0 +1,87 @@
+Experiment Results: experiment_3
+
+Number of Bugs: 10
+Correctly fixed bugs: 0
+Total Suggested Fixes: 9
+
+The list of suggested fixes:
+Codec_4
+
+###Fix:
+Lines 225 to 225 from file org/apache/commons/codec/binary/Base64.java were replaced with the following:
+['        this(true);']
+
+###Fix:
+Lines 225 to 225 from file org/apache/commons/codec/binary/Base64.java were replaced with the following:
+['        this(true);']
+
+###Fix:
+Lines 225 to 225 from file org/apache/commons/codec/binary/Base64.java were replaced with the following:
+['        this(true);']
+
+Chart_1
+
+###Fix:
+Lines 1798 to 1798 from file org/jfree/chart/renderer/category/AbstractCategoryItemRenderer.java were replaced with the following:
+['result = null;']
+
+Cli_25
+
+
+
+Closure_13
+
+
+
+Gson_13
+
+###Fix:
+Lines 573 to 573 from file JsonReaderTest.java were replaced with the following:
+['assertEquals(-0.0, reader.nextDouble());']
+
+JacksonCore_5
+
+###Fix:
+Lines 193 to 199 from file com/fasterxml/jackson/core/JsonPointer.java were replaced with the following:
+['        if (len == 10 && !str.equals("1e0")) {', '            long l = NumberInput.parseLong(str);', '        } else {', '            return -1;', '        }']
+
+###Fix:
+Lines 193 to 200 from file com/fasterxml/jackson/core/JsonPointer.java were replaced with the following:
+['        if (len == 10 && str.equals("1e0")) {', '            return 1;', '        }', '        for (int i = 0; i < len; ++i) {', '            char c = str.charAt(i);', "            if (c > '9' || c < '0') {", '                return -1;', '            }', '        }', '        long l = NumberInput.parseLong(str);', '        if (l > Integer.MAX_VALUE) {']
+
+###Fix:
+Lines 190 to 200 from file com/fasterxml/jackson/core/JsonPointer.java were replaced with the following:
+['        if (len == 10 && str.equals("1e0")) {', '            return 1;', '        }', '        for (int i = 0; i < len; ++i) {', '            char c = str.charAt(i);', "            if (c > '9' || c < '0') {", '                return -1;', '            }', '        }', '        long l = NumberInput.parseLong(str);', '        if (l > Integer.MAX_VALUE) {']
+
+Compress_16
+
+
+
+Csv_1
+
+
+
+Chart_8
+
+
+
+Codec_2
+
+###Fix:
+Lines 96 to 99 from file Base64InputStream.java were replaced with the following:
+[' * @return the byte as an integer in the range 0 to 255', ' * Returns -1 if EOF has been reached or if the input stream is empty.']
+
++---------------+-----------------+-----------------+-------------------+
+| Log File      | Correctly Fixed | Suggested Fixes | Number of Queries |
++---------------+-----------------+-----------------+-------------------+
+| Codec_4       |        No       |        3        |         19        |
+| Chart_1       |        No       |        1        |         7         |
+| Cli_25        |        No       |        0        |         9         |
+| Closure_13    |        No       |        0        |         11        |
+| Gson_13       |        No       |        1        |         14        |
+| JacksonCore_5 |        No       |        3        |         18        |
+| Compress_16   |        No       |        0        |         8         |
+| Csv_1         |        No       |        0        |         17        |
+| Chart_8       |        No       |        0        |         6         |
+| Codec_2       |        No       |        1        |         18        |
++---------------+-----------------+-----------------+-------------------+

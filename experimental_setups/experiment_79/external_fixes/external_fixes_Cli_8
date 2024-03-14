@@ -1,0 +1,48 @@
+{
+  "org/apache/commons/cli/HelpFormatter.java#812": "pos = findWrapPos(text, width, nextLineTabStop, len(text));"
+}
+{  }
+
+{  }
+
+{    }
+
+
+{ 
+  "org/apache/commons/cli/HelpFormatter.java#812#": "pos = findWrapPos(text, width, nextLineTabStop + 1);"
+}{
+    "812": "// pos = findWrapPos(text, width, nextLineTabStop); // Commenting out the line causing the bug"
+}{
+  "812": "pos = findWrapPos(text, width, nextLineTabStop, true);"
+}{ "812": "pos = findWrapPos(text, width, nextLineTabStop, false);" }{ "812": "// pos = findWrapPos(text, width, nextLineTabStop); // Commented out the original line causing the bug" }
+{ "812": "// pos = findWrapPos(text, width, nextLineTabStop); // Commented out the original line to debug the issue and prevent the incorrect calculation of text wrap position" }
+{ "812": "// pos = findWrapPos(text, width, nextLineTabStop); // Commented out due to suspected bug in findWrapPos method handling whitespace characters improperly" }
+{ "812": "//pos = findWrapPos(text, width, nextLineTabStop);" }
+{ "812": "            pos = findWrapPos(text, width, nextLineTabStop, true);" }{
+    "1": {
+        "812": "// pos = findWrapPos(text, width, nextLineTabStop); // Commented out the original line"
+    },
+    "2": {
+        "812": "pos = findWrapPos(text, width, nextLineTabStop - 1);"
+    },
+    "3": {
+        "812": "pos = findWrapPos(text.trim(), width, nextLineTabStop);"
+    }
+}
+{ "812": "// pos = findWrapPos(text, width, nextLineTabStop); // Commented out to disable the existing buggy line" }
+{ "812": "// pos = findWrapPos(text, width, nextLineTabStop); // Commenting out the problematic line for further investigation" }
+{ "812": "// pos = findWrapPos(text, width, nextLineTabStop);\n// Adding a comment to temporarily disable the line causing the bug" }
+{ "812": "// pos = findWrapPos(text, width, nextLineTabStop); // Commenting out the original line causing the bug" }{
+  "possible_fixes": [
+    {
+      "812": "// pos = findWrapPos(text, width, nextLineTabStop); // Commenting out the line causing the bug"
+    },
+    {
+      "812": "pos = findWrapPos(text, width, nextLineTabStop - 1); // Adjusting the tab stop by subtracting 1"
+    },
+    {
+      "812": "pos = findWrapPos(text.trim(), width, nextLineTabStop); // Trimming the text before calculating wrap position"
+    }
+  ]
+}
+{ "812": "pos = findWrapPos(text, width, nextLineTabStop + 1);" }

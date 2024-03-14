@@ -5,7 +5,7 @@ def test_agent_initialization(agent: Agent):
     assert agent.ai_config.ai_name == "Base"
     assert agent.history.messages == []
     assert agent.cycle_budget is None
-    assert "You are Base" in agent.system_prompt
+    assert "You are Base" in str(agent.prompt_dictionary)
 
 
 def test_execute_command_plugin(agent: Agent):

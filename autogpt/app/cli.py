@@ -87,6 +87,12 @@ import click
     multiple=True,
     help="AI goal override; may be used multiple times to pass multiple goals",
 )
+@click.option(
+    "--experiment-file",
+    type=str,
+    multiple=False,
+    help="the path to the file containing the configuration of the agent for the experiment.",
+)
 @click.pass_context
 def main(
     ctx: click.Context,
@@ -108,6 +114,7 @@ def main(
     ai_name: Optional[str],
     ai_role: Optional[str],
     ai_goal: tuple[str],
+    experiment_file: str
 ) -> None:
     """
     Welcome to AutoGPT an experimental open-source application showcasing the capabilities of the GPT-4 pushing the boundaries of AI.
@@ -140,6 +147,7 @@ def main(
             ai_name=ai_name,
             ai_role=ai_role,
             ai_goals=ai_goal,
+            experiment_file=experiment_file
         )
 
 

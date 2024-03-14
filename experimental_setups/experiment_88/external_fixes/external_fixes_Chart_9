@@ -1,0 +1,10 @@
+{
+    "944": "        if (endIndex < 0 || startIndex < 0) {"
+}{   }
+
+{  }
+
+{  
+    "944": "if (endIndex <= 0) {"
+}
+{  }

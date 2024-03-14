@@ -1,0 +1,94 @@
+Experiment Results: experiment_20
+
+Number of Bugs: 11
+Correctly fixed bugs: 0
+Total Suggested Fixes: 9
+
+The list of suggested fixes:
+Chart_9
+
+###Fix:
+Lines 945 to 946 from file org/jfree/data/time/TimeSeries.java were replaced with the following:
+['emptyRange = (endIndex < 0);']
+
+###Fix:
+Lines 944 to 944 from file org/jfree/data/time/TimeSeries.java were replaced with the following:
+['emptyRange = (endIndex < startIndex);']
+
+Codec_4
+
+
+
+Chart_1
+
+###Fix:
+Lines 1797 to 1799 from file org/jfree/chart/renderer/category/AbstractCategoryItemRenderer.java were replaced with the following:
+['if (dataset == null) {', '    int seriesCount = dataset.getRowCount();', '    // existing code here', '}']
+
+Cli_25
+
+###Fix:
+Lines 825 to 825 from file org/apache/commons/cli/HelpFormatter.java were replaced with the following:
+['nextLineTabStop = width - 2;']
+
+###Fix:
+Lines 825 to 825 from file org/apache/commons/cli/HelpFormatter.java were replaced with the following:
+['nextLineTabStop = width - 2;']
+
+###Fix:
+Lines 825 to 825 from file src/java/org/apache/commons/cli/HelpFormatter.java were replaced with the following:
+['nextLineTabStop = width - 2;']
+
+Codec_3
+
+
+
+Closure_13
+
+
+
+Cli_8
+
+
+
+Closure_14
+
+
+
+Closure_10
+
+
+
+Chart_8
+
+
+
+Codec_2
+
+###Fix:
+Lines 446 to 446 from file org/apache/commons/codec/binary/Base64.java were replaced with the following:
+['if (lineLength >= 0) {']
+
+###Fix:
+Lines 446 to 446 from file org/apache/commons/codec/binary/Base64.java were replaced with the following:
+['if (lineLength >= 0) {']
+
+###Fix:
+Lines 446 to 446 from file org/apache/commons/codec/binary/Base64.java were replaced with the following:
+['if (lineLength >= 0) {']
+
++------------+-----------------+-----------------+-------------------+
+| Log File   | Correctly Fixed | Suggested Fixes | Number of Queries |
++------------+-----------------+-----------------+-------------------+
+| Chart_9    |        No       |        2        |         11        |
+| Codec_4    |        No       |        0        |         2         |
+| Chart_1    |        No       |        1        |         13        |
+| Cli_25     |        No       |        3        |         20        |
+| Codec_3    |        No       |        0        |         1         |
+| Closure_13 |        No       |        0        |         5         |
+| Cli_8      |        No       |        0        |         9         |
+| Closure_14 |        No       |        0        |         1         |
+| Closure_10 |        No       |        0        |         10        |
+| Chart_8    |        No       |        0        |         20        |
+| Codec_2    |        No       |        3        |         11        |
++------------+-----------------+-----------------+-------------------+

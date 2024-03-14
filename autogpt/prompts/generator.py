@@ -28,38 +28,21 @@ class PromptGenerator:
             )
             return f'{self.label}: "{self.name}", params: ({params_string})'
 
-    constraints: list[str]
     commands: list[Command]
-    resources: list[str]
-    best_practices: list[str]
     command_registry: CommandRegistry | None
 
+
     def __init__(self):
-        self.constraints = []
         self.commands = []
-        self.best_practices = []
         self.command_registry = None
-        self.simple_patterns = []
-        self.debugging_hints = []
-        self.work_plan = []
-
-    def add_constraint(self, constraint: str) -> None:
-        """
-        Add a constraint to the constraints list.
-
-        Args:
-            constraint (str): The constraint to be added.
-        """
-        self.constraints.append(constraint)
+        #self.simple_patterns = []
+        self.general_guidelines: list[str] = []
 
     def add_simple_pattern(self, pattern: str) -> None:
         self.simple_patterns.append(pattern)
 
-    def add_debugging_hint(self, hint:str) -> None:
-        self.debugging_hints.append(hint)
-
-    def add_work_plan(self, step:str) -> None:
-        self.work_plan.append(step)
+    def add_general_guidelines(self, line:str) -> None:
+        self.general_guidelines.append(line)
 
     def add_command(
         self,
@@ -92,15 +75,6 @@ class PromptGenerator:
             )
         )
 
-    def add_best_practice(self, best_practice: str) -> None:
-        """
-        Add an item to the list of best practices.
-
-        Args:
-            best_practice (str): The best practice item to be added.
-        """
-        self.best_practices.append(best_practice)
-
     def _generate_numbered_list(self, items: list[str], start_at: int = 1) -> str:
         """
         Generate a numbered list containing the given items.
@@ -117,11 +91,8 @@ class PromptGenerator:
     def generate_prompt_string(
         self,
         *,
-        additional_constraints: list[str] = [],
-        additional_best_practices: list[str] = [],
-        additional_debugging_hints: list[str] = [],
         additional_simple_patterns: list[str] = [],
-        additional_work_plan: list[str] = []
+        additional_guidelines: list[str] = []
     ) -> str:
         """
         Generate a prompt string based on the constraints, commands, resources,
@@ -130,26 +101,25 @@ class PromptGenerator:
         Returns:
             str: The generated prompt string.
         """
-
-        return (
-            "## Constraints\n"
-            "You operate within the following constraints:\n"
-            f"{self._generate_numbered_list(self.constraints + additional_constraints)}\n\n"
-            "## Commands\n"
-            "You have access to the following commands:\n"
-            f"{self._generate_commands()}\n\n"
-            "## Best practices\n"
-            f"{self._generate_numbered_list(self.best_practices + additional_best_practices)}\n\n"
-            "## Debugging hints\n"
-            "Here are some general debugging tips that you can benefit from:\n"
-            f"{self._generate_numbered_list(self.debugging_hints + additional_debugging_hints)}\n\n"
-            "## Simple Bugs patterns\n"
-            "Here is a list of some frequent simple bugs patterns:\n"
-            f"{self._generate_numbered_list(self.simple_patterns + additional_simple_patterns)}\n\n"
-            "## Initial plan of work\n"
-            "The following is a generic initial plan that you can start from and customize accordingly:\n"
-            f"{self._generate_numbered_list(self.work_plan + additional_work_plan)}\n"
-        )
+        with open("fix_format") as ffmt:
+            fix_format = ffmt.read()
+        return {
+            "commands": [
+                "## Commands",
+                "You have access to the following commands (EXCLUSIVELY):",
+                f"{self._generate_commands()}",
+            ],
+            "general guidelines":[
+                "## General guidelines:",
+                "Try to adhere to the following guidlines to the best of your ability:",
+                f"{self._generate_numbered_list(self.general_guidelines + additional_guidelines)}",
+            ],
+            "fix format": [
+                "## The format of the fix",
+                "This is the description of the json format in which you should write your fixes (respect this format when calling the commands write_fix and try_fixes):",
+                fix_format
+            ]
+        }
 
     def _generate_commands(self) -> str:
         command_strings = []

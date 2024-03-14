@@ -1,0 +1,9 @@
+{
+  "307": "//if (!_hasSegments)  return _currentSegment; //commented out the problematic line causing NullPointerException"
+}{
+  "307": "// if (!_hasSegments)  return _currentSegment;"
+}{
+    "com/fasterxml/jackson/core/util/TextBuffer.java#307": "if (!_hasSegments) { return _currentSegment == null ? null : _currentSegment; }"
+}{
+    "307": "if (!_hasInit) ensureInitialized(); // Add this line to ensure the TextBuffer is properly initialized before accessing _currentSegment"
+}

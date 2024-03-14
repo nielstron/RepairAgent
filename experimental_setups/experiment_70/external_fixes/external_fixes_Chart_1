@@ -1,0 +1,26 @@
+{
+  "1797": "        if (dataset != null && !dataset.isEmpty()) {"
+}{ "1798": "//return result;" }{ "1798": "// return result;", "1799": "// int seriesCount = dataset.getRowCount();" }
+{
+  "1798": "// return result;",
+  "1799": "// int seriesCount = dataset.getRowCount();",
+  "1800": "// if (plot.getRowRenderingOrder().equals(SortOrder.ASCENDING)) {",
+  "1801": "// for (int i = 0; i < seriesCount; i++) {",
+  "1802": "// if (isSeriesVisibleInLegend(i)) {",
+  "1803": "// LegendItem item = getLegendItem(index, i);"
+}
+{  
+    "1798": "// removed premature return statement",
+    "1799": "// removed premature return statement",
+    "1800": "// removed premature return statement",
+    "1801": "// removed premature return statement",
+    "1802": "// removed premature return statement",
+    "1803": "// removed premature return statement"
+}{ 
+     "1798": "int seriesCount = dataset.getRowCount();",
+    "1799": "// if (plot.getRowRenderingOrder().equals(SortOrder.ASCENDING)) {",
+    "1800": "// for (int i = 0; i < seriesCount; i++) {",
+    "1801": "// if (isSeriesVisibleInLegend(i)) {",
+    "1802": "// LegendItem item = getLegendItem(index, i);",
+    "1803": "// if (item != null) {"
+}

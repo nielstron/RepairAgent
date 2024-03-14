@@ -1,0 +1,221 @@
+
+{
+    "file_name": "com/google/javascript/jscomp/ControlFlowAnalysis.java",
+    "modifications": [
+        {
+            "line_number": 767,
+            "modified_line": "              cfa.createEdge(fromNode, Branch.UNCOND, finallyNode, false);"
+        }
+    ]
+}
+    {
+        "file_name": "com/google/javascript/jscomp/ControlFlowAnalysis.java",
+        "modifications": [
+            {
+                "line_number": 767,
+                "modified_line": "              cfa.createEdge(fromNode, Branch.UNCOND, finallyNode); // Fixing the edge creation"
+            }
+        ]
+    }
+   
+
+                                                                                                    
+    {
+        "file_name": "com/google/javascript/jscomp/CheckMissingReturnTest.java",
+        "modifications": [
+            {
+                "line_number": 210,
+                "modified_line": "    testNotMissing(\"number\", \"var a = f(); try { alert(); if (a > 0) return 1; }\" +\n        \"finally { a = 5; } return 2;\");"
+            }
+        ]
+    }
+ 	
+
+     {
+        "file_name": "com/google/javascript/jscomp/ControlFlowAnalysis.java",
+        "insertions": [],
+        "deletions": [],
+        "modifications": [
+            {
+                "line_number": 767,
+                "modified_line": "return computeFollowNode(fromNode, parent, cfa);"
+            }
+        ]
+    }
+    
+     {
+        "file_name": "com/google/javascript/jscomp/CheckMissingReturnTest.java",
+        "insertions": [
+            {
+                "line_number": 210,
+                "new_lines": [
+                    "        return 0;"
+                ]
+            }
+        ],
+        "deletions": [],
+        "modifications": []
+    }
+    
+  {
+    "file_name": "com/google/javascript/jscomp/ControlFlowAnalysis.java",
+    "insertions": [],
+    "deletions": [],
+    "modifications": [
+      {
+        "line_number": 767,
+        "modified_line": "return computeFollowNode(fromNode, parent, cfa);"
+      }
+    ]
+  }
+ 
+                                                                                                    
+  {
+    "file_name": "com/google/javascript/jscomp/ControlFlowAnalysis.java",
+    "insertions": [],
+    "deletions": [],
+    "modifications": [
+      {
+        "line_number": 767,
+        "modified_line": "return computeFollowNode(fromNode, parent, cfa); // Adding missing return statement"
+      }
+    ]
+  }
+ 
+    {
+        "file_name": "com/google/javascript/jscomp/ControlFlowAnalysis.java",
+        "insertions": [
+            {
+                "line_number": 767,
+                "new_lines": [
+                    "return computeFollowNode(fromNode, parent, cfa); // Adding missing return statement"
+                ]
+            }
+        ],
+        "deletions": [],
+        "modifications": []
+    }
+
+  {
+    "file_name": "com/google/javascript/jscomp/ControlFlowAnalysis.java",
+    "insertions": [
+      {
+        "line_number": 767,
+        "new_lines": [
+          "return computeFollowNode(fromNode, parent, cfa); // Adding missing return statement"
+        ]
+      }
+    ],
+    "deletions": [],
+    "modifications": []
+  }
+ 
+    {
+        "file_name": "com/google/javascript/jscomp/ControlFlowAnalysis.java",
+        "insertions": [
+            {
+                "line_number": 767,
+                "new_lines": [
+                    "        return computeFollowNode(fromNode, parent, cfa); // Adding missing return statement"
+                ]
+            }
+        ],
+        "deletions": [],
+        "modifications": []
+    }
+
+{
+    "file_name": "com/google/javascript/jscomp/ControlFlowAnalysis.java",
+    "insertions": [],
+    "deletions": [],
+    "modifications": [
+        {
+            "line_number": 767,
+            "modified_line": "return computeFollowNode(fromNode, parent, cfa); // Adding missing return statement"
+        }
+    ]
+}
+    {
+        "file_name": "com/google/javascript/jscomp/ControlFlowAnalysis.java",
+        "insertions": [],
+        "deletions": [],
+        "modifications": [
+            {
+                "line_number": 767,
+                "modified_line": "return computeFollowNode(fromNode, parent, cfa); // Adding missing return statement"
+            }
+        ]
+    }
+
+  {
+    "file_name": "com/google/javascript/jscomp/ControlFlowAnalysis.java",
+    "insertions": [],
+    "deletions": [],
+    "modifications": [
+      {
+        "line_number": 767,
+        "modified_line": "return computeFollowNode(fromNode, parent, cfa); // Adding missing return statement"
+      }
+    ]
+  }
+ 
+  {
+    "file_name": "com/google/javascript/jscomp/ControlFlowAnalysis.java",
+    "insertions": [],
+    "deletions": [],
+    "modifications": [
+      {
+        "line_number": 767,
+        "modified_line": "return computeFollowNode(fromNode, parent, cfa); // Adding missing return statement"
+      }
+    ]
+  }
+ 
+   {
+      "file_name": "com/google/javascript/jscomp/ControlFlowAnalysis.java",
+      "insertions": [
+        {
+          "line_number": 767,
+          "new_lines": [
+            "return computeFollowNode(fromNode, parent, cfa); // Adding missing return statement"
+          ]
+        }
+      ],
+      "deletions": [],
+      "modifications": []
+    }
+  {
+    "file_name": "com/google/javascript/jscomp/ControlFlowAnalysis.java",
+    "insertions": [],
+    "deletions": [],
+    "modifications": [
+      {
+        "line_number": 767,
+        "modified_line": "return computeFollowNode(fromNode, parent, cfa); // Adding missing return statement"
+      }
+    ]
+  }
+ 
+  {
+    "file_name": "com/google/javascript/jscomp/ControlFlowAnalysis.java",
+    "insertions": [],
+    "deletions": [],
+    "modifications": [
+      {
+        "line_number": 767,
+        "modified_line": "return computeFollowNode(fromNode, parent, cfa); // Adding missing return statement at the end of the method"
+      }
+    ]
+  }
+ 
+    {
+        "file_name": "com/google/javascript/jscomp/ControlFlowAnalysis.java",
+        "insertions": [],
+        "deletions": [],
+        "modifications": [
+            {
+                "line_number": 767,
+                "modified_line": "return computeFollowNode(fromNode, parent, cfa); // Adding missing return statement at the end of the method"
+            }
+        ]
+    }

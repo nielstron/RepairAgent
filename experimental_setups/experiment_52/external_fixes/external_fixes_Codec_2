@@ -1,0 +1,21 @@
+{
+  "446": "            if (lineLength > 0 && modulus == 0) {"
+}{
+  "org/apache/commons/codec/binary/Base64.java#446#": "if (lineLength > 0 && (encodedData[length - 1] == '\r' || encodedData[length - 1] == '\n')) {"
+}{
+  "org/apache/commons/codec/binary/Base64.java#446": "if (lineLength > 0 && pos < buf.length) {"
+}{
+  "446": "            if (lineLength > 0 && (pos + lineSeparator.length) < buf.length) {"
+}{
+  "org/apache/commons/codec/binary/Base64.java#446": "if (lineLength > 0 && pos > 0) {"
+}{
+  "org/apache/commons/codec/binary/Base64.java#446": "if (lineLength > 0 && pos > 0) {"
+}{
+  "org/apache/commons/codec/binary/Base64.java#446": "if (lineLength > 0 && lineLength % 4 == 0) {"
+}{
+  "org/apache/commons/codec/binary/Base64.java#446": "if (lineLength > 0 && pos > 0) {"
+}{
+    "org/apache/commons/codec/binary/Base64.java#446": "if (lineLength > 0 && pos > 0) {"
+}{
+    "org/apache/commons/codec/binary/Base64.java#446": "            if (lineLength > 0 && lineLength != pos) {"
+}

@@ -1,5 +1,6 @@
 import subprocess
 import os
+import argparse
 
 def checkout_project(project_name, version):
     write_to = os.path.join("auto_gpt_workspace", "{}_{}_buggy".format(project_name.lower(), version))
@@ -13,15 +14,9 @@ def checkout_project(project_name, version):
         print(f"Checkout failed with error: {e}")
 
 
-projects_list = [("Chart", 1), ("Cli", 8), ("Chart", 8),
-                 ("Chart", 9), ("Cli", 25), ("Closure", 10),
-                 ("Closure", 13), ("Closure", 14), ("Codec", 2),
-                 ("Codec", 3), ("Codec", 4), ("Compress", 1),
-                 ("Compress", 16), ("Compress", 19), ("Csv", 1),
-                 ("Csv", 4), ("Gson", 13), ("Gson", 15),
-                 ("JacksonCore", 5), ("JacksonCore", 8)]
+parser = argparse.ArgumentParser()
+parser.add_argument("project")
+parser.add_argument("index")
+args = parser.parse_args()
 
-
-for project, bug_number in projects_list:
-    checkout_project(project, bug_number)
-
+checkout_project(args.project, args.index)

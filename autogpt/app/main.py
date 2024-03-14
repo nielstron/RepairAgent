@@ -54,7 +54,10 @@ def run_auto_gpt(
     ai_name: Optional[str] = None,
     ai_role: Optional[str] = None,
     ai_goals: tuple[str] = tuple(),
+    experiment_file: str = None
 ):
+    if not experiment_file:
+        raise ValueError("Cannot proceed without experiment file")
     # Configure logging before we do anything else.
     logger.set_level(logging.DEBUG if debug else logging.INFO)
 
@@ -169,6 +172,7 @@ def run_auto_gpt(
         triggering_prompt=DEFAULT_TRIGGERING_PROMPT,
         ai_config=ai_config,
         config=config,
+        experiment_file = experiment_file
     )
 
     run_interaction_loop(agent)
@@ -208,7 +212,7 @@ def run_interaction_loop(
     # These contain both application config and agent config, so grab them here.
     config = agent.config
     ai_config = agent.ai_config
-    logger.debug(f"{ai_config.ai_name} System Prompt: {agent.system_prompt}")
+    logger.debug(f"{ai_config.ai_name} System Prompt: {str(agent.prompt_dictionary)}")
 
     cycle_budget = cycles_remaining = _get_cycle_budget(
         config.continuous_mode, config.continuous_limit
@@ -532,9 +536,9 @@ def print_assistant_thoughts(
     assistant_thoughts_criticism = None
 
     assistant_thoughts = assistant_reply_json_valid.get("thoughts", {})
-    assistant_thoughts_text = remove_ansi_escape(assistant_thoughts.get("text", ""))
+    #assistant_thoughts_text = remove_ansi_escape(assistant_thoughts.get("text", ""))
     if assistant_thoughts:
-        assistant_thoughts_reasoning = remove_ansi_escape(
+        """assistant_thoughts_reasoning = remove_ansi_escape(
             assistant_thoughts.get("reasoning", "")
         )
         assistant_thoughts_plan = remove_ansi_escape(assistant_thoughts.get("plan", ""))
@@ -543,11 +547,12 @@ def print_assistant_thoughts(
         )
         assistant_thoughts_speak = remove_ansi_escape(
             assistant_thoughts.get("speak", "")
-        )
+        )"""
     logger.typewriter_log(
-        f"{ai_name.upper()} THOUGHTS:", Fore.YELLOW, assistant_thoughts_text
+        f"{ai_name.upper()} THOUGHTS:", Fore.YELLOW, str(assistant_thoughts)
     )
-    logger.typewriter_log("REASONING:", Fore.YELLOW, str(assistant_thoughts_reasoning))
+    #logger.typewriter_log("REASONING:", Fore.YELLOW, str(assistant_thoughts_reasoning))
+    """
     if assistant_thoughts_plan:
         logger.typewriter_log("PLAN:", Fore.YELLOW, "")
         # If it's a list, join it into a string
@@ -568,7 +573,6 @@ def print_assistant_thoughts(
             say_text(assistant_thoughts_speak, config)
         else:
             logger.typewriter_log("SPEAK:", Fore.YELLOW, f"{assistant_thoughts_speak}")
-
-
+    """
 def remove_ansi_escape(s: str) -> str:
     return s.replace("\x1B", "")

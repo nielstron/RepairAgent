@@ -1,0 +1,12 @@
+{
+    "org/jfree/data/time/TimeSeries.java#944": "if (endIndex <= 0) {"
+}{
+    "944": "if (endIndex <= 0) {"
+}{
+    "944": "// if (endIndex < 0) {"
+}{
+    "944": "// if (endIndex < 0) { // Redundant check causing the issue, removing it",
+    "945": "emptyRange = true;"
+}{
+  "944": "// Removing redundant check of endIndex < 0"
+}

@@ -37,10 +37,10 @@ OpenAIChatParser = Callable[[str], dict]
 
 class OpenAIModelName(str, enum.Enum):
     ADA = "text-embedding-ada-002"
-    GPT3 = "gpt-3.5-turbo-1106"
-    GPT3_16K = "gpt-3.5-turbo-1106"
-    GPT4 = "gpt-4-0613"
-    GPT4_32K = "gpt-4-32k-0613"
+    GPT3 = "gpt-3.5-turbo-0125"
+    GPT3_16K = "gpt-3.5-turbo-0125"
+    GPT4 = "gpt-4-0301"
+    GPT4_32K = "gpt-4-32k-0301"
 
 
 OPEN_AI_EMBEDDING_MODELS = {
@@ -63,7 +63,7 @@ OPEN_AI_LANGUAGE_MODELS = {
         provider_name=ModelProviderName.OPENAI,
         prompt_token_cost=0.0015,
         completion_token_cost=0.002,
-        max_tokens=4096,
+        max_tokens=16000,
     ),
     OpenAIModelName.GPT3_16K: LanguageModelProviderModelInfo(
         name=OpenAIModelName.GPT3,

@@ -1,0 +1,13 @@
+{
+    "944": "if (endIndex < startIndex) {"
+}{
+    "944": "if (endIndex <= 0) {"
+}{
+    "944": "if (endIndex <= 0) {"
+}{
+  "944": "if (endIndex < 0 && !emptyRange) {"
+}{
+  "944": "if (endIndex >= 0) {"
+}{
+  "944": "if (endIndex >= 0) {"
+}

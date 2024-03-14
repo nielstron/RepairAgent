@@ -1,0 +1,28 @@
+
+{
+    "file_name": "org/apache/commons/csv/CSVParser.java",
+    "modifications": [
+        {
+            "line_number": 288,
+            "modified_line": "        return headerMap != null ? new LinkedHashMap<>(this.headerMap) : null;"
+        }
+    ]
+}
+{
+    "file_name": "org/apache/commons/csv/CSVParser.java",
+    "modifications": [
+        {
+            "line_number": 288,
+            "modified_line": "        return headerMap != null ? new LinkedHashMap<String, Integer>(this.headerMap) : null;"
+        }
+    ]
+}
+{
+    "file_name": "org/apache/commons/csv/CSVParser.java",
+    "modifications": [
+        {
+            "line_number": 288,
+            "modified_line": "        return this.headerMap != null ? new LinkedHashMap<String, Integer>(this.headerMap) : null;"
+        }
+    ]
+}

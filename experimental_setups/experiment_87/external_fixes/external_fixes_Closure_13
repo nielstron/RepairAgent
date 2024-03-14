@@ -1,0 +1,32 @@
+
+{
+  "com/google/javascript/jscomp/PeepholeOptimizationsPass.java#126": "        //traverse(c);",
+  "com/google/javascript/jscomp/PeepholeOptimizationsPass.java#128": "        //FAULT_OF_OMISSION"
+}{ 
+    "com/google/javascript/jscomp/PeepholeOptimizationsPass.java#126": "traverse(next);"
+}{
+	"com/google/javascript/jscomp/PeepholeOptimizationsPass.java#126": "        // traverse(c); // commented out for debugging purposes",
+	"com/google/javascript/jscomp/PeepholeOptimizationsPass.java#128": "        // c = next; // commented out for debugging purposes"
+}{
+	"126": "        // traverse(c); // commented out the line causing the issue",
+	"127": "        Node next = c.getNext();",
+	"128": "        c = next;"
+}{
+  "126": "if(!shouldVisit(node)){return;}",
+  "127": "int visits = 0;",
+  "128": "do { Node c = node.getFirstChild(); while (c != null) { traverse(c); Node next = c.getNext(); c = next; } visit(node); visits++; Preconditions.checkState(visits < 10000, \"too many iterations\"); } while (shouldRetraverse(node)); exitNode(node);"
+}{
+  "126": "if(!shouldVisit(node)){return;}",
+  "127": "int visits = 0;",
+  "128": "do { Node c = node.getFirstChild(); while (c != null) { traverse(c); Node next = c.getNext(); c = next; } visit(node); visits++; Preconditions.checkState(visits < 10000, \"too many iterations\"); } while (shouldRetraverse(node)); exitNode(node);"
+}{  
+    "126": "if(!shouldVisit(node)){return;}",  
+    "127": "int visits = 0;",  
+    "128": "do { Node c = node.getFirstChild(); while (c != null) { traverse(c); Node next = c.getNext(); c = next; } visit(node); visits++; Preconditions.checkState(visits < 10000, \"too many iterations\"); } while (shouldRetraverse(node)); exitNode(node);"  
+}{
+  "1": "The bug may be related to missing or incorrect traversal logic at lines 126 to 128 in PeepholeOptimizationsPass.java. Try adding the following code snippet after line 127: 'Node next = c.getNext(); if (next == null) { break; }'"
+}{
+    "1": "com/google/javascript/jscomp/PeepholeOptimizationsPass.java#126#        if(!shouldVisit(node)){return;}",
+    "2": "com/google/javascript/jscomp/PeepholeOptimizationsPass.java#127#        int visits = 0;",
+    "3": "com/google/javascript/jscomp/PeepholeOptimizationsPass.java#128#        do { Node c = node.getFirstChild(); while (c != null) { traverse(c); Node next = c.getNext(); c = next; } visit(node); visits++; Preconditions.checkState(visits < 10000, \"too many iterations\"); } while (shouldRetraverse(node)); exitNode(node);"
+}

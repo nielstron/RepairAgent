@@ -1,0 +1,35 @@
+Experiment Results: experiment_7
+
+Number of Bugs: 2
+Correctly fixed bugs: 1
+Total Suggested Fixes: 4
+
+The list of suggested fixes:
+Math_30
+
+
+
+Lang_29
+
+###Fix:
+Lines 1672 to 1672 from file org/apache/commons/lang3/SystemUtils.java were replaced with the following:
+['    static int toJavaVersionInt(String version) {']
+
+###Fix:
+Lines 1672 to 1672 from file org/apache/commons/lang3/SystemUtils.java were replaced with the following:
+['    static int toJavaVersionInt(String version) {']
+
+###Fix:
+Lines 1672 to 1672 from file org/apache/commons/lang3/SystemUtils.java were replaced with the following:
+['    static int toJavaVersionInt(String version) {']
+
+###Fix:
+Lines 1672 to 1672 from file org/apache/commons/lang3/SystemUtils.java were replaced with the following:
+['    static int toJavaVersionInt(String version) {']
+
++----------+-----------------+-----------------+-------------------+
+| Log File | Correctly Fixed | Suggested Fixes | Number of Queries |
++----------+-----------------+-----------------+-------------------+
+| Math_30  |        No       |        0        |         1         |
+| Lang_29  |       Yes       |        4        |         20        |
++----------+-----------------+-----------------+-------------------+

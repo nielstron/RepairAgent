@@ -33,7 +33,10 @@ pydantic
 inflection
 agbenchmark
 agent-protocol>=0.1.1
-
+python-dotenv
+fuzzywuzzy
+langchain
+antlr4-python3-runtime
 # web server
 fastapi
 uvicorn
@@ -56,20 +59,10 @@ types-Markdown
 types-beautifulsoup4
 types-colorama
 types-Pillow
-
+# Related to defects4j experiment
+whatthepatch
 # OpenAI and Generic plugins import
 openapi-python-client==0.13.4
 
 # Items below this point will not be included in the Docker Image
 
-# Testing dependencies
-pytest
-asynctest
-pytest-asyncio
-pytest-benchmark
-pytest-cov
-pytest-integration
-pytest-mock
-vcrpy @ git+https://github.com/Significant-Gravitas/vcrpy.git@master
-pytest-recording
-pytest-xdist

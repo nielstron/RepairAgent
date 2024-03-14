@@ -42,9 +42,5 @@ class PromptConfig:
         with open(prompt_settings_file, encoding="utf-8") as file:
             config_params = yaml.load(file, Loader=yaml.FullLoader)
 
-        self.constraints = config_params.get("constraints", [])
-        self.resources = config_params.get("resources", [])
-        self.best_practices = config_params.get("best_practices", [])
-        self.debugging_hints = config_params.get("debugging_hints", [])
-        self.simple_patterns = config_params.get("simple_patterns", [])
-        self.work_plan = config_params.get("work_plan", [])
+        self.general_guidelines = config_params.get("general_guidelines", [])
+        #self.simple_patterns = config_params.get("simple_patterns", [])

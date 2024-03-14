@@ -1,0 +1,35 @@
+{
+    "com/fasterxml/jackson/core/JsonPointer.java#193": "char c = (i < str.length()) ? str.charAt(i++) : 0;"
+}{
+           "193": "char c = str.charAt(i);"
+      }
+{ 
+  "193": "char c = str.charAt(i); // remove the post increment operator"
+}{
+    "com/fasterxml/jackson/core/JsonPointer.java#199": "// long l = NumberInput.parseLong(str); // original line causing NumberFormatException\nString trimmedStr = str.trim();\nlong l = trimmedStr.contains(\"e\") ? Double.valueOf(trimmedStr).longValue() : NumberInput.parseLong(trimmedStr);"
+}{ "193": "char c = str.charAt(i);", "199": "// long l = NumberInput.parseLong(str);" }
+{  
+    "193": "char c = str.charAt(i);",
+    "199": "// long l = NumberInput.parseLong(str);"
+}
+{
+  "193": "char c = str.charAt(i); // remove the post-increment operator"
+}
+{ "193": "char c = str.charAt(i);" }
+{ 
+    "193": "char c = str.charAt(i);"
+}{
+  "1": "long l = Double.valueOf(str).longValue();"
+}{ 
+     }
+{ 
+                                                                                                       { 
+     "193": "char c = str.charAt(i);"
+}
+{  
+    "193": "char c = str.charAt(i);"
+}
+{ 
+        
+    "com/fasterxml/jackson/core/JsonPointer.java#199": "long l = Double.valueOf(str).longValue();"
+}

@@ -1,0 +1,21 @@
+{
+  "288": "return new LinkedHashMap<String, Integer>();"
+}{
+    "org/apache/commons/csv/CSVParser.java#288": "return this.headerMap != null ? new LinkedHashMap<String, Integer>(this.headerMap) : null;"
+}{
+  "org/apache/commons/csv/CSVParser.java#288": "return this.headerMap != null ? new LinkedHashMap<String, Integer>(this.headerMap) : null;"
+}{
+    "org/apache/commons/csv/CSVParser.java#288": "if (this.headerMap == null) return null;\nreturn new LinkedHashMap<String, Integer>(this.headerMap);"
+}{
+    "288": "return this.headerMap != null ? new LinkedHashMap<String, Integer>(this.headerMap) : new LinkedHashMap<>()"
+}{
+    "288": "return this.headerMap != null ? new LinkedHashMap<String, Integer>(this.headerMap) : new LinkedHashMap<>()"
+}{
+    "288": "return this.headerMap != null ? new LinkedHashMap<String, Integer>(this.headerMap) : new LinkedHashMap<>()"
+}{
+    "288": "return this.headerMap != null ? new LinkedHashMap<String, Integer>(this.headerMap) : new LinkedHashMap<>()"
+}{
+    "288": "return this.headerMap != null ? new LinkedHashMap<String, Integer>(this.headerMap) : new LinkedHashMap<>()"
+}{
+    "288": "return this.headerMap != null ? new LinkedHashMap<String, Integer>(this.headerMap) : new LinkedHashMap<>()"
+}

@@ -1,0 +1,21 @@
+{
+    "com/google/gson/stream/JsonWriter.java#495": "if (Double.isNaN(value) || Double.isInfinite(value) || !lenient) {"
+}{
+    "495": "    if (Double.isNaN(value) || Double.isInfinite(value) || Double.isInfinite(value)) {"
+}{
+    "com/google/gson/stream/JsonWriter.java#495": "    if (Double.isNaN(value)) {"
+}{
+  "495": "if (Double.isNaN(value) || Double.isInfinite(value)) {"
+}{
+    "495": "if (Double.isNaN(value) || Double.isInfinite(value)) {"
+}{
+  "495": "if (Double.isNaN(value) || Double.isInfinite(value) || Double.isInfinite(value)) {"
+}{
+    "495": "if (Double.isNaN(value) || Double.isInfinite(value) || Double.isInfinite(value)) {"
+}{
+  "495": "if (Double.isNaN(value) || Double.isInfinite(value)) {"
+}{
+  "495": "if (Double.isNaN(value) || Double.isInfinite(value) || Double.isInfinite(-value)) {"
+}{
+    "495": "if (Double.isNaN(value) || Double.isInfinite(value)) {"
+}

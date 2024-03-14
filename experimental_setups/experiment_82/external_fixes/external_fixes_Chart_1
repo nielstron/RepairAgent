@@ -1,0 +1,22 @@
+{
+	"1797": "if (dataset != null && dataset.getRowCount() > 0 && dataset.getColumnCount() > 0) {"
+}{  }
+
+
+{  ":org/jfree/chart/renderer/category/AbstractCategoryItemRenderer.java#1797#        if (dataset != null) {": "// if (dataset != null) {\n//     // add your fix here\n// }" }{
+    "1797": "if (dataset != null && dataset.getRowCount() > 0 && dataset.getColumnCount() > 0) {"
+}{ "1797": "if (dataset != null && dataset.getRowCount() > 0) {" }{
+    "1": {
+        "1797": "if (dataset != null && dataset.getRowCount() > 0) {"
+    }
+}{ "1797": "if (dataset != null && dataset.getRowCount() > 0) {" }
+{ "1797": "if (dataset != null && dataset.getRowCount() > 0) {" }{ "1797": "if (dataset != null && dataset.getRowCount() > 0) {" }{
+  "1": {
+    "1797": "if (dataset != null && dataset.getRowCount() > 0) {"
+  }
+}
+{ 
+  "1797": "if (dataset != null && dataset.getRowCount() > 0) { // Updated condition to check for dataset and row count" 
+}{ "1797": "if (dataset != null && dataset.getRowCount() > 0) { // Updated condition to check for dataset and row count" }{ "1797": "if (dataset != null && dataset.getRowCount() > 0) { // Updated condition to check for dataset and row count" }{
+    "1797": "if (dataset != null && dataset.getRowCount() > 0) { // Updated condition to check for dataset and row count"
+}{ "1797": "if (dataset != null && dataset.getRowCount() > 0) { // Updated condition to check for dataset and row count" }{ "1797": "if (dataset != null && dataset.getRowCount() > 0) { // Updated condition to check for dataset and row count" }

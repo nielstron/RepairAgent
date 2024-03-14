@@ -1,0 +1,11 @@
+{
+"thoughts": "Based on the failing test case and the bug location, it seems like the issue might be related to the wrapping of text in HelpFormatter.java. I should extract the code of the failing test case to understand the input and expected output better.",
+"command": {
+"name": "extract_test_code",
+"args": {
+"project_name": "Cli",
+"bug_index": 8,
+"test_file_path": "org/apache/commons/cli/HelpFormatterTest.java"
+}
+}
+}

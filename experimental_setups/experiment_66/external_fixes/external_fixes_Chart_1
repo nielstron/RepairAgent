@@ -1,0 +1,8 @@
+{
+  "1797": "if (dataset != null && dataset.getRowCount() > 0) {"
+}{
+      "1798": "// Adding a missing null check for 'dataset' to fix the bug\n        if (dataset == null) {\n            return result;\n        }"
+}
+{
+    "1800": "if (dataset == null) { // adding a null check for 'dataset' before accessing its properties"
+}

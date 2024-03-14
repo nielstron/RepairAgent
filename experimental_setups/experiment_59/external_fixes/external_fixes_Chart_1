@@ -1,0 +1,41 @@
+{
+  "1797": "if (dataset != null && !dataset.isEmpty()) {"
+}{
+      "1798": "        if (dataset == null) {"
+}{
+  "1798": "if (dataset == null) {"
+}{
+  "org/jfree/chart/renderer/category/AbstractCategoryItemRenderer.java#1798": "if (dataset == null) {"
+}{
+    "1798": "if (dataset == null) {"
+}{
+  "1798": "if (dataset == null) {"
+}{
+  "1798": "if (dataset == null) {"
+}{
+    "1798": "if (dataset == null) {"
+}{
+    "org/jfree/chart/renderer/category/AbstractCategoryItemRenderer.java#1798": "if (dataset == null) {"
+}{
+    "org/jfree/chart/renderer/category/AbstractCategoryItemRenderer.java#1798": "if (dataset == null) {"
+}{
+  "1798": "if (dataset == null) {"
+}{
+	"1798": "if (dataset == null) {"
+}{
+    "org/jfree/chart/renderer/category/AbstractCategoryItemRenderer.java#1798": "if (dataset == null) {"
+}{
+    "1797": "if (dataset == null) {"
+}{
+  "1797": "if (dataset == null) {"
+}{
+    "1797": "if (dataset == null) {"
+}{
+    "1798": "if (dataset == null) {"
+}{
+    "org/jfree/chart/renderer/category/AbstractCategoryItemRenderer.java#1797": "        if (dataset == null) {"
+}{
+    "1797": "if (dataset == null) {"
+}{
+  "1797": "if (dataset == null) {"
+}

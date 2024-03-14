@@ -1,0 +1,2 @@
+### PLAUSIBLE FIX
+{'file_name': '/workspace/Auto-GPT/auto_gpt_workspace/codec_4_buggy/src/java/org/apache/commons/codec/binary/Base64.java', 'insertions': [], 'deletions': [], 'modifications': [{'line_number': 225, 'modified_line': '        this(1);'}]}

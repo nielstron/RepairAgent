@@ -1,0 +1,81 @@
+Experiment Results: experiment_45
+
+Number of Bugs: 14
+Correctly fixed bugs: 0
+Total Suggested Fixes: 0
+
+The list of suggested fixes:
+Chart_9
+
+
+
+Codec_4
+
+
+
+Compress_1
+
+
+
+Chart_1
+
+
+
+Cli_25
+
+
+
+Codec_3
+
+
+
+Closure_13
+
+
+
+Cli_8
+
+
+
+Compress_19
+
+
+
+Closure_14
+
+
+
+Closure_10
+
+
+
+Compress_16
+
+
+
+Chart_8
+
+
+
+Codec_2
+
+
+
++-------------+-----------------+-----------------+-------------------+
+| Log File    | Correctly Fixed | Suggested Fixes | Number of Queries |
++-------------+-----------------+-----------------+-------------------+
+| Chart_9     |        No       |        0        |         1         |
+| Codec_4     |        No       |        0        |         1         |
+| Compress_1  |        No       |        0        |         1         |
+| Chart_1     |        No       |        0        |         1         |
+| Cli_25      |        No       |        0        |         1         |
+| Codec_3     |        No       |        0        |         1         |
+| Closure_13  |        No       |        0        |         1         |
+| Cli_8       |        No       |        0        |         1         |
+| Compress_19 |        No       |        0        |         1         |
+| Closure_14  |        No       |        0        |         1         |
+| Closure_10  |        No       |        0        |         1         |
+| Compress_16 |        No       |        0        |         1         |
+| Chart_8     |        No       |        0        |         1         |
+| Codec_2     |        No       |        0        |         1         |
++-------------+-----------------+-----------------+-------------------+

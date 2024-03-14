@@ -1,0 +1,29 @@
+{
+    "file_name": "org/apache/commons/cli/HelpFormatter.java",
+    "modifications": [
+        {
+            "line_number": 825,
+            "modified_line": "            nextLineTabStop = width - 1;"
+        }
+    ]
+}
+  {
+    "file_name": "org/apache/commons/cli/HelpFormatter.java",
+    "modifications": [
+      {
+        "line_number": 825,
+        "modified_line": "nextLineTabStop = width - 2;"
+      }
+    ]
+  }
+ 
+    {
+        "file_name": "org/apache/commons/cli/HelpFormatter.java",
+        "modifications": [
+            {
+                "line_number": 825,
+                "modified_line": "            nextLineTabStop = width - 2;"
+            }
+        ]
+    }
+   

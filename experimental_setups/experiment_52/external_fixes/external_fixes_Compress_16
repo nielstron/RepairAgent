@@ -1,0 +1,24 @@
+{
+  "org/apache/commons/compress/archivers/ArchiveStreamFactory.java#244": "if (tais.canReadEntryData(entry)) {",
+  "org/apache/commons/compress/archivers/ArchiveStreamFactory.java#246": "return tais;"
+}{
+    "244": "return tais.getNextEntry();",
+    "246": "//FAULT_OF_OMISSION"
+}{
+    "org/apache/commons/compress/archivers/ArchiveStreamFactory.java#244": "return null; // tais.getNextEntry();",
+    "org/apache/commons/compress/archivers/ArchiveStreamFactory.java#246": "// FAULT_OF_OMISSION"
+}{
+  "org/apache/commons/compress/archivers/ArchiveStreamFactory.java#244": "if (tais != null) { tais.getNextEntry(); }",
+  "org/apache/commons/compress/archivers/ArchiveStreamFactory.java#246": "//FAULT_OF_OMISSION"
+}{
+    "244": "throw new ArchiveException(\\"    }                                                                                                    {
+    "org/apache/commons/compress/archivers/ArchiveStreamFactory.java#244": "throw new ArchiveException(\"No Archiver found for InputStream\");"
+}{
+    "org/apache/commons/compress/archivers/ArchiveStreamFactory.java#244": "throw new ArchiveException(\"No Archiver found for InputStream\");"
+}{
+    "244": "throw new ArchiveException(\"No Archiver found for InputStream\");"
+}{
+    "244": "throw new ArchiveException(\"No Archiver found for InputStream\");"
+}{
+    "org/apache/commons/compress/archivers/ArchiveStreamFactory.java#244": "throw new ArchiveException(\"No Archiver found for InputStream\");"
+}

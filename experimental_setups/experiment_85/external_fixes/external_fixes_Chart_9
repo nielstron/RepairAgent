@@ -1,0 +1,26 @@
+{
+    "944": "if (endIndex < 0 || endIndex >= getItemCount()) {"
+}
+{ 
+                                                                                                       
+{ "944": "if (endIndex <= 0) {", "945": "emptyRange = endIndex <= 0;" }
+{ "944": "if (endIndex <= 0) {", "945": "emptyRange = endIndex <= 0;" }
+{ "944": "if (endIndex <= 0) {", "945": "emptyRange = true;" }
+{ "944": "if (endIndex <= 0) {", "945": "emptyRange = true;" }
+{ "944": "if (endIndex <= 0) {" }
+{  
+    "944": "if (endIndex <= 0) {",
+    "945": "// emptyRange = endIndex <= 0;"
+}
+{ "944": "if (endIndex <= 0) {",
+  "945": "emptyRange = endIndex <= 0;" }{  }
+{ "944": "if (endIndex <= 0) {", "945": "emptyRange = endIndex <= 0;" }
+{ "944": "if (endIndex <= 0) {" }
+{ 
+    "944": "if (endIndex <= 0) {", 
+    "945": "emptyRange = endIndex <= 0;"
+}
+{
+    "944": "if (endIndex <= 0) {",
+    "945": "emptyRange = endIndex <= 0;"
+}

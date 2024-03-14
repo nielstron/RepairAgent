@@ -1,0 +1,43 @@
+{
+    "944": "        if (endIndex < 0 || endIndex < startIndex) {"
+}
+{ 
+                                                                                                       {  }
+
+{ 
+                                                                                                       
+{ 
+    "944": "// if (endIndex < 0) {",
+    "945": "// emptyRange = true;"
+}
+{ 
+    "944": "// if (endIndex < 0) { \n", 
+    "945": "emptyRange = endIndex < 0 && startIndex <= endIndex && startIndex >= 0;" 
+}
+  {
+    "944": "if (endIndex < startIndex) {",
+    "945": "// emptyRange = true;"
+  }
+{ 
+    "944": "// if (endIndex < 0) {\n// emptyRange = true;\n// }"
+}
+{ 
+"944": "// if (endIndex < 0) { // commented out as it causes the issue\n",
+"945": "emptyRange = endIndex < 0 && startIndex <= endIndex && startIndex >= 0 && startIndex <= getItemCount() && endIndex <= getItemCount();"
+}
+{ "944": "// if (endIndex < 0) {" }
+{ 
+  "944": "if (endIndex < 0 && startIndex <= endIndex) {"
+}
+{ 
+    "944": "// if (endIndex < 0) {\n//     emptyRange = true;\n// }",
+    "945": "emptyRange = endIndex < 0 && startIndex <= endIndex;"
+}
+  { "944": "// if (endIndex < 0) {" }
+{ 
+    "944": "// if (endIndex < 0) { \n//     emptyRange = true; \n// }"
+}
+{ 
+    "944": "// if (endIndex < 0) { // commented out the original line to disable the emptyRange flag\n",
+    "945": "emptyRange = endIndex < 0 || startIndex <= endIndex && startIndex >= 0 && startIndex <= getItemCount();"
+}

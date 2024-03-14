@@ -22,7 +22,7 @@ PLUGINS_CONFIG_FILE = "plugins_config.yaml"
 PROMPT_SETTINGS_FILE = "prompt_settings.yaml"
 
 GPT_4_MODEL = "gpt-4"
-GPT_3_MODEL = "gpt-3.5-turbo"
+GPT_3_MODEL = "gpt-3.5-turbo-0125"
 
 
 class Config(SystemSettings, arbitrary_types_allowed=True):
@@ -54,7 +54,7 @@ class Config(SystemSettings, arbitrary_types_allowed=True):
     workspace_path: Optional[Path] = None
     file_logger_path: Optional[Path] = None
     # Model configuration
-    fast_llm: str = "gpt-3.5-turbo"
+    fast_llm: str = "gpt-3.5-turbo-0125"
     smart_llm: str = "gpt-4-0314"
     temperature: float = 0
     openai_functions: bool = False

@@ -1,0 +1,54 @@
+Experiment Results: experiment_64
+
+Number of Bugs: 1
+Correctly fixed bugs: 0
+Total Suggested Fixes: 10
+
+The list of suggested fixes:
+Chart_1
+
+###Fix:
+Lines:['0'] from file /workspace/Auto-GPT/auto_gpt_workspace/chart_1_buggy/tests/org/jfree/chart/renderer/category/junit/BarRendererTests.java were replaced with the following:
+{'0': '{DefaultCategoryDatasetdataset0=newDefaultCategoryDataset();dataset0.addValue(21.0,"R1","C1");dataset0.addValue(22.0,"R2","C1");DefaultCategoryDatasetdataset1=newDefaultCategoryDataset();dataset1.addValue(23.0,"R3","C1");dataset1.addValue(24.0,"R4","C1");dataset1.addValue(25.0,"R5","C1");BarRendererr=newBarRenderer();CategoryPlotplot=newCategoryPlot(dataset0,newCategoryAxis("x"),newNumberAxis("y"),r);plot.setDataset(1,dataset1);newJFreeChart(plot);LegendItemli=r.getLegendItem(1,2);assertEquals("R5",li.getLabel());assertEquals(1,li.getDatasetIndex());assertEquals(2,li.getSeriesIndex());}'}
+
+###Fix:
+Lines:['1797'] from file org/jfree/chart/renderer/category/AbstractCategoryItemRenderer.java were replaced with the following:
+{'1797': 'if (dataset == null) { return result; }'}
+
+###Fix:
+Lines:['1797'] from file org/jfree/chart/renderer/category/AbstractCategoryItemRenderer.java were replaced with the following:
+{'1797': 'if (dataset != null) {'}
+
+###Fix:
+Lines:['1797'] from file org/jfree/chart/renderer/category/AbstractCategoryItemRenderer.java were replaced with the following:
+{'1797': 'if (dataset == null) { return result; }'}
+
+###Fix:
+Lines:['1797'] from file org/jfree/chart/renderer/category/AbstractCategoryItemRenderer.java were replaced with the following:
+{'1797': 'if (dataset != null) {'}
+
+###Fix:
+Lines:['1797'] from file org/jfree/chart/renderer/category/AbstractCategoryItemRenderer.java were replaced with the following:
+{'1797': 'if (dataset == null) { return result; }'}
+
+###Fix:
+Lines:['1797'] from file org/jfree/chart/renderer/category/AbstractCategoryItemRenderer.java were replaced with the following:
+{'1797': 'if (dataset == null) { return result; }'}
+
+###Fix:
+Lines:[] from file org/jfree/chart/renderer/category/AbstractCategoryItemRenderer.java were replaced with the following:
+{}
+
+###Fix:
+Lines:['1797'] from file org/jfree/chart/renderer/category/AbstractCategoryItemRenderer.java were replaced with the following:
+{'1797': 'if (dataset != null) {'}
+
+###Fix:
+Lines:['1797'] from file org/jfree/chart/renderer/category/AbstractCategoryItemRenderer.java were replaced with the following:
+{'1797': 'if (dataset != null) {'}
+
++----------+-----------------+-----------------+-------------------+
+| Log File | Correctly Fixed | Suggested Fixes | Number of Queries |
++----------+-----------------+-----------------+-------------------+
+| Chart_1  |        No       |        10       |         26        |
++----------+-----------------+-----------------+-------------------+

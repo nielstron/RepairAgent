@@ -1,0 +1,13 @@
+{ 
+  "org/apache/commons/codec/language/DoubleMetaphone.java#455#": "            } else if (contains(value, index + 1, 4, \"IER\") || contains(value, index + 1, 4, \"IER\")) {"
+}
+{ 
+                                                                                                       
+{  
+    "org/apache/commons/codec/language/DoubleMetaphone.java#455#": "            } else if (contains(value, index + 1, 3, \"IER\")) {"
+}
+{  
+    "org/apache/commons/codec/language/DoubleMetaphone.java#455#": "            //result.append('J'); // Commenting out the original line causing the bug\n            result.append('J', 'K'); // Fixing the bug by appending both 'J' and 'K'"
+}{
+    "1": "Possible fix: Change the comparison length from 4 to 3 in the condition 'else if (contains(value, index + 1, 4, \"IER\"))' to 'else if (contains(value, index + 1, 3, \"IER\"))'. This might resolve the issue with the failing test case."
+}

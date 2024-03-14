@@ -1,0 +1,18 @@
+{ "com/google/javascript/jscomp/NodeUtil.java#1417#": "return allResultsMatch(n, MAY_BE_STRING_PREDICATE) && !mayBeString(n, false);" }{  }{ "1417": "// return allResultsMatch(n, MAY_BE_STRING_PREDICATE);" }
+{  }{ "1417": "return mayBeStringHelper(n);" }{
+  "fix1": {
+    "1417": "return mayBeStringHelper(n);"
+  },
+  "fix2": {
+    "1417": "// return allResultsMatch(n, MAY_BE_STRING_PREDICATE);"
+  }
+}
+{ "1417": "return mayBeStringHelper(n);" }{ "1417": "return mayBeStringHelper(n);" }{ "fixes": [
+    {
+        "1417": "return mayBeStringHelper(n);"
+    },
+    {
+        "1417": "// return allResultsMatch(n, MAY_BE_STRING_PREDICATE);"
+    }
+]}
+{ "1417": "return mayBeStringHelper(n);" }

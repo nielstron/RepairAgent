@@ -1,0 +1,44 @@
+Experiment Results: experiment_114
+
+Number of Bugs: 2
+Correctly fixed bugs: 1
+Total Suggested Fixes: 9
+
+The list of suggested fixes:
+Chart_1
+
+###Fix:
+[]
+
+###Fix:
+[{'file_name': 'org/jfree/chart/renderer/category/AbstractCategoryItemRenderer.java', 'modifications': [{'line_number': 1797, 'modified_line': '        if (dataset == null) {'}]}]
+
+Cli_8
+
+###Fix:
+[]
+
+###Fix:
+[{'file_name': 'org/apache/commons/cli/HelpFormatter.java', 'insertions': [], 'deletions': [], 'modifications': [{'line_number': 807, 'modified_line': '        final String padding = createPadding(nextLineTabStop + 1);'}]}]
+
+###Fix:
+[{'file_name': 'org/apache/commons/cli/HelpFormatter.java', 'insertions': [], 'deletions': [], 'modifications': [{'line_number': 807, 'modified_line': '        final String padding = createPadding(nextLineTabStop + 1);'}]}]
+
+###Fix:
+[{'file_name': 'org/apache/commons/cli/HelpFormatter.java', 'insertions': [], 'deletions': [], 'modifications': [{'line_number': 812, 'modified_line': '            pos = findWrapPos(text, width, nextLineTabStop + 1);'}]}]
+
+###Fix:
+[{'file_name': 'org/apache/commons/cli/HelpFormatter.java', 'insertions': [], 'deletions': [], 'modifications': [{'line_number': 807, 'modified_line': '        final String padding = createPadding(nextLineTabStop + 1);'}, {'line_number': 812, 'modified_line': '            pos = findWrapPos(text, width, nextLineTabStop + 1);'}]}]
+
+###Fix:
+[{'file_name': 'org/apache/commons/cli/HelpFormatter.java', 'insertions': [], 'deletions': [], 'modifications': [{'line_number': 807, 'modified_line': '        final String padding = createPadding(nextLineTabStop + 2);'}]}]
+
+###Fix:
+[{'file_name': 'org/apache/commons/cli/HelpFormatter.java', 'insertions': [], 'deletions': [], 'modifications': [{'line_number': 807, 'modified_line': '        final String padding = createPadding(nextLineTabStop + 1);'}, {'line_number': 812, 'modified_line': '            pos = findWrapPos(text, width, nextLineTabStop + 1);'}]}]
+
++----------+-----------------+-----------------+-------------------+
+| Log File | Correctly Fixed | Suggested Fixes | Number of Queries |
++----------+-----------------+-----------------+-------------------+
+| Chart_1  |       Yes       |        2        |         12        |
+| Cli_8    |        No       |        7        |         27        |
++----------+-----------------+-----------------+-------------------+

@@ -1,0 +1,12 @@
+{ 
+    "com/google/javascript/jscomp/NodeUtil.java#1417#": "return allResultsMatch(n, MAY_BE_STRING_PREDICATE, true);"
+}{ 
+    "com/google/javascript/jscomp/NodeUtil.java#1417#": "return allResultsMatch(n, MAY_BE_STRING_PREDICATE) && !mayBeString(n, false);"
+}
+{  }
+{
+  "com/google/javascript/jscomp/PeepholeFoldConstantsTest.java#581": "foldSame(\"var a=(Math.random()>0.5?1:2)+3+4;\")"
+}{ 
+  "1417": "return allResultsMatch(n, MAY_BE_STRING_PREDICATE, false);"
+}{ "com/google/javascript/jscomp/PeepholeFoldConstantsTest.java#87": "fold(\"Math.random() > 0.5 ? '1' : 2\", \"true\");", "com/google/javascript/jscomp/PeepholeFoldConstantsTest.java#97": "fold(\"Math.random() > 0.5 ? '1' : '1'\", \"true\");" }
+{ "1417": "return allResultsMatch(n, MAY_BE_NUMBER_PREDICATE);" }{ "1417": "return allResultsMatch(n, MAY_BE_STRING_PREDICATE); // Possible fix to the bug by commenting out the line" }

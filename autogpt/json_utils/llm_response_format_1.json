@@ -3,30 +3,8 @@
     "type": "object",
     "properties": {
         "thoughts": {
-            "type": "object",
-            "properties": {
-                "text": {
-                    "type": "string",
-                    "description": "thoughts"
-                },
-                "reasoning": {
-                    "type": "string"
-                },
-                "plan": {
-                    "type": "string",
-                    "description": "- short bulleted\n- list that conveys\n- long-term plan"
-                },
-                "criticism": {
-                    "type": "string",
-                    "description": "constructive self-criticism"
-                },
-                "speak": {
-                    "type": "string",
-                    "description": "thoughts summary to say to user"
-                }
-            },
-            "required": ["text", "reasoning", "plan", "criticism", "speak"],
-            "additionalProperties": false
+            "type": "string",
+            "description": "Express your thoughts based on the information that you have collected so far, the possible steps that you could do next and also your reasoning about fixing the bug in question"
         },
         "command": {
             "type": "object",

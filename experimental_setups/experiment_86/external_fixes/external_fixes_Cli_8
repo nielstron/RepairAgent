@@ -1,0 +1,13 @@
+{
+    "org/apache/commons/cli/HelpFormatter.java#812": "pos = findWrapPos(text, width, nextLineTabStop) - 1;"
+}{    }{   }
+{    }
+{                                                                                                    {
+    "812": "// pos = findWrapPos(text, width, nextLineTabStop); // Commented out the original line causing the bug"
+}
+{                                                                                                    
+{ 
+    "812": "            pos = findWrapPos(text, width, 0);"
+}{     "org/apache/commons/cli/HelpFormatter.java#812": "// pos = findWrapPos(text, width, nextLineTabStop); // Commenting out the problematic line to disable wrapping for now" }{
+	"812": "pos = findWrapPos(text, width, 0);"
+}

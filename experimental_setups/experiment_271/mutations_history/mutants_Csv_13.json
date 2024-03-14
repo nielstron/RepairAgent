@@ -1,0 +1,1 @@
+[{"file_name": "org/apache/commons/csv/CSVFormat.java", "insertions": [{"line_number": 319, "new_lines": [".withQuoteMode(QuoteMode.ALL_NON_NULL).withRecordSeparator(LF);"]}], "deletions": [], "modifications": []}]

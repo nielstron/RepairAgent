@@ -1,0 +1,39 @@
+
+{
+    "file_name": "org/apache/commons/cli/HelpFormatter.java",
+    "modifications": [
+        {
+            "line_number": 812,
+            "modified_line": "pos = findWrapPos(text, width, nextLineTabStop, 0);"
+        }
+    ]
+}
+{
+    "file_name": "org/apache/commons/cli/HelpFormatter.java",
+    "modifications": [
+        {
+            "line_number": 812,
+            "modified_line": "pos = findWrapPos(text, width, nextLineTabStop); // Adjusted line to fix the issue"
+        }
+    ]
+}
+    {
+        "file_name": "org/apache/commons/cli/HelpFormatter.java",
+        "modifications": [
+            {
+                "line_number": 812,
+                "modified_line": "pos = findWrapPos(text, width, nextLineTabStop, 0);"
+            }
+        ]
+    }
+   
+
+{
+    "file_name": "org/apache/commons/cli/HelpFormatter.java",
+    "modifications": [
+        {
+            "line_number": 812,
+            "modified_line": "pos = findWrapPos(text, width, nextLineTabStop, 0);"
+        }
+    ]
+}

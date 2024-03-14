@@ -1,0 +1,9 @@
+{  }
+
+{ 
+  "org/apache/commons/csv/CSVParser.java#288": "return headerMap != null ? new LinkedHashMap<String, Integer>(this.headerMap) : null;"
+}{
+	"288": "// return this.headerMap == null ? null : new LinkedHashMap<String, Integer>(this.headerMap);"
+}{ "288": "if (this.headerMap == null) { return null; }", "289": "return new LinkedHashMap<String, Integer>(this.headerMap);" }{ "288": "if (this.headerMap == null) { return null; }", "289": "return new LinkedHashMap<String, Integer>(this.headerMap);" }
+{ "288": "if (this.headerMap == null) { return Collections.emptyMap(); }", "289": "return new LinkedHashMap<String, Integer>(this.headerMap);" }
+{ "288": "if (this.headerMap == null) { return Collections.emptyMap(); }", "289": "return new LinkedHashMap<String, Integer>(this.headerMap);" }{ "288": "if (this.headerMap == null) { return Collections.emptyMap(); }", "289": "return new LinkedHashMap<String, Integer>(this.headerMap);" }{ "288": "if (this.headerMap == null) { return Collections.emptyMap(); }", "289": "return new LinkedHashMap<String, Integer>(this.headerMap);" }{ "288": "if (this.headerMap == null) { return Collections.emptyMap(); }", "289": "return new LinkedHashMap<String, Integer>(this.headerMap);" }

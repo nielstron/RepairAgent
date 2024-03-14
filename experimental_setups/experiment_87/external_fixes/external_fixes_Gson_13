@@ -1,0 +1,22 @@
+
+{ 
+  "com/google/gson/stream/JsonReader.java#731#": "    if (last == NUMBER_CHAR_DIGIT && fitsInLong && (value != Long.MIN_VALUE || negative)) { // Fix bug by adjusting condition to include negative sign"
+}
+{  
+    "731": "if (last == NUMBER_CHAR_DIGIT && fitsInLong && (value != Long.MIN_VALUE || negative) && peekNumber() != null) {"
+}
+{ 
+  "com/google/gson/stream/JsonReader.java#731#": "if (last == NUMBER_CHAR_DIGIT && fitsInLong && (value != Long.MIN_VALUE || negative) && bufferPos == buffer.length()) {"
+}
+{ "731": "if (last == NUMBER_CHAR_DIGIT && fitsInLong && (value != Long.MIN_VALUE || negative || value == 0)) {" }
+{ "731": "if (last == NUMBER_CHAR_DIGIT && fitsInLong && (value != Long.MIN_VALUE || negative || value == 0)) {" }
+{ "731": "if (last == NUMBER_CHAR_DIGIT && fitsInLong && (value != Long.MIN_VALUE || negative || value == 0)) {" }
+{ "731": "if (last == NUMBER_CHAR_DIGIT && fitsInLong && (value != Long.MIN_VALUE || negative || (value == 0 && peeked == PEEKED_NUMBER))) {" } 
+{ "731": "if (last == NUMBER_CHAR_DIGIT && fitsInLong && (value != Long.MIN_VALUE || negative || (value == 0 && peeked == PEEKED_NUMBER))) {" } 
+{ "731": "if (last == NUMBER_CHAR_DIGIT && fitsInLong && (value != Long.MIN_VALUE || negative || value == 0)) {" }
+{ "731": "if (last == NUMBER_CHAR_DIGIT && fitsInLong && (value != Long.MIN_VALUE || negative || value == 0)) {" }
+{ "731": "if (last == NUMBER_CHAR_DIGIT && fitsInLong && (value != Long.MIN_VALUE || negative || value == 0)) {" }
+{ "731": "if (last == NUMBER_CHAR_DIGIT && fitsInLong && (value != Long.MIN_VALUE || negative || value == 0)) {" }
+{ "731": "if (last == NUMBER_CHAR_DIGIT && fitsInLong && (value != Long.MIN_VALUE || negative || value == 0)) {" }
+{ "731": "if (last == NUMBER_CHAR_DIGIT && fitsInLong && (value != Long.MIN_VALUE || negative || value == 0)) {" }
+{ "731": "if (last == NUMBER_CHAR_DIGIT && fitsInLong && (value != Long.MIN_VALUE || negative || value == 0)) {" }

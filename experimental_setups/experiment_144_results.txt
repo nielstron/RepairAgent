@@ -1,0 +1,29 @@
+Experiment Results: experiment_144
+
+Number of Bugs: 1
+Correctly fixed bugs: 0
+Total Suggested Fixes: 5
+
+The list of suggested fixes:
+Chart_1
+
+###Fix:
+[{'file_name': 'source/org/jfree/chart/renderer/category/AbstractCategoryItemRenderer.java', 'insertions': [], 'deletions': [], 'modifications': [{'line_number': 1797, 'modified_line': '        if (dataset == null || dataset.getRowCount() == 0) {'}]}]
+
+###Fix:
+[]
+
+###Fix:
+[{'file_name': 'source/org/jfree/chart/renderer/category/AbstractCategoryItemRenderer.java', 'insertions': [], 'deletions': [], 'modifications': [{'line_number': 1797, 'modified_line': '        if (dataset != null && dataset.getRowCount() > 0) {'}]}]
+
+###Fix:
+[{'file_name': 'source/org/jfree/chart/renderer/category/AbstractCategoryItemRenderer.java', 'insertions': [], 'deletions': [], 'modifications': [{'line_number': 1797, 'modified_line': '        if (dataset != null && dataset.getRowCount() > 0) {'}]}]
+
+###Fix:
+[{'file_name': 'source/org/jfree/chart/renderer/category/AbstractCategoryItemRenderer.java', 'insertions': [], 'deletions': [], 'modifications': [{'line_number': 1797, 'modified_line': '        if (dataset != null && dataset.getRowCount() > 0 && dataset.getColumnCount() > 0) {'}]}]
+
++----------+-----------------+-----------------+-------------------+
+| Log File | Correctly Fixed | Suggested Fixes | Number of Queries |
++----------+-----------------+-----------------+-------------------+
+| Chart_1  |        No       |        5        |         16        |
++----------+-----------------+-----------------+-------------------+

@@ -1,0 +1,9 @@
+{
+  "org/apache/commons/codec/binary/Base64.java#446#": "            if (lineLength >= 0) {"
+}{
+	"org/apache/commons/codec/binary/Base64.java#446": "if (lineLength > 0 && pos < encodedData.length) {"
+}
+{ 
+  "446": "// if (lineLength > 0) {"
+}{ "446": "if (lineLength > 0 && lineLength % 4 == 0) {" }
+{ "446": "if (lineLength > 0 && lineLength % 4 == 0 && pos > 0) { // Updated line condition to include pos check" }

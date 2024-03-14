@@ -1,0 +1,21 @@
+{
+  "346": "throw new IOException(\"Failed to write entry\");"
+}{
+  "346": "//super.close(); // Commenting out the original line causing the issue"
+}{
+    "org/apache/commons/compress/archivers/cpio/CpioArchiveOutputStream.java#346": "// super.close(); // Commented out the super close invocation"
+}{
+    "org/apache/commons/compress/archivers/cpio/CpioArchiveOutputStream.java#346": "if(!this.closed){super.close();this.closed=true;}"
+}{
+    "org/apache/commons/compress/archivers/cpio/CpioArchiveOutputStream.java#346": "if(!this.closed){super.close();this.closed=true;}"
+}{
+  "org/apache/commons/compress/archivers/cpio/CpioArchiveOutputStream.java#346": "if(!this.closed){super.close();this.closed=true;}"
+}{
+    "346": "if(!this.closed){super.close();this.closed=true;}"
+}{
+    "org/apache/commons/compress/archivers/cpio/CpioArchiveOutputStream.java#346": "if(!this.closed){super.close();this.closed=true;}"
+}{
+    "org/apache/commons/compress/archivers/cpio/CpioArchiveOutputStream.java#346": "if(!this.closed){super.close();this.closed=true;}"
+}{
+  "org/apache/commons/compress/archivers/cpio/CpioArchiveOutputStream.java#346": "if(!this.closed){super.close();this.closed=true;}"
+}

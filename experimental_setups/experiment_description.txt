@@ -1,0 +1,6 @@
+
+
+
+No budget control
+Budget notification in the prompt
+Budget enforcing (forcing the model to go to the next step)

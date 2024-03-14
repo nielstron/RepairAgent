@@ -1,0 +1,26 @@
+Experiment Results: experiment_136
+
+Number of Bugs: 1
+Correctly fixed bugs: 1
+Total Suggested Fixes: 4
+
+The list of suggested fixes:
+Chart_1
+
+###Fix:
+[{'file_name': 'org/jfree/chart/renderer/category/AbstractCategoryItemRenderer.java', 'insertions': [], 'deletions': [], 'modifications': [{'line_number': 1797, 'modified_line': '        if (dataset == null) {'}]}]
+
+###Fix:
+[{'file_name': 'org/jfree/chart/renderer/category/AbstractCategoryItemRenderer.java', 'insertions': [], 'deletions': [], 'modifications': [{'line_number': 1797, 'modified_line': '        if (dataset == null) {'}]}, {'file_name': 'org/jfree/chart/plot/MultiplePiePlot.java', 'insertions': [], 'deletions': [], 'modifications': [{'line_number': 1234, 'modified_line': '        if (dataset == null) {'}]}]
+
+###Fix:
+[{'file_name': 'org/jfree/chart/renderer/category/AbstractCategoryItemRenderer.java', 'insertions': [], 'deletions': [], 'modifications': [{'line_number': 1797, 'modified_line': '        if (dataset == null) {'}]}]
+
+###Fix:
+[{'file_name': 'org/jfree/chart/renderer/category/AbstractCategoryItemRenderer.java', 'insertions': [], 'deletions': [], 'modifications': [{'line_number': 1797, 'modified_line': '        if (dataset == null) {'}]}]
+
++----------+-----------------+-----------------+-------------------+
+| Log File | Correctly Fixed | Suggested Fixes | Number of Queries |
++----------+-----------------+-----------------+-------------------+
+| Chart_1  |       Yes       |        4        |         16        |
++----------+-----------------+-----------------+-------------------+

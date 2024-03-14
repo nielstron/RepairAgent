@@ -1,0 +1,1 @@
+{"file_name": "org/apache/commons/compress/archivers/ArchiveStreamFactory.java", "modifications": [{"line_number": 244, "modified_line": "                    entry = tais.getNextEntry();"}, {"line_number": 246, "modified_line": "                    return new ArchiveInputStream(entry);"}]}

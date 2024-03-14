@@ -1,0 +1,26 @@
+Experiment Results: experiment_30
+
+Number of Bugs: 1
+Correctly fixed bugs: 0
+Total Suggested Fixes: 3
+
+The list of suggested fixes:
+Chart_1
+
+###Fix:
+Lines:['1798'] from file org/jfree/chart/renderer/category/AbstractCategoryItemRenderer.java were replaced with the following:
+{'1798': 'if (dataset == null) {'}
+
+###Fix:
+Lines:['1798'] from file org/jfree/chart/renderer/category/AbstractCategoryItemRenderer.java were replaced with the following:
+{'1798': 'if (dataset == null) {'}
+
+###Fix:
+Lines:['1798'] from file org/jfree/chart/renderer/category/AbstractCategoryItemRenderer.java were replaced with the following:
+{'1798': 'if (dataset == null) {'}
+
++----------+-----------------+-----------------+-------------------+
+| Log File | Correctly Fixed | Suggested Fixes | Number of Queries |
++----------+-----------------+-----------------+-------------------+
+| Chart_1  |        No       |        3        |         8         |
++----------+-----------------+-----------------+-------------------+

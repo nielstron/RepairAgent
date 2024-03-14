@@ -1,0 +1,225 @@
+
+    {
+        "file_name": "com/fasterxml/jackson/core/util/TextBuffer.java",
+        "modifications": [
+            {
+                "line_number": 307,
+                "modified_line": "        if (!_hasSegments || _currentSegment == null)  return NO_CHARS;"
+            }
+        ]
+    }
+
+{
+    "file_name": "com/fasterxml/jackson/core/util/TextBuffer.java",
+    "modifications": [
+        {
+            "line_number": 307,
+            "modified_line": "        if (!_hasSegments || _currentSegment == null)  return _currentSegment;"
+        }
+    ]
+}
+    {
+        "file_name": "com/fasterxml/jackson/core/util/TextBuffer.java",
+        "modifications": [
+            {
+                "line_number": 307,
+                "modified_line": "if (!_hasSegments || _currentSegment == null) return null; return _currentSegment;"
+            }
+        ]
+    }
+   
+
+{
+    "file_name": "com/fasterxml/jackson/core/util/TextBuffer.java",
+    "insertions": [],
+    "deletions": [],
+    "modifications": [
+        {
+            "line_number": 307,
+            "modified_line": "if (!_hasSegments || _currentSegment == null) return _currentSegment;"
+        }
+    ]
+}
+    {
+        "file_name": "com/fasterxml/jackson/core/util/TextBuffer.java",
+        "insertions": [],
+        "deletions": [],
+        "modifications": [
+            {
+                "line_number": 307,
+                "modified_line": "if (!_hasSegments || _currentSegment == null) return _currentSegment;"
+            }
+        ]
+    }
+
+    {
+        "file_name": "com/fasterxml/jackson/core/util/TextBuffer.java",
+        "insertions": [],
+        "deletions": [],
+        "modifications": [
+            {
+                "line_number": 307,
+                "modified_line": "if (!_hasSegments || _currentSegment == null) return _currentSegment;"
+            }
+        ]
+    }
+   
+    {
+        "file_name": "com/fasterxml/jackson/core/util/TextBuffer.java",
+        "insertions": [],
+        "deletions": [],
+        "modifications": [
+            {
+                "line_number": 307,
+                "modified_line": "if (!_hasSegments || _currentSegment == null) return _currentSegment;"
+            }
+        ]
+    }
+   
+{
+    "file_name": "com/fasterxml/jackson/core/util/TextBuffer.java",
+    "insertions": [],
+    "deletions": [],
+    "modifications": [
+        {
+            "line_number": 307,
+            "modified_line": "if (!_hasSegments || _currentSegment == null) return _currentSegment;"
+        }
+    ]
+}
+    {
+        "file_name": "com/fasterxml/jackson/core/util/TextBuffer.java",
+        "insertions": [],
+        "deletions": [],
+        "modifications": [
+            {
+                "line_number": 307,
+                "modified_line": "if (!_hasSegments || _currentSegment == null) return _currentSegment;"
+            }
+        ]
+    }
+
+{
+    "file_name": "com/fasterxml/jackson/core/util/TextBuffer.java",
+    "insertions": [],
+    "deletions": [],
+    "modifications": [
+        {
+            "line_number": 307,
+            "modified_line": "if (!_hasSegments || _currentSegment == null) return _currentSegment;"
+        }
+    ]
+}
+{
+    "file_name": "com/fasterxml/jackson/core/util/TextBuffer.java",
+    "insertions": [],
+    "deletions": [],
+    "modifications": [
+        {
+            "line_number": 307,
+            "modified_line": "if (!_hasSegments || _currentSegment == null) return _currentSegment;"
+        }
+    ]
+}
+{
+    "file_name": "com/fasterxml/jackson/core/util/TextBuffer.java",
+    "insertions": [],
+    "deletions": [],
+    "modifications": [
+        {
+            "line_number": 307,
+            "modified_line": "if (!_hasSegments || _currentSegment == null) return _currentSegment;"
+        }
+    ]
+}
+    {
+        "file_name": "com/fasterxml/jackson/core/util/TextBuffer.java",
+        "insertions": [],
+        "deletions": [],
+        "modifications": [
+            {
+                "line_number": 307,
+                "modified_line": "if (!_hasSegments || _currentSegment == null) return _currentSegment;"
+            }
+        ]
+    }
+
+{
+    "file_name": "com/fasterxml/jackson/core/util/TextBuffer.java",
+    "insertions": [],
+    "deletions": [],
+    "modifications": [
+        {
+            "line_number": 307,
+            "modified_line": "if (!_hasSegments || _currentSegment == null) return _currentSegment;"
+        }
+    ]
+}
+{
+    "file_name": "com/fasterxml/jackson/core/util/TextBuffer.java",
+    "insertions": [],
+    "deletions": [],
+    "modifications": [
+        {
+            "line_number": 307,
+            "modified_line": "if (!_hasSegments || _currentSegment == null) return _currentSegment;"
+        }
+    ]
+}
+{
+    "file_name": "com/fasterxml/jackson/core/util/TextBuffer.java",
+    "insertions": [],
+    "deletions": [],
+    "modifications": [
+        {
+            "line_number": 307,
+            "modified_line": "if (!_hasSegments || _currentSegment == null) return _currentSegment;"
+        }
+    ]
+}
+    {
+        "file_name": "com/fasterxml/jackson/core/util/TextBuffer.java",
+        "insertions": [],
+        "deletions": [],
+        "modifications": [
+            {
+                "line_number": 307,
+                "modified_line": "if (!_hasSegments || _currentSegment == null) return _currentSegment;"
+            }
+        ]
+    }
+   
+{
+    "file_name": "com/fasterxml/jackson/core/util/TextBuffer.java",
+    "insertions": [],
+    "deletions": [],
+    "modifications": [
+        {
+            "line_number": 307,
+            "modified_line": "if (!_hasSegments || _currentSegment == null) return _currentSegment;"
+        }
+    ]
+} 
+
+{
+    "file_name": "com/fasterxml/jackson/core/util/TextBuffer.java",
+    "insertions": [],
+    "deletions": [],
+    "modifications": [
+        {
+            "line_number": 307,
+            "modified_line": "if (!_hasSegments || _currentSegment == null) return _currentSegment;"
+        }
+    ]
+}
+{
+    "file_name": "com/fasterxml/jackson/core/util/TextBuffer.java",
+    "insertions": [],
+    "deletions": [],
+    "modifications": [
+        {
+            "line_number": 307,
+            "modified_line": "if (!_hasSegments || _currentSegment == null) return _currentSegment;"
+        }
+    ]
+}

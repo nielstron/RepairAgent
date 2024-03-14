@@ -26,7 +26,7 @@ OPEN_AI_CHAT_MODELS = {
     info.name: info
     for info in [
         ChatModelInfo(
-            name="gpt-3.5-turbo-16k-0613",
+            name="gpt-3.5-turbo-16k-0301 ",
             prompt_token_cost=0.003,
             completion_token_cost=0.004,
             max_tokens=16384,
@@ -39,30 +39,30 @@ OPEN_AI_CHAT_MODELS = {
             max_tokens=8192,
         ),
         ChatModelInfo(
-            name="gpt-4-0613",
+            name="gpt-4-0301",
             prompt_token_cost=0.03,
             completion_token_cost=0.06,
             max_tokens=8191,
             supports_functions=True,
         ),
         ChatModelInfo(
-            name="gpt-4-32k-0314",
+            name="gpt-4-32k-0301",
             prompt_token_cost=0.06,
             completion_token_cost=0.12,
             max_tokens=32768,
         ),
         ChatModelInfo(
-            name="gpt-4-32k-0613",
+            name="gpt-4-32k-0301",
             prompt_token_cost=0.06,
             completion_token_cost=0.12,
             max_tokens=32768,
             supports_functions=True,
         ),
         ChatModelInfo(
-            name="gpt-3.5-turbo-1106",
+            name="gpt-3.5-turbo-0125",
             prompt_token_cost=0.001,
             completion_token_cost=0.002,
-            max_tokens=4096,
+            max_tokens=16000,
             supports_functions=True,
         )
 
@@ -70,10 +70,10 @@ OPEN_AI_CHAT_MODELS = {
 }
 # Set aliases for rolling model IDs
 chat_model_mapping = {
-    "gpt-3.5-turbo": "gpt-3.5-turbo-1106",
-    "gpt-3.5-turbo-16k": "gpt-3.5-turbo-1106",
-    "gpt-4": "gpt-4-0613",
-    "gpt-4-32k": "gpt-4-32k-0613",
+    "gpt-3.5-turbo": "gpt-3.5-turbo-0125",
+    "gpt-3.5-turbo-16k": "gpt-3.5-turbo-0125",
+    "gpt-4": "gpt-4-0301",
+    "gpt-4-32k": "gpt-4-32k-0301",
 }
 for alias, target in chat_model_mapping.items():
     alias_info = ChatModelInfo(**OPEN_AI_CHAT_MODELS[target].__dict__)

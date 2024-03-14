@@ -1,0 +1,36 @@
+{
+    "file_name": "com/google/javascript/jscomp/NodeUtil.java",
+    "modifications": [
+        {
+            "line_number": 1417,
+            "modified_line": "      return n.mayBeString(true, false);"
+        }
+    ]
+}
+{
+    "file_name": "com/google/javascript/jscomp/NodeUtil.java",
+    "modifications": [
+        {
+            "line_number": 1417,
+            "modified_line": "      return allResultsMatch(n, MAY_BE_STRING_OR_TYPEOF_PREDICATE);"
+        }
+    ]
+}
+{
+    "file_name": "com/google/javascript/jscomp/NodeUtil.java",
+    "modifications": [
+        {
+            "line_number": 1417,
+            "modified_line": "      return mayBeString(n, MAY_BE_STRING_PREDICATE);"
+        }
+    ]
+}
+{
+    "file_name": "com/google/javascript/jscomp/NodeUtil.java",
+    "modifications": [
+        {
+            "line_number": 1417,
+            "modified_line": "return allResultsMatch(n, MAY_BE_STRING_PREDICATE, false);"
+        }
+    ]
+}

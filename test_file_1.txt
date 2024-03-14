@@ -1,0 +1,36 @@
+1
+2
+
+4
+    if (dataset == null) {
+6
+7
+8
+9
+    // ... more new lines ...
+    // ... new lines to insert ...
+10
+11
+
+13
+    int seriesCount = dataset.getColumnCount();
+15
+    // ... additional new lines ...
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33

@@ -1,0 +1,23 @@
+
+{  
+    "1797": "        if (dataset != null && !dataset.isEmpty()) {"
+}
+{
+  "1797": "if (dataset == null) {"
+}{ 
+       "org/jfree/chart/renderer/category/AbstractCategoryItemRenderer.java#1797": "if (dataset == null) {return result;}"
+}{
+    "1797": "// if (dataset != null) {"
+}{
+	"1797": "if (dataset == null) {return result;}"
+}{ "1797": "if (dataset == null) { return result; }" }{ "1797": "if (dataset == null) { return result; }" }
+{ "1797": "if (dataset == null) { return result; }" }
+{
+  "1797": "if (dataset != null) {"
+}
+{ "1797": "if (dataset == null) { return result; }" }
+{ "1797": "if (dataset == null) { return result; }" }
+{ "1797": "if (dataset == null) { return result; }" }
+{ 
+  "1797": "if (dataset == null) { return result; }"
+}

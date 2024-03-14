@@ -1,0 +1,7 @@
+{ "259": "            if (rawCentralDirectoryData.length != expectedLength) {" }
+{
+  "org/apache/commons/compress/archivers/zip/Zip64ExtendedInformationExtraField.java#259#": "            if (rawCentralDirectoryData.length != expectedLength) { // Fix bug by updating the condition to use the correct length comparison"
+}
+{ 
+  "org/apache/commons/compress/archivers/zip/Zip64ExtendedInformationExtraField.java#259": "            if (rawCentralDirectoryData.length != expectedLength) { // Fixing the length comparison"
+}

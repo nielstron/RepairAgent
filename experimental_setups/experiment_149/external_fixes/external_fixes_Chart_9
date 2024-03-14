@@ -1,0 +1,58 @@
+
+{
+    "file_name": "org/jfree/data/time/TimeSeries.java",
+    "modifications": [
+        {
+            "line_number": 944,
+            "modified_line": "        if (endIndex < 0 || startIndex < 0) {"
+        }
+    ]
+}
+{
+    "file_name": "org/jfree/data/time/TimeSeries.java",
+    "modifications": [
+        {
+            "line_number": 944,
+            "modified_line": "        /* if (endIndex < 0) {",
+        "line_number": 945,
+            "modified_line": "            //emptyRange = true;"
+        },
+        {
+            "line_number": 946,
+            "modified_line": "        /* } */"
+        }
+    ]
+}
+{
+    "file_name": "org/jfree/data/time/TimeSeries.java",
+    "modifications": [
+        {
+            "line_number": 944,
+            "modified_line": "        // if (endIndex < 0) {"
+        }
+    ]
+}
+{
+    "file_name": "org/jfree/data/time/TimeSeries.java",
+    "modifications": [
+        {
+            "line_number": 944,
+            "modified_line": "        if (endIndex < 0 && !emptyRange) {"
+        }
+    ]
+}
+{
+    "file_name": "org/jfree/data/time/TimeSeries.java",
+    "modifications": [
+        {
+            "line_number": 944,
+            "modified_line": "// if (endIndex < 0) {"
+        }
+    ]
+}
+{
+    "file_name": "org/jfree/data/time/TimeSeries.java",
+    "insertions": [],
+    "deletions": [944],
+    "modifications": []
+}

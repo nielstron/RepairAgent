@@ -1,0 +1,17 @@
+
+{ "812": "// pos = findWrapPos(text, width, nextLineTabStop);" }
+{  }
+{
+    "812": "            pos = findWrapPos(text, width, 0);"
+}
+{ "812": "// pos = findWrapPos(text, width, nextLineTabStop); // Commented out the original line to temporarily disable it" }{  "org/apache/commons/cli/HelpFormatter.java#812": "// pos = findWrapPos(text, width, nextLineTabStop); // Commenting out the current line for debugging purposes\npos = findWrapPos(text, width, nextLineTabStop) + 1;"}{
+    "812": "            pos = findWrapPos(text, width, nextLineTabStop, 0);"
+}
+{ 
+      "org/apache/commons/cli/HelpFormatter.java#812#": "pos = findWrapPos(text, width, 0);"
+}
+{                                                                                                    {
+    "812": "// pos = findWrapPos(text, width, nextLineTabStop); // Commented out the line causing the bug"
+}  {  }{
+    "812": "            pos = findWrapPos(text, width, nextLineTabStop); // Adjusted the wrapping position calculation"
+}

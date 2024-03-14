@@ -1,0 +1,43 @@
+{
+    "1797": "if (dataset != null && dataset.getRowCount() > 0) {"
+}
+{
+                                                                                                    {  }
+
+
+{
+    "1798": "if (dataset == null) {",
+    "1800": "//int seriesCount = dataset.getRowCount();"
+}{
+    "1798": "if (dataset == null) {",
+    "1800": "//int seriesCount = dataset.getRowCount();"
+}{
+    "1798": "if (dataset == null) {",
+    "1800": "//int seriesCount = dataset.getRowCount();"
+}{ 
+    "1798": "if (dataset == null) {", 
+    "1799": "int seriesCount = dataset.getRowCount();", 
+    "1800": "//if (plot.getRowRenderingOrder().equals(SortOrder.ASCENDING)) {"
+}{
+  "Possible Fix 1": {
+    "1798": "if (dataset == null) {",
+    "1800": "//int seriesCount = dataset.getRowCount();"
+  },
+  "Possible Fix 2": {
+    "1798": "if (dataset == null) {",
+    "1799": "int seriesCount = dataset.getRowCount();",
+    "1800": "//if (plot.getRowRenderingOrder().equals(SortOrder.ASCENDING)) {"
+  },
+  "Possible Fix 3": {
+    "1798": "if (dataset == null) {",
+    "1799": "int seriesCount = dataset.getRowCount();",
+    "1800": "//if (plot.getRowRenderingOrder().equals(SortOrder.ASCENDING)) {"
+  },
+  "Possible Fix 4": {
+    "1798": "if (dataset == null) {",
+    "1799": "//int seriesCount = dataset.getRowCount();",
+    "1800": "//if (plot.getRowRenderingOrder().equals(SortOrder.ASCENDING)) {"
+  }
+}
+{ "1798": "if (dataset == null) {", "1800": "//int seriesCount = dataset.getRowCount();" }
+{ "1798": "if (dataset == null) {", "1800": "//int seriesCount = dataset.getRowCount();" }

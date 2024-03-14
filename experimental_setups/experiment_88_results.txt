@@ -1,0 +1,283 @@
+Experiment Results: experiment_88
+
+Number of Bugs: 20
+Correctly fixed bugs: 4
+Total Suggested Fixes: 52
+
+The list of suggested fixes:
+Gson_15
+
+
+
+Chart_9
+
+###Fix:
+Lines:['945'] from file org/jfree/data/time/TimeSeries.java were replaced with the following:
+{'945': 'emptyRange = endIndex < 0;'}
+
+###Fix:
+Lines:['945'] from file org/jfree/data/time/TimeSeries.java were replaced with the following:
+{'945': 'emptyRange = endIndex < 0;'}
+
+###Fix:
+Lines:['944'] from file org/jfree/data/time/TimeSeries.java were replaced with the following:
+{'944': 'if (endIndex <= 0) {'}
+
+###Fix:
+Lines:['944'] from file org/jfree/data/time/TimeSeries.java were replaced with the following:
+{'944': 'if (endIndex <= 0) {'}
+
+Codec_4
+
+###Fix:
+Lines:['225'] from file org/apache/commons/codec/binary/Base64.java were replaced with the following:
+{'225': 'this(true)'}
+
+###Fix:
+Lines:['225'] from file org/apache/commons/codec/binary/Base64.java were replaced with the following:
+{'225': 'this(CHUNK_SIZE, CHUNK_SEPARATOR, urlSafe)'}
+
+Compress_1
+
+###Fix:
+Lines:['346'] from file org/apache/commons/compress/archivers/cpio/CpioArchiveOutputStream.java were replaced with the following:
+{'346': 'if(!this.closed){super.close();this.closed=true;}'}
+
+###Fix:
+Lines:['82'] from file org/apache/commons/compress/archivers/cpio/CpioArchiveInputStream.java were replaced with the following:
+{'82': 'while ((entry = in.getNextEntry()) != null) {'}
+
+Chart_1
+
+###Fix:
+Lines:['1797'] from file org/jfree/chart/renderer/category/AbstractCategoryItemRenderer.java were replaced with the following:
+{'1797': 'if (dataset != null && dataset.getRowCount() > 0) {'}
+
+###Fix:
+Lines:['1797'] from file org/jfree/chart/renderer/category/AbstractCategoryItemRenderer.java were replaced with the following:
+{'1797': 'if (dataset != null && dataset.getRowCount() > 0) {'}
+
+###Fix:
+Lines:['1797'] from file org/jfree/chart/renderer/category/AbstractCategoryItemRenderer.java were replaced with the following:
+{'1797': 'if (dataset != null && dataset.getColumnCount() > 0) {'}
+
+Cli_25
+
+###Fix:
+Lines:['825'] from file org/apache/commons/cli/HelpFormatter.java were replaced with the following:
+{'825': 'nextLineTabStop = width - 2;'}
+
+Codec_3
+
+###Fix:
+Lines:['455'] from file org/apache/commons/codec/language/DoubleMetaphone.java were replaced with the following:
+{'455': '            } else if (contains(value, index + 1, 3, "IER")) {'}
+
+###Fix:
+Lines:['455'] from file org/apache/commons/codec/language/DoubleMetaphone.java were replaced with the following:
+{'455': '            } else if (contains(value, index + 1, 4, "IER")) {'}
+
+Closure_13
+
+###Fix:
+Lines:['126'] from file com/google/javascript/jscomp/PeepholeOptimizationsPass.java were replaced with the following:
+{'126': 'traverse(root)'}
+
+###Fix:
+Lines:["// Update variable names and formatting in the failing test case 'testIssue787' to match the expected result"] from file com/google/javascript/jscomp/IntegrationTest.java were replaced with the following:
+{"// Update variable names and formatting in the failing test case 'testIssue787' to match the expected result": "// Update variable names and formatting in the failing test case 'testIssue787' to match the expected result"}
+
+###Fix:
+Lines:["// Update variable names and formatting in the failing test case 'testIssue787' to match the expected result"] from file com/google/javascript/jscomp/IntegrationTest.java were replaced with the following:
+{"// Update variable names and formatting in the failing test case 'testIssue787' to match the expected result": "// Update variable names and formatting in the failing test case 'testIssue787' to match the expected result"}
+
+###Fix:
+Lines:["// Update variable names and formatting in the failing test case 'testIssue787' to match the expected result"] from file com/google/javascript/jscomp/IntegrationTest.java were replaced with the following:
+{"// Update variable names and formatting in the failing test case 'testIssue787' to match the expected result": "// Update variable names and formatting in the failing test case 'testIssue787' to match the expected result"}
+
+Cli_8
+
+###Fix:
+Lines:['811'] from file org/apache/commons/cli/HelpFormatter.java were replaced with the following:
+{'811': 'text = padding + rtrim(text.substring(pos));'}
+
+###Fix:
+Lines:['811'] from file org/apache/commons/cli/HelpFormatter.java were replaced with the following:
+{'811': "text = padding + rtrim(text.substring(pos)) + ' ';"}
+
+###Fix:
+Lines:['811'] from file org/apache/commons/cli/HelpFormatter.java were replaced with the following:
+{'811': "text = padding + rtrim(text.substring(pos)) + ' ';"}
+
+###Fix:
+Lines:['811'] from file org/apache/commons/cli/HelpFormatter.java were replaced with the following:
+{'811': "text = padding + rtrim(text.substring(pos)) + ' ';"}
+
+JacksonCore_8
+
+###Fix:
+Lines:['307'] from file com/fasterxml/jackson/core/util/TextBuffer.java were replaced with the following:
+{'307': 'if (!_hasSegments || _currentSegment == null) return contentsAsArray();'}
+
+Gson_13
+
+###Fix:
+Lines:['731'] from file com/google/gson/stream/JsonReader.java were replaced with the following:
+{'731': 'if (last == NUMBER_CHAR_DIGIT && fitsInLong && (value != 0 || negative)) {'}
+
+###Fix:
+Lines:['731'] from file com/google/gson/stream/JsonReader.java were replaced with the following:
+{'731': 'if (last == NUMBER_CHAR_DIGIT && fitsInLong && (value != 0 || (negative && value != Long.MIN_VALUE)))'}
+
+###Fix:
+Lines:['731'] from file com/google/gson/stream/JsonReader.java were replaced with the following:
+{'731': 'if (last == NUMBER_CHAR_DIGIT && fitsInLong && (value != 0 || (negative && value != Long.MIN_VALUE)))'}
+
+###Fix:
+Lines:['731'] from file com/google/gson/stream/JsonReader.java were replaced with the following:
+{'731': 'if (last == NUMBER_CHAR_DIGIT && fitsInLong && (value != 0 && (negative || value != Long.MIN_VALUE)))'}
+
+###Fix:
+Lines:['731'] from file com/google/gson/stream/JsonReader.java were replaced with the following:
+{'731': 'if (last == NUMBER_CHAR_DIGIT && fitsInLong && (value != 0 || (negative && value != Long.MIN_VALUE)) || (value == 0 && negative)'}
+
+###Fix:
+Lines:['731'] from file com/google/gson/stream/JsonReader.java were replaced with the following:
+{'731': 'if (last == NUMBER_CHAR_DIGIT && fitsInLong && (value != 0 || (negative && value != Long.MIN_VALUE))'}
+
+Csv_4
+
+###Fix:
+Lines:['288'] from file /workspace/Auto-GPT/auto_gpt_workspace/csv_4_buggy/src/main/java/org/apache/commons/csv/CSVParser.java were replaced with the following:
+{'288': 'if (this.headerMap == null) { this.headerMap = new LinkedHashMap<>(); } return new LinkedHashMap<String, Integer>(this.headerMap);'}
+
+JacksonCore_5
+
+###Fix:
+Lines:['199'] from file com/fasterxml/jackson/core/JsonPointer.java were replaced with the following:
+{'199': 'int index = NumberInput.parseInt(str);'}
+
+###Fix:
+Lines:['199'] from file com/fasterxml/jackson/core/JsonPointer.java were replaced with the following:
+{'199': 'int index = NumberInput.parseInt(str); // Update the parsing logic to handle scientific notation properly'}
+
+Compress_19
+
+###Fix:
+Lines:['259'] from file org/apache/commons/compress/archivers/zip/Zip64ExtendedInformationExtraField.java were replaced with the following:
+{'259': 'if (rawCentralDirectoryData.length != expectedLength && rawCentralDirectoryData.length != expectedLength + 12) {'}
+
+Closure_14
+
+###Fix:
+Lines:['767'] from file com/google/javascript/jscomp/ControlFlowAnalysis.java were replaced with the following:
+{'767': 'return computeFollowNode(fromNode, parent, cfa);'}
+
+###Fix:
+Lines:['767'] from file com/google/javascript/jscomp/ControlFlowAnalysis.java were replaced with the following:
+{'767': 'return computeFollowNode(fromNode, parent, cfa);'}
+
+###Fix:
+Lines:['767'] from file com/google/javascript/jscomp/ControlFlowAnalysis.java were replaced with the following:
+{'767': 'return computeFollowNode(fromNode, parent, cfa); // Correcting the return statement logic'}
+
+Closure_10
+
+
+
+Compress_16
+
+###Fix:
+Lines:['246'] from file org/apache/commons/compress/archivers/ArchiveStreamFactory.java were replaced with the following:
+{'246': '                } catch (ArchiveException e) { // NOPMD'}
+
+###Fix:
+Lines:['246'] from file org/apache/commons/compress/archivers/ArchiveStreamFactory.java were replaced with the following:
+{'246': '                } catch (ArchiveException e) { // NOPMD'}
+
+###Fix:
+Lines:['246'] from file org/apache/commons/compress/archivers/ArchiveStreamFactory.java were replaced with the following:
+{'246': '                } catch (ArchiveException ae) { // NOPMD'}
+
+###Fix:
+Lines:['246'] from file org/apache/commons/compress/archivers/ArchiveStreamFactory.java were replaced with the following:
+{'246': '                } catch (ArchiveException e) { // NOPMD // Added comment for clarity'}
+
+Csv_1
+
+###Fix:
+Lines:['59'] from file org/apache/commons/csv/ExtendedBufferedReader.java were replaced with the following:
+{'59': "if (current == '\n' && lastChar != '\r') {"}
+
+###Fix:
+Lines:['59'] from file org/apache/commons/csv/ExtendedBufferedReader.java were replaced with the following:
+{'59': "if (current == '\n' && lastChar != '\r') {"}
+
+###Fix:
+Lines:['59'] from file org/apache/commons/csv/ExtendedBufferedReader.java were replaced with the following:
+{'59': "if (current == '\n' && lastChar == '\r') {"}
+
+###Fix:
+Lines:['59'] from file org/apache/commons/csv/ExtendedBufferedReader.java were replaced with the following:
+{'59': "if (current == '\n' && lastChar == '\n') {"}
+
+###Fix:
+Lines:['59'] from file org/apache/commons/csv/ExtendedBufferedReader.java were replaced with the following:
+{'59': "if (current == '\n' && lastChar != '\r') { // Increment lineCounter only if the current character is a newline and the last character is not a carriage return"}
+
+Chart_8
+
+###Fix:
+Lines:['175'] from file org/jfree/data/time/Week.java were replaced with the following:
+{'175': 'this(time, RegularTimePeriod.DEFAULT_TIME_ZONE, zone);'}
+
+###Fix:
+Lines:['175'] from file org/jfree/data/time/Week.java were replaced with the following:
+{'175': 'this(time, RegularTimePeriod.DEFAULT_TIME_ZONE, zone);'}
+
+###Fix:
+Lines:['175'] from file org/jfree/data/time/Week.java were replaced with the following:
+{'175': 'this(time, RegularTimePeriod.DEFAULT_TIME_ZONE, Locale.getDefault());'}
+
+Codec_2
+
+###Fix:
+Lines:['446'] from file org/apache/commons/codec/binary/Base64.java were replaced with the following:
+{'446': 'if (lineLength > 0 && lineLength % 4 == 0) {'}
+
+###Fix:
+Lines:['446'] from file org/apache/commons/codec/binary/Base64.java were replaced with the following:
+{'446': 'if (lineLength > 0 && lineLength % 4 == 0) { // Updated line condition'}
+
+###Fix:
+Lines:['446'] from file org/apache/commons/codec/binary/Base64.java were replaced with the following:
+{'446': 'if (lineLength > 0 && lineLength % 3 == 0) { // Updated line condition'}
+
+###Fix:
+Lines:['446'] from file org/apache/commons/codec/binary/Base64.java were replaced with the following:
+{'446': 'if (lineLength > 0 && lineLength % 4 == 0 && pos > 0) { // Updated line condition to include pos check'}
+
++---------------+-----------------+-----------------+-------------------+
+| Log File      | Correctly Fixed | Suggested Fixes | Number of Queries |
++---------------+-----------------+-----------------+-------------------+
+| Gson_15       |        No       |        0        |         10        |
+| Chart_9       |        No       |        4        |         10        |
+| Codec_4       |        No       |        2        |         10        |
+| Compress_1    |        No       |        2        |         10        |
+| Chart_1       |        No       |        3        |         10        |
+| Cli_25        |        No       |        1        |         10        |
+| Codec_3       |       Yes       |        2        |         10        |
+| Closure_13    |        No       |        4        |         10        |
+| Cli_8         |        No       |        4        |         10        |
+| JacksonCore_8 |       Yes       |        1        |         10        |
+| Gson_13       |        No       |        6        |         10        |
+| Csv_4         |        No       |        1        |         10        |
+| JacksonCore_5 |        No       |        2        |         10        |
+| Compress_19   |       Yes       |        1        |         6         |
+| Closure_14    |        No       |        3        |         10        |
+| Closure_10    |        No       |        0        |         10        |
+| Compress_16   |        No       |        4        |         10        |
+| Csv_1         |        No       |        5        |         10        |
+| Chart_8       |        No       |        3        |         10        |
+| Codec_2       |       Yes       |        4        |         9         |
++---------------+-----------------+-----------------+-------------------+

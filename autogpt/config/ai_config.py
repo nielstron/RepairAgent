@@ -130,12 +130,13 @@ class AIConfig:
             prompt_generator = plugin.post_prompt(prompt_generator)
 
         # Construct full prompt
-        full_prompt_parts = [
-            f"You are {self.ai_name}, {self.ai_role.rstrip('.')}.",
-            "Your decisions must always be made independently without seeking "
-            "user assistance. Play to your strengths as an LLM and pursue "
-            "simple strategies with no legal complications.",
-        ]
+        full_prompt_parts = {
+            
+            "role": f"You are {self.ai_name}, {self.ai_role.rstrip('.')}." +\
+            "Your decisions must always be made independently without seeking " +\
+            "user assistance. Play to your strengths as an LLM and pursue " +\
+            "simple strategies with no legal complications."
+        }
 
         if config.execute_local_commands:
             # add OS info to prompt
@@ -148,28 +149,23 @@ class AIConfig:
 
             full_prompt_parts.append(f"The OS you are running on is: {os_info}")
 
-        additional_constraints: list[str] = []
-        if self.api_budget > 0.0:
-            additional_constraints.append(
-                f"It takes money to let you run. "
-                f"Your API budget is ${self.api_budget:.3f}"
-            )
-
-        full_prompt_parts.append(
-            prompt_generator.generate_prompt_string(
-                additional_constraints=additional_constraints
-            )
-        )
-
         if self.ai_goals:
-            full_prompt_parts.append(
-                "\n".join(
-                    [
+            full_prompt_parts["goals"] = [
                         "## Goals",
                         "For your task, you must fulfill the following goals:",
                         *[f"{i+1}. {goal}" for i, goal in enumerate(self.ai_goals)],
                     ]
-                )
+            
+        additional_constraints: list[str] = []
+        if self.api_budget > 0.0:
+            additional_constraints["additional constraints"] = (
+                f"It takes money to let you run. "
+                f"Your API budget is ${self.api_budget:.3f}"
             )
 
-        return "\n\n".join(full_prompt_parts).strip("\n")
+        full_prompt_parts.update(
+            prompt_generator.generate_prompt_string(
+            )
+        )
+
+        return full_prompt_parts

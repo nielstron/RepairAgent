@@ -1,0 +1,227 @@
+
+    {
+        "file_name": "org/apache/commons/compress/archivers/ArchiveStreamFactory.java",
+        "modifications": [
+            {
+                "line_number": 244,
+                "modified_line": "                    entry = tais.getNextEntry();"
+            },
+            {
+                "line_number": 246,
+                "modified_line": "                    if (entry == null) {"
+            }
+        ]
+    }
+ 
+{
+    "file_name": "org/apache/commons/compress/archivers/ArchiveStreamFactory.java",
+    "modifications": [
+        {
+            "line_number": 246,
+            "modified_line": "                    return new ArchiveStreamFactory().createArchiveInputStream(in);"
+        }
+    ]
+}
+    {
+        "file_name": "org/apache/commons/compress/archivers/ArchiveStreamFactory.java",
+        "modifications": [
+            {
+                "line_number": 246,
+                "modified_line": "                } catch (ArchiveException ae) { // NOPMD"
+            }
+        ]
+    }
+   
+    {
+        "file_name": "org/apache/commons/compress/archivers/ArchiveStreamFactory.java",
+        "modifications": [
+            {
+                "line_number": 246,
+                "modified_line": "                } catch (ArchiveException ae) {"
+            }
+        ]
+    }
+   
+
+    {
+        "file_name": "org/apache/commons/compress/archivers/ArchiveStreamFactory.java",
+        "modifications": [
+            {
+                "line_number": 246,
+                "modified_line": "                } catch (ArchiveException e) { // NOPMD"
+            }
+        ]
+    }
+   
+
+    {
+        "file_name": "org/apache/commons/compress/archivers/ArchiveStreamFactory.java",
+        "modifications": [
+            {
+                "line_number": 246,
+                "modified_line": "                } catch (ArchiveException ae) { // NOPMD"
+            }
+        ]
+    }
+   
+
+{
+    "file_name": "org/apache/commons/compress/archivers/ArchiveStreamFactory.java",
+    "insertions": [],
+    "deletions": [],
+    "modifications": [
+        {
+            "line_number": 246,
+            "modified_line": "                } catch (ArchiveException e) { // NOPMD"
+        }
+    ]
+}  
+
+{
+    "file_name": "org/apache/commons/compress/archivers/ArchiveStreamFactory.java",
+    "insertions": [],
+    "deletions": [],
+    "modifications": [
+        {
+            "line_number": 246,
+            "modified_line": "                } catch (ArchiveException e) { // NOPMD"
+        }
+    ]
+}
+    {
+        "file_name": "org/apache/commons/compress/archivers/ArchiveStreamFactory.java",
+        "insertions": [],
+        "deletions": [],
+        "modifications": [
+            {
+                "line_number": 246,
+                "modified_line": "                } catch (ArchiveException ae) { // Specific exception handling for ArchiveException"
+            }
+        ]
+    }
+
+    {
+        "file_name": "org/apache/commons/compress/archivers/ArchiveStreamFactory.java",
+        "insertions": [],
+        "deletions": [],
+        "modifications": [
+            {
+                "line_number": 246,
+                "modified_line": "                } catch (ArchiveException ae) { // Specific exception handling for ArchiveException"
+            }
+        ]
+    }
+   
+    {
+        "file_name": "org/apache/commons/compress/archivers/ArchiveStreamFactory.java",
+        "insertions": [],
+        "deletions": [],
+        "modifications": [
+            {
+                "line_number": 246,
+                "modified_line": "                } catch (ArchiveException ae) { // Specific exception handling for ArchiveException"
+            }
+        ]
+    }
+
+    {
+        "file_name": "org/apache/commons/compress/archivers/ArchiveStreamFactory.java",
+        "insertions": [],
+        "deletions": [],
+        "modifications": [
+            {
+                "line_number": 246,
+                "modified_line": "                } catch (ArchiveException ae) { // Specific exception handling for ArchiveException"
+            }
+        ]
+    }
+
+    {
+        "file_name": "org/apache/commons/compress/archivers/ArchiveStreamFactory.java",
+        "insertions": [],
+        "deletions": [],
+        "modifications": [
+            {
+                "line_number": 246,
+                "modified_line": "                } catch (ArchiveException ae) { // Specific exception handling for ArchiveException"
+            }
+        ]
+    }
+
+{
+    "file_name": "org/apache/commons/compress/archivers/ArchiveStreamFactory.java",
+    "insertions": [],
+    "deletions": [],
+    "modifications": [
+        {
+            "line_number": 246,
+            "modified_line": "                } catch (ArchiveException ae) { // Specific exception handling for ArchiveException"
+        }
+    ]
+}
+{
+    "file_name": "org/apache/commons/compress/archivers/ArchiveStreamFactory.java",
+    "insertions": [],
+    "deletions": [],
+    "modifications": [
+        {
+            "line_number": 246,
+            "modified_line": "                } catch (ArchiveException ae) { // Specific exception handling for ArchiveException"
+        }
+    ]
+}
+{
+    "file_name": "org/apache/commons/compress/archivers/ArchiveStreamFactory.java",
+    "insertions": [],
+    "deletions": [],
+    "modifications": [
+        {
+            "line_number": 246,
+            "modified_line": "                } catch (ArchiveException e) { // Specific exception handling for ArchiveException"
+        }
+    ]
+}
+{
+    "file_name": "org/apache/commons/compress/archivers/ArchiveStreamFactory.java",
+    "insertions": [],
+    "deletions": [],
+    "modifications": [
+        {
+            "line_number": 246,
+            "modified_line": "                } catch (ArchiveException ae) { // Specific exception handling for ArchiveException"
+        }
+    ]
+}
+{
+    "file_name": "org/apache/commons/compress/archivers/ArchiveStreamFactory.java",
+    "insertions": [],
+    "deletions": [],
+    "modifications": [
+        {
+            "line_number": 246,
+            "modified_line": "                } catch (ArchiveException ae) { // Specific exception handling for ArchiveException"
+        }
+    ]
+}
+{
+    "file_name": "org/apache/commons/compress/archivers/ArchiveStreamFactory.java",
+    "insertions": [],
+    "deletions": [],
+    "modifications": [
+        {
+            "line_number": 246,
+            "modified_line": "                } catch (ArchiveException ae) { // Specific exception handling for ArchiveException"
+        }
+    ]
+}
+{
+    "file_name": "org/apache/commons/compress/archivers/ArchiveStreamFactory.java",
+    "insertions": [],
+    "deletions": [],
+    "modifications": [
+        {
+            "line_number": 246,
+            "modified_line": "                } catch (ArchiveException ae) { // Specific exception handling for ArchiveException"
+        }
+    ]
+}

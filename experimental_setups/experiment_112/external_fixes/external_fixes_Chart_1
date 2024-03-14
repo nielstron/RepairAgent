@@ -1,0 +1,17 @@
+{
+	"1797": "if (dataset != null && !dataset.isEmpty()) {"
+}{  }
+{
+	"1797": "dataset.addValue(1.0, \"S1\", \"C1\");"
+}{
+    "1797": "        if (dataset != null && dataset.getRowCount() > 0) {"
+}{
+	"1797": "// if (dataset != null) { // commenting out this line to prevent null pointer exception"
+}{
+	"fix1": {
+		"1797": "// Check for dataset count instead of null check\n        if (dataset != null && dataset.getRowCount() > 0) {"
+	},
+	"fix2": {
+		"1797": "// Check for dataset count and series count\n        if (dataset != null && dataset.getRowCount() > 0 && dataset.getColumnCount() > 0) {"
+	}
+}{ "1797": "        if (dataset != null && dataset.getRowCount() > 0) {" }

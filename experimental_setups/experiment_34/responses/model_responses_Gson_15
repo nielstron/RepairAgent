@@ -1,0 +1,27 @@
+```json
+{
+  "thoughts": "The bug is related to non-finite doubles, specifically when the value is NaN. The failing test case 'testNonFiniteDoublesWhenLenient' triggers the bug. I need to extract the code of the failing test case to understand the context of the failure and the expected behavior.",
+  "command": {
+    "name": "extract_test_code",
+    "args": {
+      "project_name": "Gson",
+      "bug_index": 15,
+      "test_file_path": "com.google.gson.stream.JsonWriterTest"
+    }
+  }
+}
+``````json
+{
+  "thoughts": "The failing test case 'testNonFiniteDoublesWhenLenient' involves writing non-finite double values to a JSON writer and then comparing the resulting JSON string. The bug occurs when the value is NaN. I need to analyze the code in the JsonWriter class to identify potential fixes.",
+  "command": {
+    "name": "read_range",
+    "args": {
+      "project_name": "Gson",
+      "bug_index": "15",
+      "filepath": "com/google/gson/stream/JsonWriter.java",
+      "startline": 495,
+      "endline": 495
+    }
+  }
+}
+```

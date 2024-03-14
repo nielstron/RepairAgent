@@ -1,0 +1,21 @@
+{
+  "812": "pos = findWrapPos(text, width, nextLineTabStop, 0);"
+}{
+  "org/apache/commons/cli/HelpFormatter.java#812": "pos = findWrapPos(text, width, nextLineTabStop, padding);"
+}{
+     "org/apache/commons/cli/HelpFormatter.java#812": "pos = findWrapPos(text, width, nextLineTabStop) + padding.length();"
+}{
+  "org/apache/commons/cli/HelpFormatter.java#812": "pos = findWrapPos(text, width, nextLineTabStop, pos);"
+}{
+  "812": "pos = findWrapPos(text, width, nextLineTabStop, startPos); // Updated line with an additional argument"
+}{
+  "812": "pos = findWrapPos(text, width, nextLineTabStop, startPos); // Updated line with an additional argument for startPos"
+}{
+  "812": "pos = findWrapPos(text, width, nextLineTabStop, startPos); // Updated line with an additional argument for startPos"
+}{
+    "812": "pos = findWrapPos(text, width, nextLineTabStop, startPos); // Updated line with an additional argument for startPos"
+}{
+    "812": "pos = findWrapPos(text, width, nextLineTabStop, startPos); // Updated line with an additional argument for startPos"
+}{
+  "812": "pos = findWrapPos(text, width, nextLineTabStop, startPos); // Updated line with an additional argument for startPos"
+}

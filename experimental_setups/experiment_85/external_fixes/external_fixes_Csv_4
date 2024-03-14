@@ -1,0 +1,25 @@
+{
+    "288": "// Fix for the bug: Added a null check before creating a new LinkedHashMap to avoid NullPointerException\n        if(this.headerMap == null) return new LinkedHashMap<String, Integer>();\n        return new LinkedHashMap<String, Integer>(this.headerMap);"
+}
+{  
+    "288": "//return new LinkedHashMap<String, Integer>(this.headerMap); // commented out the original line causing NullPointerException\n        if(this.headerMap != null) {\n            return new LinkedHashMap<String, Integer>(this.headerMap);\n        }\n        return null; // added a null check to prevent NullPointerException"
+}{
+	"288": "// return new LinkedHashMap<String, Integer>(); // returning an empty LinkedHashMap instead of using this.headerMap"
+}{  "288": "//return new LinkedHashMap<String, Integer>(this.headerMap); // Commented out the problematic line causing NullPointerException\n        return this.headerMap != null ? new LinkedHashMap<>(this.headerMap) : new LinkedHashMap<>();" }{
+	"288": "    if (this.headerMap == null) {",
+	"289": "        return null;",
+	"290": "    }"
+}{ "288": "if (this.headerMap == null) {", "289": "    return null;", "290": "}" }{ "288": "    if (this.headerMap == null) {", "289": "        return null;", "290": "    }", "291": "    return new LinkedHashMap<String, Integer>(this.headerMap);" }
+{ "288": "    if (this.headerMap == null) {", "289": "        this.headerMap = new HashMap<>();" } 
+{ "288": "    if (this.headerMap == null) {", "289": "        this.headerMap = new HashMap<>();" } 
+{ "288": "    if (this.headerMap == null) {", "289": "        this.headerMap = new HashMap<>();" } {
+  "1": {
+    "287": "public Map<String, Integer> getHeaderMap() {",
+    "288": "    if (this.headerMap == null) {",
+    "289": "        this.headerMap = new HashMap<>();",
+    "290": "    }",
+    "291": "    return new LinkedHashMap<String, Integer>(this.headerMap);"
+  }
+}{ "288": "//return new LinkedHashMap<String, Integer>(this.headerMap);" }
+{ "288": "        if (this.headerMap == null) {", "289": "            this.headerMap = new HashMap<>();" } 
+{ "288": "    if (this.headerMap == null) {", "289": "        this.headerMap = new HashMap<>();" } { "288": "    if (this.headerMap == null) {", "289": "        this.headerMap = new HashMap<>();" } { "288": "    if (this.headerMap == null) {", "289": "        this.headerMap = new HashMap<>();" } { "288": "    if (this.headerMap == null) {", "289": "        this.headerMap = new HashMap<>();" } 

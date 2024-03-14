@@ -1,0 +1,21 @@
+{
+  "org/apache/commons/csv/ExtendedBufferedReader.java#58#": "if (current == '\\r') {"
+}{
+  "58": "if (current == '\\r') {"
+}{
+  "org/apache/commons/csv/ExtendedBufferedReader.java#58": "if (current == '\\n' || current == '\\r') {"
+}{
+  "org/apache/commons/csv/ExtendedBufferedReader.java#58": "        if (current == '\\r' || current == '\\n') {"
+}{
+  "org/apache/commons/csv/ExtendedBufferedReader.java#58": "        if (current == '\\n' || current == '\\r') {"
+}{
+  "org/apache/commons/csv/ExtendedBufferedReader.java#58": "if (current == '\\n' || current == '\\r') {"
+}{
+  "org/apache/commons/csv/ExtendedBufferedReader.java#58": "        if (current == '\\n' || current == '\\r') {"
+}{
+  "org/apache/commons/csv/ExtendedBufferedReader.java#58": "if (current == '\\r' || current == '\\n') {"
+}{
+  "org/apache/commons/csv/ExtendedBufferedReader.java#58": "if (current == '\\n' || current == '\\r') {"
+}{
+  "org/apache/commons/csv/ExtendedBufferedReader.java#58": "        if (current == '\\n' || current == '\\r') {"
+}
