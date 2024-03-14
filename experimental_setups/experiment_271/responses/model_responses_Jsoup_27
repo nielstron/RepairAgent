@@ -39,4 +39,26 @@
 "method_name": "getCharsetFromContentType"
 }
 }
+}{
+"thoughts": "The current implementation of the getCharsetFromContentType method converts the charset to uppercase before returning it, causing a case-sensitive comparison issue. To fix the bug, I will modify the method to return the charset in lowercase to ensure a case-insensitive comparison.",
+"command": {
+"name": "write_fix",
+"args": {
+"project_name": "Jsoup",
+"bug_index": 27,
+"changes_dicts": [
+{
+"file_name": "org/jsoup/helper/DataUtil.java",
+"insertions": [],
+"deletions": [],
+"modifications": [
+{
+"line_number": 132,
+"modified_line": "            charset = charset.toLowerCase(Locale.ENGLISH);"
+}
+]
+}
+]
+}
+}
 }

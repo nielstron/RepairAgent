@@ -27768,3 +27768,197 @@
         }
     ]
 }
+{
+    "mutations": [
+        {
+            "file_name": "com/google/javascript/jscomp/FunctionInjector.java",
+            "insertions": [
+                {
+                    "line_number": 697,
+                    "new_lines": [
+                        "        // Add missing condition or logic here to fix the bug"
+                    ]
+                },
+                {
+                    "line_number": 723,
+                    "new_lines": [
+                        "        if (cArg != null && fnParam == null) {",
+                        "            return CanInlineResult.NO;",
+                        "        }"
+                    ]
+                }
+            ]
+        },
+        {
+            "file_name": "com/google/javascript/jscomp/FunctionInjector.java",
+            "insertions": [
+                {
+                    "line_number": 697,
+                    "new_lines": [
+                        "        // Add missing condition or logic here to fix the bug"
+                    ]
+                },
+                {
+                    "line_number": 723,
+                    "new_lines": [
+                        "        if (cArg == null || fnParam != null) {",
+                        "            return CanInlineResult.NO;",
+                        "        }"
+                    ]
+                }
+            ]
+        },
+        {
+            "file_name": "com/google/javascript/jscomp/FunctionInjector.java",
+            "insertions": [
+                {
+                    "line_number": 697,
+                    "new_lines": [
+                        "        // Add missing condition or logic here to fix the bug"
+                    ]
+                },
+                {
+                    "line_number": 723,
+                    "new_lines": [
+                        "        if (cArg == null && fnParam == null) {",
+                        "            return CanInlineResult.NO;",
+                        "        }"
+                    ]
+                }
+            ]
+        },
+        {
+            "file_name": "com/google/javascript/jscomp/FunctionInjector.java",
+            "insertions": [
+                {
+                    "line_number": 697,
+                    "new_lines": [
+                        "        // Add missing condition or logic here to fix the bug"
+                    ]
+                },
+                {
+                    "line_number": 723,
+                    "new_lines": [
+                        "        if (cArg != null && fnParam != null) {",
+                        "            return CanInlineResult.NO;",
+                        "        }"
+                    ]
+                }
+            ]
+        },
+        {
+            "file_name": "com/google/javascript/jscomp/FunctionInjector.java",
+            "insertions": [
+                {
+                    "line_number": 697,
+                    "new_lines": [
+                        "        // Add missing condition or logic here to fix the bug"
+                    ]
+                },
+                {
+                    "line_number": 723,
+                    "new_lines": [
+                        "        if (cArg == null && fnParam == null) {",
+                        "            return CanInlineResult.NO;",
+                        "        }"
+                    ]
+                }
+            ]
+        },
+        {
+            "file_name": "com/google/javascript/jscomp/FunctionInjector.java",
+            "insertions": [
+                {
+                    "line_number": 697,
+                    "new_lines": [
+                        "        // Add missing condition or logic here to fix the bug"
+                    ]
+                },
+                {
+                    "line_number": 723,
+                    "new_lines": [
+                        "        if (cArg != null || fnParam == null) {",
+                        "            return CanInlineResult.NO;",
+                        "        }"
+                    ]
+                }
+            ]
+        },
+        {
+            "file_name": "com/google/javascript/jscomp/FunctionInjector.java",
+            "insertions": [
+                {
+                    "line_number": 697,
+                    "new_lines": [
+                        "        // Add missing condition or logic here to fix the bug"
+                    ]
+                },
+                {
+                    "line_number": 723,
+                    "new_lines": [
+                        "        if (cArg == null && fnParam != null) {",
+                        "            return CanInlineResult.NO;",
+                        "        }"
+                    ]
+                }
+            ]
+        },
+        {
+            "file_name": "com/google/javascript/jscomp/FunctionInjector.java",
+            "insertions": [
+                {
+                    "line_number": 697,
+                    "new_lines": [
+                        "        // Add missing condition or logic here to fix the bug"
+                    ]
+                },
+                {
+                    "line_number": 723,
+                    "new_lines": [
+                        "        if (cArg != null || fnParam != null) {",
+                        "            return CanInlineResult.NO;",
+                        "        }"
+                    ]
+                }
+            ]
+        },
+        {
+            "file_name": "com/google/javascript/jscomp/FunctionInjector.java",
+            "insertions": [
+                {
+                    "line_number": 697,
+                    "new_lines": [
+                        "        // Add missing condition or logic here to fix the bug"
+                    ]
+                },
+                {
+                    "line_number": 723,
+                    "new_lines": [
+                        "        if (cArg == null || fnParam == null) {",
+                        "            return CanInlineResult.YES;",
+                        "        }"
+                    ]
+                }
+            ]
+        },
+        {
+            "file_name": "com/google/javascript/jscomp/FunctionInjector.java",
+            "insertions": [
+                {
+                    "line_number": 697,
+                    "new_lines": [
+                        "        // Add missing condition or logic here to fix the bug"
+                    ]
+                },
+                {
+                    "line_number": 723,
+                    "new_lines": [
+                        "        if (cArg != null && fnParam == null) {",
+                        "            return CanInlineResult.YES;",
+                        "        }"
+                    ]
+                }
+            ]
+        }
+    ]
+}
