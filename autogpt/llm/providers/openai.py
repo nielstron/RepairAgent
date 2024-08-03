@@ -64,7 +64,13 @@ OPEN_AI_CHAT_MODELS = {
             completion_token_cost=0.002,
             max_tokens=16000,
             supports_functions=True,
-        )
+        ),
+        ChatModelInfo(
+            name="gpt-4-1106-preview",
+            prompt_token_cost=0.03,
+            completion_token_cost=0.06,
+            max_tokens=8192,
+        ),
 
     ]
 }
