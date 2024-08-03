@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import pathlib
 import re
 from abc import ABCMeta, abstractmethod
 from typing import TYPE_CHECKING, Any, Literal, Optional
@@ -940,7 +941,9 @@ please use the indicated format and produce a list, like this:
         #    exps = eht.read().splitlines()
 
         exps = self.exps
-        with open(os.path.join("experimental_setups", exps[-1], "logs", "prompt_history_{}_{}".format(project_name, bug_index)), "a+") as patf:
+        log_dir = pathlib.Path("experimental_setups", exps[-1], "logs")
+        log_dir.mkdir(parents=True, exist_ok=True)
+        with open(os.path.join(log_dir, "prompt_history_{}_{}".format(project_name, bug_index)), "a+") as patf:
             patf.write(prompt.dump())
         
         # handle querying strategy
