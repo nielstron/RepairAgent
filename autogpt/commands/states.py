@@ -19,7 +19,7 @@ from autogpt.agents.agent import Agent
         }
 )
 def express_hypothesis(hypothesis: str, agent: Agent) -> str:
-    return "Since you have a hypothesis about the bug, the current state have been changed from 'collect information to understand the bug' to 'collect information to fix the bug'"
+    return "Since you have a hypothesis about the bug, the current state have been changed from 'collect information to understand the bug' to 'collect information to reproduce the bug'"
 
 @command(
         "discard_hypothesis",
@@ -37,7 +37,7 @@ def discard_hypothesis(reason_for_discarding: str, agent: Agent) -> str:
 
 @command(
         "go_back_to_collect_more_info",
-        "This command allows you to go back to the state 'collect information to fix the bug'. Call this command when you suggest many fixes but none of them work.",
+        "This command allows you to go back to the state 'collect information to reproduce the bug'. Call this command when you suggest many tests but none of them work.",
         {
             "reason_for_going_back":{
                 "type": "string",
@@ -47,7 +47,7 @@ def discard_hypothesis(reason_for_discarding: str, agent: Agent) -> str:
         }
 )
 def go_back_to_collect_more_info(reason_for_going_back: str, agent: Agent) -> str:
-    return "You are now back at the state 'collect information to fix the bug'"
+    return "You are now back at the state 'collect information to reproduce the bug'"
 
 
 @command(
@@ -63,9 +63,9 @@ def go_back_to_collect_more_info(reason_for_going_back: str, agent: Agent) -> st
 )
 def change_state(current_state:str, next_state_name: str, agent:Agent) -> str:
     change_possibilities = {
-        "collect information to understand the bug": ["collect information to fix the bug"],
-        "collect information to fix the bug":["trying out candidate fixes"],
-        "trying out candidate fixes": ["collect information to understand the bug", "collect information to fix the bug"]
+        "collect information to understand the bug": ["collect information to reproduce the bug"],
+        "collect information to reproduce the bug":["trying out candidate tests"],
+        "trying out candidate tests": ["collect information to understand the bug", "collect information to reproduce the bug"]
     }
     if current_state not in change_possibilities:
         return "Uknown current state, please provide the correct current state name"
@@ -76,8 +76,8 @@ def change_state(current_state:str, next_state_name: str, agent:Agent) -> str:
     
 """
 s1: collect information to understand the bug
-s2: collect information to fix the bug
-s3: trying out candidate fixes
+s2: collect information to reproduce the bug
+s3: trying out candidate tests
 
 s3 to s1: discard hypothesis
 s3 to s2: need more info

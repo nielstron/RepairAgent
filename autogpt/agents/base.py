@@ -206,7 +206,7 @@ class BaseAgent(metaclass=ABCMeta):
             "localization_info": self.localization_info,
             "test_results": self.tests_results,
             "read_files": self.read_files,
-            "suggested_fixes": self.suggested_fixes,
+            "suggested_tests": self.suggested_fixes,
             "search_queries": self.search_queries,
             "bug_report": self.bug_report,
             "bug_index": self.bug_index,
@@ -305,7 +305,7 @@ please use the indicated format and produce a list, like this:
         self.localization_info = context["localization_info"]
         self.tests_results = context["test_results"]
         self.read_files = context["read_files"]
-        self.suggested_fixes = context["suggested_fixes"]
+        self.suggested_fixes = context["suggested_tests"]
         self.search_queries = context["search_queries"]
         self.bug_report = context["bug_report"]
         self.commands_history = context["commands_history"]
@@ -329,11 +329,11 @@ please use the indicated format and produce a list, like this:
         bug_report = self.construct_bug_report_context()
         similar_calls_context = self.construct_similar_calls_context()
 
-        prelude = "This is the info we gathered so far about the bug. Unfortunately, we cannot gather any more info. You have to suggested a fixed based the following given information and ofcourse based on your knowledge."
+        prelude = "This is the info we gathered so far about the bug. Unfortunately, we cannot gather any more info. You have to suggested a test based on the following given information and of course based on your knowledge."
         context_prompt = prelude + "\n" + bug_report + "\n" + "\n" + read_files_section + "\n" + suggested_fixes_section + "\n" + search_queries + "\n" +\
-            similar_calls_context + "\n".join(self.prompt_dictionary["fix format"]) + "\n\n"
+            similar_calls_context + "\n".join(self.prompt_dictionary["test format"]) + "\n\n"
         
-        context_prompt += "Task: Suggest a list of 10 possible fixes, output a list in the following form: [fix1, fix2, ..., fix10]\n"
+        context_prompt += "Task: Suggest a list of 10 possible tests, output a list in the following form: [test1, test2, ..., test10]\n"
         
         return context_prompt
 
@@ -465,7 +465,7 @@ please use the indicated format and produce a list, like this:
                     pass
         self.commands_history = commands_history
 
-    def construct_suggested_fixes(self, command_names = ["write_range", "write_fix", "try_fixes"]):
+    def construct_suggested_fixes(self, command_names = ["write_range", "write_test", "try_tests"]):
         skip_next = False
         suggested_fixes = []
         messages_history = [msg for _, msg in enumerate(self.history)]
@@ -479,11 +479,11 @@ please use the indicated format and produce a list, like this:
                 if not self.validate_command_parsing(command_dict):
                     continue
                 if command_dict["command"]["name"] in command_names:
-                    if command_dict["command"]["name"] in ["write_range", "write_fix"]:
+                    if command_dict["command"]["name"] in ["write_range", "write_test"]:
                         changes_dicts = command_dict["command"]["args"].get("changes_dicts", [])
                         suggested_fixes.append(changes_dicts)
                     else:
-                        for f in command_dict["command"]["args"]["fixes_list"]:
+                        for f in command_dict["command"]["args"]["tests_list"]:
                             changes_dicts = f["changes_dicts"]
                             suggested_fixes.append(changes_dicts)
 
@@ -692,15 +692,15 @@ please use the indicated format and produce a list, like this:
                 if "Hypothesis discarded! You are now back at the state 'collect information to understand the bug'" in self.history[i+1].content:
                     if self.current_state != "collect information to understand the bug":
                         self.update_prompt_state("collect information to understand the bug")
-                elif "You are now back at the state 'collect information to fix the bug'" in self.history[i+1].content:
-                    if self.current_state != "collect information to fix the bug":
-                        self.update_prompt_state("collect information to fix the bug")
-                elif "Since you have a hypothesis about the bug, the current state have been changed from 'collect information to understand the bug' to 'collect information to fix the bug'" in self.history[i+1].content:
-                    if self.current_state != "collect information to fix the bug":
-                        self.update_prompt_state("collect information to fix the bug")
-                elif "\n **Note:** You are automatically switched to the state 'trying out candidate fixes'" in self.history[i+1].content:
-                    if self.current_state != "trying out candidate fixes":
-                        self.update_prompt_state("trying out candidate fixes")
+                elif "You are now back at the state 'collect information to reproduce the bug'" in self.history[i+1].content:
+                    if self.current_state != "collect information to reproduce the bug":
+                        self.update_prompt_state("collect information to reproduce the bug")
+                elif "Since you have a hypothesis about the bug, the current state have been changed from 'collect information to understand the bug' to 'collect information to reproduce the bug'" in self.history[i+1].content:
+                    if self.current_state != "collect information to reproduce the bug":
+                        self.update_prompt_state("collect information to reproduce the bug")
+                elif "\n **Note:** You are automatically switched to the state 'trying out candidate tests'" in self.history[i+1].content:
+                    if self.current_state != "trying out candidate tests":
+                        self.update_prompt_state("trying out candidate tests")
                 break
 
     def construct_hypothesises_context(self,):
@@ -728,12 +728,12 @@ please use the indicated format and produce a list, like this:
         return read_files_section
     
     def construct_fixes_context(self,):
-        suggested_fixes_section = "## Suggested fixes:\n"+"This is the list of suggested fixes so far but none of them worked:\n"
+        suggested_fixes_section = "## Suggested tests:\n"+"This is the list of suggested tests so far but none of them worked:\n"
         if self.suggested_fixes:
             for f in self.suggested_fixes:
-                suggested_fixes_section += "###Fix:\n{}\n\n".format(str(f))
+                suggested_fixes_section += "###Test:\n{}\n\n".format(str(f))
         else:
-            suggested_fixes_section += "No fixes were suggested yet.\n"
+            suggested_fixes_section += "No tests were suggested yet.\n"
         return suggested_fixes_section
     
     def construct_search_context(self,):
@@ -797,7 +797,7 @@ please use the indicated format and produce a list, like this:
     def construct_context_prompt(self,):
         
         context_prompt = "What follows are sections of the most important information you gathered so far about the current bug.\
-        Use the following info to suggest a fix for the buggy code:\n"
+        Use the following info to suggest a test for the buggy code:\n"
         
         hypothesis_string = self.construct_hypothesises_context()
         read_files_section = self.construct_read_files_context()
@@ -847,10 +847,10 @@ please use the indicated format and produce a list, like this:
             info_sections.append(search_queries)
 
         context_prompt = "What follows are sections of the most important information that we have gathered so far about the bug.\
-        Make usage of the following information to suggest mutations of fixes:\n"
+        Make usage of the following information to suggest mutations of tests:\n"
 
         context_prompt += "\n".join(info_sections)
-        context_prompt += "\n" + "\n".join(self.prompt_dictionary["fix format"])
+        context_prompt += "\n" + "\n".join(self.prompt_dictionary["test format"])
         #context_prompt += "\n" + "For reference, here is a patch that you can start mutating from (if not available create your own):\n" + str(last_patch) +"\n\n"
         with open("hints.txt") as htt:
             hints = htt.read()
@@ -858,7 +858,7 @@ please use the indicated format and produce a list, like this:
         list_example = '[{"file_name": "org/apache/commons/codec/binary/Base64.java", "insertions": [], "deletions": [], "modifications": [{"line_number": 225, "modified_line": "        this(true);"}]}, {"file_name": "org/apache/commons/codec/binary/Base64.java", "insertions": [], "deletions": [], "modifications": [{"line_number": 225, "modified_line": "        this(null);"}]}, {"file_name": "org/apache/commons/codec/binary/Base64.java", "insertions": [], "deletions": [], "modifications": [{"line_number": 225, "modified_line": "        this(1==0);"}]}, {"file_name": "org/apache/commons/codec/binary/Base64.java", "insertions": [], "deletions": [], "modifications": [{"line_number": 225, "modified_line": "        this(1 - 2);"}]}, ...]'
         context_prompt += "Here are some hints that might help you in suggesting good mutations:\n" + hints + "\n\n"
         context_prompt += detailed_buggies
-        context_prompt += "Task for assistant:  generate 30 mutants of the target buggy lines. Respect the fix format, only change values (never touch keys). For every mutant generate a full fix dictionary. Put the 30 mutants in a main list."
+        context_prompt += "Task for assistant:  generate 30 mutants of the target buggy lines. Respect the test format, only change values (never touch keys). For every mutant generate a full test dictionary. Put the 30 mutants in a main list."
         # For example: {}. Make sure your output is json parsable.".format(list_example)
 
         context_prompt += "To generate the list of your mutations, fillout the following template multiple time with different variants:\n"
@@ -875,7 +875,7 @@ please use the indicated format and produce a list, like this:
             elif isinstance(json_content, dict):
                 file_content = []
                 new_contents = []
-                if any(x in [k.lower() for k in json_content.keys()] for x in ["mutants", "mutants list", "mutants_list", "possible_mutants", "possible_mutants", "mutations", "possible mutations", "possible_mutations", "mutations_list", "mutations list", "fixes", "possible fixes", "possible_fixes", "fixes list", "fixes_list"]):
+                if any(x in [k.lower() for k in json_content.keys()] for x in ["mutants", "mutants list", "mutants_list", "possible_mutants", "possible_mutants", "mutations", "possible mutations", "possible_mutations", "mutations_list", "mutations list", "tests", "possible tests", "possible_tests", "tests list", "tests_list"]):
                     for _, v in json_content.items():
                         file_content.extend(v)
                         new_contents.extend(v)
@@ -898,7 +898,7 @@ please use the indicated format and produce a list, like this:
             
             elif isinstance(json_content, dict):
                 new_contents = []
-                if any(x in [k.lower() for k in json_content.keys()] for x in ["mutants", "mutants list", "mutants_list", "possible_mutants", "possible_mutants", "mutations", "possible mutations", "possible_mutations", "mutations_list", "mutations list", "fixes", "possible fixes", "possible_fixes", "fixes list", "fixes_list"]):
+                if any(x in [k.lower() for k in json_content.keys()] for x in ["mutants", "mutants list", "mutants_list", "possible_mutants", "possible_mutants", "mutations", "possible mutations", "possible_mutations", "mutations_list", "mutations list", "tests", "possible tests", "possible_tests", "tests list", "tests_list"]):
                     for _, v in json_content.items():
                         file_content.extend(v)
                         new_contents.extend(v)
@@ -949,11 +949,11 @@ please use the indicated format and produce a list, like this:
         # handle querying strategy
         # For now, we do not evaluate the external query
         # we just want to observe how good is it
-        if self.hyperparams["external_fix_strategy"] != 0:
-            if self.cycle_count % self.hyperparams["external_fix_strategy"] == 0:
+        if self.hyperparams["external_test_strategy"] != 0:
+            if self.cycle_count % self.hyperparams["external_test_strategy"] == 0:
                 query = self.construct_fix_query()
                 suggested_fixes = query_for_fix(query, )
-                self.save_to_json(os.path.join("experimental_setups", exps[-1], "external_fixes", "external_fixes_{}_{}.json".format(project_name, bug_index)), json.loads(suggested_fixes))
+                self.save_to_json(os.path.join("experimental_setups", exps[-1], "external_tests", "external_tests_{}_{}.json".format(project_name, bug_index)), json.loads(suggested_fixes))
 
         raw_response = create_chat_completion(
             prompt,
@@ -1054,17 +1054,17 @@ please use the indicated format and produce a list, like this:
         elif self.hyperparams["budget_control"]["name"] == "FULL-TRACK" and self.hyperparams["budget_control"]["params"]=={}:
             cycle_instruction += "\nYou have, so far, executed {} commands, you have only {} commands left.\n".format(self.cycle_count, self.hyperparams["commands_limit"]-self.cycle_count)
         elif self.hyperparams["budget_control"]["name"] == "FULL-TRACK" and self.hyperparams["budget_control"]["params"]!={}:
-            n_fixes = self.hyperparams["budget_control"]["params"]["#fixes"]
-            cycle_instruction += "\nYou have, so far, executed, {} commands and suggested {} fixes. You have {} commands left. However, you need to suggest {} fixes before consuming all the left commands.\n".format(self.cycle_count, len(self.suggested_fixes), self.hyperparams["commands_limit"]-self.cycle_count, n_fixes - len(self.suggested_fixes))
+            n_fixes = self.hyperparams["budget_control"]["params"]["#tests"]
+            cycle_instruction += "\nYou have, so far, executed, {} commands and suggested {} tests. You have {} commands left. However, you need to suggest {} tests before consuming all the left commands.\n".format(self.cycle_count, len(self.suggested_fixes), self.hyperparams["commands_limit"]-self.cycle_count, n_fixes - len(self.suggested_fixes))
         elif self.hyperparams["budget_control"]["name"]=="FORCED":
             t1 = self.hyperparams["budget_control"]["T1"]
             t2 = self.hyperparams["budget_control"]["T2"]
             if self.cycle_count >= t2:
-                self.update_prompt_state("trying out candidate fixes")
-                cycle_instruction += "\nBecause of budget constaints, you were forced to transition to the state 'trying out candidate fixes'" 
+                self.update_prompt_state("trying out candidate tests")
+                cycle_instruction += "\nBecause of budget constaints, you were forced to transition to the state 'trying out candidate tests'"
             elif self.cycle_count >= t1:
-                self.update_prompt_state("collect information to fix the bug")
-                cycle_instruction += "\nBecause of budget constaints, you were forced to transition to the state 'collect information to fix the bug'" 
+                self.update_prompt_state("collect information to reproduce the bug")
+                cycle_instruction += "\nBecause of budget constaints, you were forced to transition to the state 'collect information to reproduce the bug'"
 
         context_prompt = self.construct_context_prompt()
         prompt = ChatSequence.for_model(
@@ -1073,8 +1073,8 @@ please use the indicated format and produce a list, like this:
         
         definitions_prompt = ""
         static_sections_names = ["goals", "current state", "commands", "general guidelines"]
-        if self.current_state in ["collect information to fix the bug", "trying out candidate fixes"]:
-            static_sections_names.append("fix format")
+        if self.current_state in ["collect information to reproduce the bug", "trying out candidate tests"]:
+            static_sections_names.append("test format")
         for key in static_sections_names:
             if isinstance(self.prompt_dictionary[key], list):
                 definitions_prompt += "\n".join(self.prompt_dictionary[key]) + "\n"
@@ -1167,7 +1167,7 @@ please use the indicated format and produce a list, like this:
 
         RESPONSE_FORMAT_WITH_COMMAND = """```ts
         interface Response {
-            // Express your thoughts based on the information that you have collected so far, the possible steps that you could do next and also your reasoning about fixing the bug in question"
+            // Express your thoughts based on the information that you have collected so far, the possible steps that you could do next and also your reasoning about reproducing the bug in question"
             thoughts: string;
             command: {
                 name: string;
