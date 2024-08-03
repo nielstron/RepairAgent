@@ -34,9 +34,11 @@ generate_method_desc = "AI_generates_method_code: This function allows to use an
 
 express_hypo_desc = """ express_hypothesis: This command allows to express a hypothesis about what exactly is the bug. Call this command after you have collected enough information about the bug in the project, params: (hypothesis: string). By calling this command, you also automatically switch to the state 'collect information to reproduce the bug'. Before delving into reproduction, you should always express a hypothesis."""
 
+undo_desc = """undo_changes: Undo the changes that you made to the project and restore the original content of all files"""
+
 commands_dict = {
     "trying out candidate tests": "\n".join(["{}. {}".format(i+1, t) for i, t in enumerate(
-        [write_fix_desc, read_range_desc, go_back_desc, discard_hypothesis, goals_accomplished_desc])]),
+        [write_fix_desc, read_range_desc, go_back_desc, discard_hypothesis, undo_desc, goals_accomplished_desc])]),
     "collect information to reproduce the bug": "\n".join(["{}. {}".format(i+1, t) for i, t in enumerate(
         [search_code_desc, get_classes_desc, get_similar_desc, extract_method_desc, write_fix_desc, read_range_desc, generate_method_desc])]),
     "collect information to understand the bug": "\n".join(["{}. {}".format(i+1, t) for i, t in enumerate(

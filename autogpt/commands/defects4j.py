@@ -139,7 +139,7 @@ def run_checkout(project_name: str, bug_index:int, agent: Agent):
         logger.debug("Auto-GPT is not running in a Docker container")
         return "Tricky situation! Auto-GPT is not running in a Docker container"
 
-"""@command(
+@command(
     "undo_changes",
     "Undo the changes that you made to the project, and restore the original content of all files",
     {
@@ -155,7 +155,7 @@ def run_checkout(project_name: str, bug_index:int, agent: Agent):
 
         }
     },
-)"""
+)
 def undo_changes(project_name: str, bug_index: int, agent: Agent) -> str:
     """Undo the changes that you made to the project and restore the original content of all files
 
@@ -235,14 +235,14 @@ def run_defects4j_tests(project_name: str, bug_index:int, agent: Agent):
             if "BUILD FAILED" in result.stdout:
                 with open(os.path.join(agent.config.workspace_path, folder_name+"_test.txt"), "w") as testrf:
                     testrf.write("")
-                undo_c = undo_changes(project_name, bug_index, agent)
+                # undo_c = undo_changes(project_name, bug_index, agent)
                 return result.stdout[result.stdout.find("BUILD FAILED"):]
                 #return result.stdout
             else:
                 with open(os.path.join(agent.config.workspace_path, folder_name+"_test.txt"), "w") as testrf:
                     testrf.write(result.stdout)
                 fail_report = extract_fail_report(project_name, bug_index, agent)
-                undo_c = undo_changes(project_name, bug_index, agent)
+                # undo_c = undo_changes(project_name, bug_index, agent)
                 return fail_report
         else:
             if "BUILD FAILED" in result.stderr:
@@ -510,7 +510,7 @@ def try_tests(project_name: str, bug_index:int, tests_list, agent: Agent):
 
 @command(
     "write_range",
-    "Write a list of lines into a file, the parameter changed_lines is a dictionary that contains lines numbers as keys and the new content of that line as value (only include changed lines). The test cases are run automatically after running the changes. The changes are reverted automatically if the the test cases fail.",
+    "Write a list of lines into a file, the parameter changed_lines is a dictionary that contains lines numbers as keys and the new content of that line as value (only include changed lines). The test cases are run automatically after running the changes. The changes are permanent.",
     {
         "project_name": {
             "type": "string",
