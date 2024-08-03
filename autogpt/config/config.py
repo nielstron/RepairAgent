@@ -21,7 +21,7 @@ AZURE_CONFIG_FILE = "azure.yaml"
 PLUGINS_CONFIG_FILE = "plugins_config.yaml"
 PROMPT_SETTINGS_FILE = "prompt_settings.yaml"
 
-GPT_4_MODEL = "gpt-4"
+GPT_4_MODEL = "gpt-4-1106-preview"
 GPT_3_MODEL = "gpt-3.5-turbo-0125"
 
 
