@@ -625,11 +625,11 @@ def write_test(project_name:str, bug_index:int, changes_dicts: list, agent: Agen
             run_ret = execute_write_range(project_name, bug_index, deletion_fix, agent)
             logger.info("PROBLEM LOCATION 7")
             agent.dummy_fix = True
-    if len(missed_lines)!=0:
-        logger.info("PROBLEM LOCATION 8")
-        fix_template = create_fix_template(project_name, bug_index)
-        logger.info("PROBLEM LOCATION 9")
-        return "Your test did not target all the buggy lines. Here is the list of all the buggy lines: {}. To help you, you can fill out the following the template to generate your test {}".format(buggy_lines, fix_template)
+    # if len(missed_lines)!=0:
+    #     logger.info("PROBLEM LOCATION 8")
+    #     fix_template = create_fix_template(project_name, bug_index)
+    #     logger.info("PROBLEM LOCATION 9")
+    #     return "Your test did not target all the buggy lines. Here is the list of all the buggy lines: {}. To help you, you can fill out the following the template to generate your test {}".format(buggy_lines, fix_template)
     run_ret = execute_write_range(project_name, bug_index, changes_dicts, agent)
     if 1 == 0:
         validation_result = validate_fix_against_hypothesis(bug_report, hypothesis, fix)
