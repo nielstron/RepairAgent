@@ -1,1 +1,0 @@
-[{"file_name": "com/google/javascript/rhino/TokenStream.java", "insertions": [{"line_number": 194, "new_lines": ["        if (!Character.isJavaIdentifierStart(s.charAt(0))) { // Mutated condition to check if first character is not a valid Java identifier start"]}], "deletions": [199], "modifications": []}]

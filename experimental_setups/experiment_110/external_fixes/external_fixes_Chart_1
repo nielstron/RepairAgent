@@ -1,6 +1,0 @@
-{ 
-    "1797": "        if (dataset == null) {" 
-}{ 
-                                                                                                       {
-	"org/jfree/chart/renderer/category/AbstractCategoryItemRenderer.java#1797": "if (dataset != null && dataset.getRowCount() > 0 && dataset.getColumnCount() > 0) {"
-}

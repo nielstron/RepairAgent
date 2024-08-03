@@ -1,24 +1,26 @@
 # Versions history
 
-## AutoDebug 0.1.0
-- Try AutoGPT as is for the task of program repair on defects4j
+## RepairAgent 0.1.0
+- Try AutoGPT as-is for the task of program repair on defects4j
 
-## AutoDebug 0.2.0
+## RepairAgent 0.2.0
+### Added
+- integrated defects into the environement (docker container)
 
-## AutoDebug 0.3.0
+## RepairAgent 0.3.0
 ### Added
 - A wrapper around defects4j commands
 ### Fixed
 - remove unncessary commands from AutoGPT
 
 
-## AutoDebug 0.4.0
+## RepairAgent 0.4.0
 ### Added
 ### Fixed
 - Change of the prompt format from history of commands and their output to structured prompt with different sections of information
 - The last command and its output are added to the end of the prompt
 
-## AutoDebug 0.5.0
+## RepairAgent 0.5.0
 ### Added
 - Adding states in which the model could exist and give the model the ability to transition to according to the above sketch, the three states are:
     * Collect more info to understand the bug
@@ -28,7 +30,7 @@
 ### Fixed
 - Simplify the structure of the output of the model by replacing the thoughts dictionary with just a text field
 
-## AutoDebug 0.6.0
+## RepairAgent 0.6.0
 ### Added
 - Validate fix against hypothesis
     * Sometimes the model gives a hypothesis about the bug but then proceeds to suggest a fix that is irrelevant or does not reflect the hypothesis
@@ -46,7 +48,7 @@
     * Only keep role description as a system message
     * The conversation would always be of the form: user input, assistant output, user input…
 
-## AutoDebug 0.6.1
+## RepairAgent 0.6.1
 
 ### Added
 - Information of bug localization and initial running of test cases are added to the prompt
@@ -58,7 +60,7 @@
 - path approximation now handles dotted paths
 - fixed bug in prompt construction that lead into wrong information sections ("system"-->"user")
 
-## AutoDebug 0.6.2
+## RepairAgent 0.6.2
 
 ### Added
 - add option to query for fix after each n queries (with 0 for disabled)
@@ -84,7 +86,7 @@
 - fixed the number of suggested fixes logged at the end of each cycle len(suggested_fixes) does not work
 - handle the case of missing command name
 
-## AutoDebug 0.6.3
+## RepairAgent 0.6.3
 
 ### Added
 - save/restore the progress (context) of the agent on a given instance
@@ -104,7 +106,7 @@
     - modification in modified lines should respect a minimum threshold of similarity
 
 - create a setup where after each query, we ask chatgpt whether the collected information is enough to fix the bug and if so suggest a fix, otherwise what type of information should we get next (only provide the next needed information. we acknowledge that we might need multiple peices of information but we want you to give us only one for now. we will give you the chance to ask for more later.).
-    - At the end of each cycle we add the type of information to collect to the prompt of AutoDebug and it should produce a command that collects that information
+    - At the end of each cycle we add the type of information to collect to the prompt of RepairAgent and it should produce a command that collects that information
 
 - Execute all commands in each state (at least once then leave the model do whatever it wants)
 - produce mutations of a line

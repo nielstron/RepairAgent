@@ -1,9 +1,0 @@
-{  }
-
-{ 
-  "org/apache/commons/cli/HelpFormatter.java#812": "pos = findWrapPos(text, width, nextLineTabStop, false);" 
-}{  }
-{ "812": "pos = findWrapPos(text, width, nextLineTabStop); // Original line causing the bug" }{
-    "812": "pos = findWrapPos(text, width, nextLineTabStop); // Updated line to fix text wrapping and padding issue"
-}{ "org/apache/commons/cli/HelpFormatter.java#812": "pos = findWrapPos(text, width, nextLineTabStop); // Original line causing the bug" }{ "812": "pos = findWrapPos(text, width, nextLineTabStop); // Original line causing the bug, resetting the value of 'pos' after padding the text" }
-{ "812": "pos = findWrapPos(text, width, nextLineTabStop); // Fixing the bug by reverting back to the original line" }{ "812": "pos = findWrapPos(text, width, nextLineTabStop); // Fixing the logic for finding the wrap position in renderWrappedText method" }

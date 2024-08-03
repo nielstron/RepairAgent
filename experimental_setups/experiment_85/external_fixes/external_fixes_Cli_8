@@ -1,32 +1,0 @@
-
-{  	"org/apache/commons/cli/HelpFormatter.java#812": "//pos = findWrapPos(text, width, nextLineTabStop);" }{   }
-{                                                                                                                                                                                                      
-{ 
-                                                                                                       
-{                                                                                                    
-{ "812": "// pos = findWrapPos(text, width, nextLineTabStop); // original line commented out\npos = Math.min(findWrapPos(text, width, nextLineTabStop), text.length() - 1);" }
-{    }{ "814": "if (pos <= 0)" }{ "814": "if (pos <= 0)" }{ 
-    "814": "if (pos <= 0)"
-}{ "814": "if (pos <= 0)" }
-{ "812": "pos = findWrapPos(text, width, nextLineTabStop);" }{
-  "1": "Here is a possible fix for the bug",
-  "2": "You can try to change the condition in line 814 to 'if (pos <= 0)' instead of 'if (pos == -1)'",
-  "3": "Another possible fix is to revert the change in line 812 back to the original code: 'pos = findWrapPos(text, width, nextLineTabStop);'"
-}{
-	"1": "No suggested fix available based on the provided information"
-}{ "814": "if (pos <= 0)" }
-{ 
-  "814": "if (pos <= 0)"
-}
-{ 
-    "814": "if (pos <= 0)"
-}
-{     
-    "814": "if (pos <= 0)"
-}
-{ 
-  "812": "pos = findWrapPos(text, width, nextLineTabStop); // update the wrap position"
-}
-  { 
-    "814": "if (pos <= 0)" 
-  }

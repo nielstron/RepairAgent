@@ -1,1 +1,0 @@
-[{"file_name": "org/apache/commons/codec/binary/Base64.java", "modifications": [{"line_number": 225, "modified_line": "        this(true);"}]}]

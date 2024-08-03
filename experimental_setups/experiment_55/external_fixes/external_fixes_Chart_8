@@ -1,7 +1,0 @@
-{
-  "175": "this(time, RegularTimePeriod.DEFAULT_TIME_ZONE, Locale.getDefault()); // Fixing the bug by using the default locale"
-}{
-  "175": "this(time, RegularTimePeriod.DEFAULT_TIME_ZONE, Locale.getDefault(Locale.Category.FORMAT));"
-}{
-  "175": "// this(time, RegularTimePeriod.DEFAULT_TIME_ZONE, Locale.getDefault()); // Commented out the original line to prevent default initialization issues"
-}

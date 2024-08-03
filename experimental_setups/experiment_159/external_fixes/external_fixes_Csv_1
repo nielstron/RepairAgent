@@ -1,1 +1,0 @@
-{"fixes": [{"file_name": "org/apache/commons/csv/ExtendedBufferedReader.java", "modifications": [{"line_number": 58, "modified_line": "        if (current == '\\r') {"}]}, {"file_name": "org/apache/commons/csv/CSVParserTest.java", "modifications": [{"line_number": 510, "modified_line": "        assertEquals(1, parser.getLineNumber());"}]}]}

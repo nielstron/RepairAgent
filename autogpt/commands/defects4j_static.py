@@ -5,6 +5,9 @@ import re
 import json
 from autogpt.logs import logger
 
+
+STATIC_MODEL = "gpt-3.5-turbo-0125"
+
 def get_info(name: str, index: int, workspace) -> str:
     """Create and execute a Python file in a Docker container and return the STDOUT of the
     executed code. If there is any data that needs to be captured use a print statement
@@ -50,13 +53,8 @@ def execute_get_info(name: str, index:int, workspace):
         if result.returncode == 0:
             root_cause = extract_root_cause(result.stdout)
             edited_files = get_edited_files(name, index)
-            lines_range = extract_lines_range(name, index)
-            ## need to include hunks numbers
             localization_info = get_localization(name, index)
             return root_cause + "\n"+ localization_info
-        
-            #"Buggy files and range of possible buggy line numbers:\n" +\
-            #"\n".join(["In file: {}  ,lines from {} to {}".format(ef, *lr) for ef, lr in zip(edited_files, lines_range)]) 
         else:
             return f"Error: {result.stderr}"
     else:
@@ -249,14 +247,16 @@ def extract_lines_range(name, index):
     return min_max
 
 def get_localization(name, index):
-    localization_dir = "buggy-lines"
-    methods_dir = "buggy-methods"
+    localization_dir = "defects4j/buggy-lines"
+    methods_dir = "defects4j/buggy-methods"
     file_name = "{}-{}.buggy.lines".format(name, index)
     if not os.path.exists(os.path.join(localization_dir, file_name)):
         lines_info = ""
     else:
         with open(os.path.join(localization_dir, file_name)) as buggy_lines_file:
             bug_lines = buggy_lines_file.read()
+
+        # better use the format of detailed buggy lines
         lines_info = "The bug is located at exactly these lines numbers: (the format is file-name#line-number# line-code):\n" + bug_lines
 
     file_name = "{}-{}.buggy.methods".format(name, index)
@@ -276,8 +276,8 @@ def get_localization(name, index):
     return lines_info + "\n" + methods_info
 
 def get_list_of_buggy_lines(name, index):
-    localization_dir = "buggy-lines"
-    methods_dir = "buggy-methods"
+    localization_dir = "defects4j/buggy-lines"
+    methods_dir = "defects4j/buggy-methods"
     file_name = "{}-{}.buggy.lines".format(name, index)
     if not os.path.exists(os.path.join(localization_dir, file_name)):
         return []
@@ -329,8 +329,8 @@ def extract_fail_report(name: str, index: str, workspace):
 from langchain.chat_models import ChatOpenAI
 from langchain.schema.messages import HumanMessage, SystemMessage, AIMessage
 
-def query_for_fix(query, model="gpt-3.5-turbo-0125"):
-    chat = ChatOpenAI(openai_api_key="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", model=model)
+def query_for_fix(query, model=STATIC_MODEL):
+    chat = ChatOpenAI(openai_api_key=os.getenv("OPENAI_KEY"), model=model)
 
     messages = [
         SystemMessage(
@@ -342,13 +342,12 @@ def query_for_fix(query, model="gpt-3.5-turbo-0125"):
             content=query
             )  
     ]
-    # response_format={ "type": "json_object" }
     response = chat.invoke(messages)
 
     return response.content
 
-def query_for_mutants(query, model="gpt-3.5-turbo-0125"):
-    chat = ChatOpenAI(openai_api_key="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", model=model)
+def query_for_mutants(query, model=STATIC_MODEL):
+    chat = ChatOpenAI(openai_api_key=os.getenv("OPENAI_KEY"), model=model)
 
     messages = [
         SystemMessage(
@@ -363,7 +362,7 @@ def query_for_mutants(query, model="gpt-3.5-turbo-0125"):
             )  
     ]
     #response_format={ "type": "json_object" }
-    response = chat.invoke(messages, response_format={ "type": "json_object" })
+    response = chat.invoke(messages)
 
     return response.content
 
@@ -394,8 +393,8 @@ def construct_fix_command(fix_object, project_name, bug_index):
         }
 
 
-def query_for_commands(query, model="gpt-3.5-turbo-0125"):
-    chat = ChatOpenAI(openai_api_key="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", model=model)
+def query_for_commands(query, model=STATIC_MODEL):
+    chat = ChatOpenAI(openai_api_key=os.getenv("OPENAI_KEY"), model=model)
 
     messages = [
         SystemMessage(
@@ -406,7 +405,7 @@ def query_for_commands(query, model="gpt-3.5-turbo-0125"):
             )  
     ]
     #response_format={ "type": "json_object" }
-    response = chat.invoke(messages, response_format={ "type": "json_object" })
+    response = chat.invoke(messages)
 
     return response.content
 
@@ -500,9 +499,9 @@ def extract_function_def_context(project_name, bug_index, method_name, file_path
     else:
         return enc.decode(context[-input_limit:])
     
-def auto_complete_functions(project_name, bug_index, file_path, method_name, model="gpt-3.5-turbo-0125"):
+def auto_complete_functions(project_name, bug_index, file_path, method_name, model=STATIC_MODEL):
     context = extract_function_def_context(project_name, bug_index, method_name, file_path)
-    chat = ChatOpenAI(openai_api_key="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", model=model)
+    chat = ChatOpenAI(openai_api_key=os.getenv("OPENAI_KEY"), model=model)
     messages = [
             SystemMessage(
                 content="implement the code for the method {}, here is the code before the method:".format(method_name)),
@@ -511,7 +510,7 @@ def auto_complete_functions(project_name, bug_index, file_path, method_name, mod
                 )  
         ]
         #response_format={ "type": "json_object" }
-    response = chat.invoke(messages, response_format={ "type": "json_object" })
+    response = chat.invoke(messages)
     return response.content
 
 def extract_command(
@@ -607,8 +606,8 @@ def execute_command(
         return f"Error: {str(e)}"
 
 def get_detailed_list_of_buggy_lines(name, index):
-    localization_dir = "buggy-lines"
-    methods_dir = "buggy-methods"
+    localization_dir = "defects4j/buggy-lines"
+    methods_dir = "defects4j/buggy-methods"
     file_name = "{}-{}.buggy.lines".format(name, index)
     if not os.path.exists(os.path.join(localization_dir, file_name)):
         return []
@@ -617,22 +616,47 @@ def get_detailed_list_of_buggy_lines(name, index):
             bug_lines = buggy_lines_file.read().splitlines()
         lines = []
         for bl in bug_lines:
-            lines.append((int(bl.split("#")[-2]), bl.split("#")[-1]))
-
-        insertions = []
-        modifications = []
-        for l in lines:
-            if l[1] == "FAULT_OF_OMISSION":
-                insertions.append(l[0])
-            else:
-                modifications.append(l[0])
-        ret_val = ""
-        if len(modifications)!=0:
-            ret_val += "The following lines should be modified or deleted (decide which based on your understanding and the context):{}\n".format(modifications)
-        if len(insertions)!=0:
-            ret_val += "You should insert new line(s) at the following locations: {}\n".format(insertions)
+            lines.append("Line: "+ bl.split("#")[1] + "#" + bl.split("#")[0])
         
+        ret_val = "Your fix should target all the following lines by at least one edit type (modification, insertion, or deletion):\n"
+        for l in lines:
+            ret_val += l[0] + " from file: " + l[1] + "\n"
+
+        ret_val += "\n"
         return ret_val
+
+def parse_buggy_lines(buggy_lines):
+	parsed_lines = {}
+	for line in buggy_lines:
+		splitted_line = line.split("#")
+		if splitted_line[0] in parsed_lines:
+			parsed_lines[splitted_line[0]].append((splitted_line[1], splitted_line[2]))
+		else:
+			parsed_lines[splitted_line[0]] = [(splitted_line[1], splitted_line[2])]
+	return parsed_lines
+
+
+def create_fix_template(project_name, bug_number):
+	with open("defects4j/buggy-lines/{}-{}.buggy.lines".format(project_name, bug_number)) as bgl:
+		buggy_lines = bgl.read().splitlines()
+	parsed_lines = parse_buggy_lines(buggy_lines)
+	
+	fix_template = []
+	for key in parsed_lines:
+		new_dict = {
+        "file_name": key,
+		"target_lines": parsed_lines[key],
+        "insertions": [],
+        "deletions": [],
+        "modifications": []
+    	}
+		fix_template.append(new_dict)
+
+	fix_template_str = json.dumps(fix_template)
+	fix_template_str = fix_template_str.replace('"modifications": []', '"modifications": [here put the list of modification dictionaries {"line_number":..., "modified_line":...}, ...]')
+	fix_template_str = fix_template_str.replace('"deletions": []', '"deletions": [here put the lines number to delete...]')
+	fix_template_str = fix_template_str.replace('"insertions": []', '"insertions": [here put the list of insertion dictionaries. DO NOT REPEAT ALREADY EXISTING LINES!: {"line_numbe":..., "new_lines":[...]}, ...]')
+	return fix_template_str
 
 if __name__ =="__main__":
     file_path = "src/com/google/javascript/jscomp/NodeUtil.java"

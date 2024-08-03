@@ -1,7 +1,0 @@
-
-{ 
-  "307": "// if (!_hasSegments)  return _currentSegment;"
-}
-{                                                                                                    { "307": "if (!_hasSegments || _currentSegment == null) return contentsAsArray();" }
-{ "307": "if (!_hasSegments || _currentSegment == null) return contentsAsArray();" }{ "307": "if (!_hasSegments || _currentSegment == null) return contentsAsArray();" }
-{ "307": "if (!_hasSegments || _currentSegment == null) return contentsAsArray();" }

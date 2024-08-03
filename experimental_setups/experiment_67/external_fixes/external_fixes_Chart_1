@@ -1,4 +1,0 @@
-{
-    "1797": "// if (dataset != null) {"
-}{ "1797": "        if (dataset == null) { return result; }" }{
-                                                                                                    { "1797": "if (dataset != null && plot != null) {" }

@@ -1,6 +1,0 @@
-{
-    "812": "// pos = findWrapPos(text, width, nextLineTabStop); // Commenting out the problematic line to temporarily disable it"
-}{  
-    "org/apache/commons/cli/HelpFormatter.java#812": "pos = findWrapPos(text, width, nextLineTabStop, nextLineTabStop);"
-}
-{    "org/apache/commons/cli/HelpFormatter.java#812": "pos = findWrapPos(text, width, nextLineTabStop) - 1;" }

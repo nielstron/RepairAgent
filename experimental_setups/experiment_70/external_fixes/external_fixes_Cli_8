@@ -1,2 +1,0 @@
-{   }
-{ "812": "pos = findWrapPos(text, width, nextLineTabStop) + 1;" }{ "812": "pos = findWrapPos(text, width, nextLineTabStop + 1);" }

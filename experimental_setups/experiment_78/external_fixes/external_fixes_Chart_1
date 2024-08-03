@@ -1,9 +1,0 @@
-{
-    "1797": "// Check if dataset is not null before performing any operations\n        if (dataset != null && dataset.getRowCount() > 0 && dataset.getColumnCount() > 0) {"
-}
-{ 
-  "1797": "//if (dataset != null) { \n //commented out the line causing the issue\n}"
-}{
-    "org/jfree/chart/renderer/category/AbstractCategoryItemRenderer.java#1797#        if (dataset != null) {": "        if (dataset != null && dataset.getRowCount() > 0 && dataset.getColumnCount() > 0) {"
-}{ "1797": "if (dataset != null && dataset.getRowCount() > 0) {" }{ "org/jfree/chart/renderer/category/AbstractCategoryItemRenderer.java#1797": "if (dataset != null && dataset.getRowCount() > 0 && dataset.getColumnCount() > 0) {" } 
-{ "1797": "if (dataset != null && dataset.getRowCount() > 0 && dataset.getColumnCount() > 0) {" }

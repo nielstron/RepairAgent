@@ -1,6 +1,0 @@
-{ 	"1797": "// if (dataset != null) { // commenting out the buggy line to prevent null pointer exception\n        if (dataset != null) {" }{
-                                                                                                       { 
-                                                                                                       {  "1797": "if (dataset == null) { return result; }"}
-{ 
-  "1797": "if (dataset == null) {"
-}

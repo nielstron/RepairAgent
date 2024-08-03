@@ -1,8 +1,0 @@
-{
-	"1797": "if (dataset == null) {"
-}{  }
-
-
-{ "1797": "if (dataset == null) {" }{
-    "1797": "// Add a null check for dataset before proceeding\n        if (dataset != null) {\n"
-}{ "1797": "if (dataset != null && dataset.getRowCount() > 0) {" }

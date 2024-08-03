@@ -1,9 +1,0 @@
-{
-	"1797": "// if (dataset != null) { // commented out the problematic line causing the AssertionFailedError\n        if (dataset != null && dataset.getRowCount() > 0) { // added a null check and a row count check"
-}{   "1797": "if (dataset == null) {" }{
-  "1798": "// return result; // commenting out the premature return statement"
-}{ 
-    "1798": "//return result;"
-}{
-	"1798": "// return result; // Commenting out the premature return statement to allow the method to continue processing"
-}

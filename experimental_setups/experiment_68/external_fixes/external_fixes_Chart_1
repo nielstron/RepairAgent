@@ -1,9 +1,0 @@
-{
-	"1797": "        if (dataset != null && dataset.getRowCount() > 0 && dataset.getColumnCount() > 0) {"
-}
-{  
-    "1798": "// handling null dataset case differently\n        // return result;"
-}
-{ 
-  "1798": "return null;"
-}

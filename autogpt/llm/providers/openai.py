@@ -227,6 +227,8 @@ def create_chat_completion(
         OpenAIObject: The ChatCompletion response from OpenAI
 
     """
+    kwargs.pop("response_format")
+    kwargs.pop("max_tokens")
     completion: OpenAIObject = openai.ChatCompletion.create(
         messages=messages,
         **kwargs,

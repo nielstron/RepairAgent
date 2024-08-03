@@ -24,6 +24,82 @@ from create_files_index import list_java_files
 ALLOWLIST_CONTROL = "allowlist"
 DENYLIST_CONTROL = "denylist"
 
+def preprocess_paths(agent, project_name, bug_index, filepath):
+    workspace = agent.config.workspace_path
+    project_dir = os.path.join(workspace, project_name.lower()+"_"+str(bug_index)+"_buggy")
+    
+    if filepath.endswith(".java"):
+        filepath = filepath[:-5]
+        filepath = filepath.replace(".", "/")
+        filepath += ".java"
+    else:
+        filepath = filepath.replace(".", "/")
+    
+    if not os.path.exists(os.path.join(project_dir,filepath)):
+        if not os.path.exists(os.path.join(project_dir, "files_index.txt")):
+            with open(os.path.join(project_dir, "files_index.txt"), "w") as fit:
+                fit.write("\n".join(list_java_files(project_dir)))
+            
+        with open(os.path.join(project_dir, "files_index.txt")) as fit:
+            files_index = [f for f in fit.read().splitlines() if filepath in f]
+        
+        if len(files_index) == 1:
+            filepath = files_index[0]
+        elif len(files_index) >= 1:
+            raise ValueError("Multiple Candidate Paths. We do not handle this yet!")
+        else:
+            return "The filepath {} does not exist.".format(filepath)
+    return filepath
+
+def parse_buggy_lines(buggy_lines):
+    parsed_lines = {}
+    for line in buggy_lines:
+        splitted_line = line.split("#")
+        if splitted_line[0] in parsed_lines:
+            parsed_lines[splitted_line[0]].append((splitted_line[1], splitted_line[2]))
+        else:
+            parsed_lines[splitted_line[0]] = [(splitted_line[1], splitted_line[2])]
+    return parsed_lines
+
+def create_fix_template(project_name, bug_number):
+    with open("defects4j/buggy-lines/{}-{}.buggy.lines".format(project_name, bug_number)) as bgl:
+        buggy_lines = bgl.read().splitlines()
+    parsed_lines = parse_buggy_lines(buggy_lines)
+
+    fix_template = []
+    for key in parsed_lines:
+        new_dict = {
+        "file_name": key,
+		"target_lines": parsed_lines[key],
+        "insertions": [],
+        "deletions": [],
+        "modifications": []
+    	}
+        fix_template.append(new_dict)
+    fix_template_str = json.dumps(fix_template)
+    fix_template_str = fix_template_str.replace('"modifications": []', '"modifications": [] #here put the list of modification dictionaries{"line_number":..., "modified_line":...}, ...')
+    fix_template_str = fix_template_str.replace('"deletions": []', '"deletions": [] #here put the lines number to delete...')
+    fix_template_str = fix_template_str.replace('"insertions": []', '"insertions": [] #here put the list of insertion dictionaries targeting the lines marked with FAULT_OF_OMISSON: {"line_numbe":..., "new_lines":[...]}, ...')
+    return fix_template_str
+
+def create_deletion_template(project_name, bug_number):
+    with open("defects4j/buggy-lines/{}-{}.buggy.lines".format(project_name, bug_number)) as bgl:
+        buggy_lines = bgl.read().splitlines()
+    parsed_lines = parse_buggy_lines(buggy_lines)
+    if "FAULT_OF_OMISSION" in str(parsed_lines):
+        return None
+    fix_template = []
+    for key in parsed_lines:
+        new_dict = {
+        "file_name": key,
+        "insertions": [],
+        "deletions": [t[0] for t in parsed_lines[key]],
+        "modifications": []
+    	}
+        fix_template.append(new_dict)
+    return fix_template
+
+
 def run_checkout(project_name: str, bug_index:int, agent: Agent):
     cmd_temp = "defects4j checkout -p {} -v {}b -w {}"
     folder_name = "_".join([project_name.lower(), str(bug_index), "buggy"])
@@ -539,16 +615,37 @@ def write_fix(project_name:str, bug_index:int, changes_dicts: list, agent: Agent
     ai_name = agent.ai_config.ai_name
     bug_report =  agent.construct_bug_report_context()
     hypothesis = agent.construct_hypothesises_context()
+    logger.info("PROBLEM LOCATION 1")
     if len(changes_dicts) == 0:
         return "The fix you passed is empty. Please provide a non empty implementation of the fix."
     fix = "The fix consist of the following changes:\n{}".format(
         str(changes_dicts))
 
-    target_lines = extract_targeted_lines(changes_dicts)
-    buggy_lines = get_list_of_buggy_lines(project_name, bug_index)
-    missed_lines = set(buggy_lines) - set(target_lines)
+    try:
+        logger.info("PROBLEM LOCATION 2")
+        target_lines = extract_targeted_lines(changes_dicts)
+        logger.info("PROBLEM LOCATION 3")
+        buggy_lines = get_list_of_buggy_lines(project_name, bug_index)
+        logger.info("PROBLEM LOCATION 4")
+        missed_lines = set(buggy_lines) - set(target_lines)
+    except:
+        missed_lines = []
+
+    if not agent.dummy_fix:
+        logger.info("PROBLEM LOCATION 5")
+        deletion_fix = create_deletion_template(project_name, bug_index)
+        logger.info("PROBLEM LOCATION 6")
+        if deletion_fix is not None:
+            run_ret = execute_write_range(project_name, bug_index, deletion_fix, agent)
+            logger.info("PROBLEM LOCATION 7")
+            agent.dummy_fix = True
+            if " 0 failing test" in run_ret:
+                return "Deleting the buggy lines fixed the problem and passed all the test cases. 0 failing tests."
     if len(missed_lines)!=0:
-        return "Your fix did not target all the buggy lines. Here is the list of all the buggy lines: {}. Refer to fault localization section. Some locations require insertions, others require modification, and sometimes deletion.".format(buggy_lines)
+        logger.info("PROBLEM LOCATION 8")
+        fix_template = create_fix_template(project_name, bug_index)
+        logger.info("PROBLEM LOCATION 9")
+        return "Your fix did not target all the buggy lines. Here is the list of all the buggy lines: {}. To help you, you can fill out the following the template to generate your fix {}".format(buggy_lines, fix_template)
     run_ret = execute_write_range(project_name, bug_index, changes_dicts, agent)
     if 1 == 0:
         validation_result = validate_fix_against_hypothesis(bug_report, hypothesis, fix)
@@ -562,7 +659,7 @@ def write_fix(project_name:str, bug_index:int, changes_dicts: list, agent: Agent
 def execute_read_range(project_name, bug_index, filepath, startline, endline, agent):
     workspace = agent.config.workspace_path
     project_dir = os.path.join(workspace, project_name.lower()+"_"+str(bug_index)+"_buggy")
-    
+    """
     if not os.path.exists(os.path.join(project_dir,filepath)):
         if not os.path.exists(os.path.join(project_dir, "files_index.txt")):
             with open(os.path.join(project_dir, "files_index.txt"), "w") as fit:
@@ -577,7 +674,8 @@ def execute_read_range(project_name, bug_index, filepath, startline, endline, ag
             raise ValueError("Multiple Candidate Paths. We do not handle this yet!")
         else:
             return "The filepath {} does not exist.".format(filepath)
-    
+    """
+    filepath = preprocess_paths(agent, project_name, bug_index, filepath)
     with open(os.path.join(project_dir,filepath)) as fp:
         lines = fp.readlines()
 
@@ -591,6 +689,7 @@ def execute_write_range(project_name, bug_index, changes_dicts, agent):
     project_dir = os.path.join(agent.config.workspace_path, project_name.lower()+"_"+str(bug_index)+"_buggy")
     for change_dict in changes_dicts:
         filepath = change_dict["file_name"]
+        """
         if not os.path.exists(os.path.join(project_dir,filepath)):
             if not os.path.exists(os.path.join(project_dir, "files_index.txt")):
                 with open(os.path.join(project_dir, "files_index.txt"), "w") as fit:
@@ -605,7 +704,8 @@ def execute_write_range(project_name, bug_index, changes_dicts, agent):
                 raise ValueError("Multiple Candidate Paths. We do not handle this yet!")
             else:
                 return "The filepath {} does not exist.".format(filepath)
-        
+        """
+        filepath = preprocess_paths(agent, project_name, bug_index, filepath)
         change_dict["file_name"] = os.path.join(project_dir,filepath)
     
         apply_changes(change_dict)
@@ -687,6 +787,7 @@ def get_classes_and_methods(project_name: str, bug_index: str, file_path: str, a
     else:
         #return "Could not find source or src directory"
         pass
+    """
     if not os.path.exists(os.path.join(workspace, project_dir,file_path)):
         if not os.path.exists(os.path.join(workspace, project_dir, "files_index.txt")):
             with open(os.path.join(workspace, project_dir, "files_index.txt"), "w") as fit:
@@ -701,7 +802,8 @@ def get_classes_and_methods(project_name: str, bug_index: str, file_path: str, a
             raise ValueError("Multiple Candidate Paths. We do not handle this yet!")
         else:
             return "The filepath {} does not exist.".format(file_path)
-        
+    """
+    file_path = preprocess_paths(agent, project_name, bug_index, file_path)    
     with open(os.path.join(workspace, project_dir, file_path)) as tfp:
         content = tfp.read()
 
@@ -879,7 +981,7 @@ def extract_test_code(project_name:str, bug_index:str, test_file_path: str, agen
     test_file_path = test_file_path.split("::")[0]
     if test_file_path.endswith(".java"):
         test_file_path = test_file_path[:-5]
-        test_file_path.replace(".", "/")
+        test_file_path = test_file_path.replace(".", "/")
         test_file_path += ".java"
     else:
         test_file_path = test_file_path.replace(".", "/")
@@ -890,6 +992,7 @@ def extract_test_code(project_name:str, bug_index:str, test_file_path: str, agen
     result = extract_failing_test(test_message)
     if not result:
         return "No test function found, probably the failing test message was not parsed correctly"
+    
     
     if not os.path.exists(os.path.join(workspace, project_dir, test_dir, test_file_path)):
         if not os.path.exists(os.path.join(workspace, project_dir, "files_index.txt")):
@@ -1112,7 +1215,7 @@ from langchain.schema.messages import HumanMessage, SystemMessage, AIMessage
 )
 """
 def ask_chatgpt(question: str, agent: Agent):
-    chat = ChatOpenAI(openai_api_key="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")
+    chat = ChatOpenAI(openai_api_key=os.getenv("OPENAI_KEY"))
 
     if not agent.ask_chatgpt:
         messages = [
@@ -1131,7 +1234,7 @@ If the details in the given quetion are not enough, you should ask the user to a
     return response.content
 
 def validate_fix_against_hypothesis(bug_report, hypothesis, fix, model = "gpt-3.5-turbo-0125"):
-    chat = ChatOpenAI(openai_api_key="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", model=model)
+    chat = ChatOpenAI(openai_api_key=os.getenv("OPENAI_KEY"), model=model)
 
     messages = [
         SystemMessage(
@@ -1203,6 +1306,7 @@ def extract_similar_functions_calls(project_name:str, bug_index: str, file_path:
     workspace = agent.config.workspace_path
     project_dir = "{}_{}_buggy".format(project_name.lower(), bug_index)
     
+    """
     if not os.path.exists(os.path.join(workspace, project_dir,file_path)):
         if not os.path.exists(os.path.join(workspace, project_dir, "files_index.txt")):
             with open(os.path.join(workspace, project_dir, "files_index.txt"), "w") as fit:
@@ -1217,7 +1321,9 @@ def extract_similar_functions_calls(project_name:str, bug_index: str, file_path:
             raise ValueError("Multiple Candidate Paths. We do not handle this yet!")
         else:
             return "The filepath {} does not exist.".format(file_path)
+    """
 
+    file_path = preprocess_paths(agent, project_name, bug_index, file_path)
     with open(os.path.join(workspace, project_dir, file_path)) as fpt:
         java_code = fpt.read()
 
@@ -1246,8 +1352,8 @@ def extract_similar_functions_calls(project_name:str, bug_index: str, file_path:
 
 
 def get_localization(name, index):
-    localization_dir = "buggy-lines"
-    methods_dir = "buggy-methods"
+    localization_dir = "defects4j/buggy-lines"
+    methods_dir = "defects4j/buggy-methods"
     file_name = "{}-{}.buggy.lines".format(name, index)
     if not os.path.exists(os.path.join(localization_dir, file_name)):
         lines_info = ""
@@ -1324,9 +1430,11 @@ class FunctionExtractor(JavaListener):
 def extract_method_code(project_name: str, bug_index: str, filepath: str, method_name:str, agent: Agent):
     workspace = agent.config.workspace_path
     project_dir = "{}_{}_buggy".format(project_name.lower(), bug_index)
+    
+    """
     if filepath.endswith(".java"):
         filepath = filepath[:-5]
-        filepath.replace(".", "/")
+        filepath = filepath.replace(".", "/")
         filepath += ".java"
     else:
         filepath = filepath.replace(".", "/")
@@ -1345,7 +1453,9 @@ def extract_method_code(project_name: str, bug_index: str, filepath: str, method
             raise ValueError("Multiple Candidate Paths. We do not handle this yet!")
         else:
             return "The filepath {} does not exist.".format(filepath)
-    
+    """
+    filepath = preprocess_paths(agent, project_name, bug_index, filepath)
+
     input_stream = FileStream(os.path.join(workspace, project_dir, filepath))
     
     lexer = JavaLexer(input_stream)
@@ -1375,9 +1485,11 @@ def extract_function_def_context(project_name, bug_index, method_name, filepath,
     input_limit = 12000
     workspace = "./auto_gpt_workspace"
     project_dir = "{}_{}_buggy".format(project_name.lower(), bug_index)
+    
+    """
     if filepath.endswith(".java"):
         filepath = filepath[:-5]
-        filepath.replace(".", "/")
+        filepath = filepath.replace(".", "/")
         filepath += ".java"
     else:
         filepath = filepath.replace(".", "/")
@@ -1396,7 +1508,8 @@ def extract_function_def_context(project_name, bug_index, method_name, filepath,
             raise ValueError("Multiple Candidate Paths. We do not handle this yet!")
         else:
             return "The filepath {} does not exist.".format(filepath)
-    
+    """
+    filepath = preprocess_paths(agent, project_name, bug_index, filepath)
     extracted_methods = extract_method_code(project_name, bug_index, filepath, method_name, agent)
     if len(extracted_methods) == 0:
         raise ValueError("NO EXTRACTED METHODS, SHOULD NOT HAPPEN")
@@ -1444,7 +1557,7 @@ def extract_function_def_context(project_name, bug_index, method_name, filepath,
 )
 def auto_complete_functions(project_name, bug_index, filepath, method_name, agent, model="gpt-3.5-turbo-0125"):
     context = extract_function_def_context(project_name, bug_index, method_name, filepath, agent)
-    chat = ChatOpenAI(openai_api_key="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", model=model)
+    chat = ChatOpenAI(openai_api_key=os.getenv("OPENAI_KEY"), model=model)
     messages = [
             SystemMessage(
                 content="You are a code implementer and autocompletion engine. Basically, you would be given some already written code up to some line and you would be asked to implement the function/method that is declared at the last line. Always give full implementation of the method starting from declaration (public void myFunc(...)) to all the body. Take the given context into considration. Only give the implementation of the method and nothing else. If you want to add some explanation you can write it as comments above each line of code."),
@@ -1469,21 +1582,21 @@ def apply_changes(change_dict):
     # Apply deletions first to avoid conflicts with line number changes
     affected_lines = set()
     for line_number in deletions:
-        if 1 <= line_number <= len(lines):
-            lines[line_number - 1] = "\n"
+        if 1 <= int(line_number) <= len(lines):
+            lines[int(line_number) - 1] = "\n"
 
     # Apply modifications
     for modification in modifications:
         line_number = modification.get("line_number", 0)
         modified_line = modification.get("modified_line", "")
-        if 1 <= line_number <= len(lines):
-            orig_line = lines[line_number - 1]
+        if 1 <= int(line_number) <= len(lines):
+            orig_line = lines[int(line_number) - 1]
             if fuzz.ratio(orig_line, modified_line) < 70:
                 continue
             if modified_line.endswith("\n"):
-                lines[line_number - 1] = modified_line
+                lines[int(line_number) - 1] = modified_line
             else:
-                lines[line_number - 1] = modified_line + "\n"
+                lines[int(line_number) - 1] = modified_line + "\n"
 
     # Apply insertions and record affected lines
     line_offset = 0
@@ -1491,9 +1604,9 @@ def apply_changes(change_dict):
 
     sorted_insertions = sorted(insertions, key=itemgetter('line_number')) 
     for insertion in sorted_insertions:
-        line_number = insertion.get("line_number", 0) + line_offset
+        line_number = int(insertion.get("line_number", 0)) + line_offset
         for new_line in insertion.get("new_lines", []):
-            lines.insert(line_number - 1, new_line)
+            lines.insert(int(line_number) - 1, new_line)
             line_offset += 1
 
 
@@ -1516,8 +1629,8 @@ def extract_targeted_lines(changes_dicts):
     return [int(i) for i in targeted_lines]
 
 def get_list_of_buggy_lines(name, index):
-    localization_dir = "buggy-lines"
-    methods_dir = "buggy-methods"
+    localization_dir = "defects4j/buggy-lines"
+    methods_dir = "defects4j/buggy-methods"
     file_name = "{}-{}.buggy.lines".format(name, index)
     if not os.path.exists(os.path.join(localization_dir, file_name)):
         return []
