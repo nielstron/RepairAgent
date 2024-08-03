@@ -114,9 +114,9 @@ class PromptGenerator:
                 "Try to adhere to the following guidlines to the best of your ability:",
                 f"{self._generate_numbered_list(self.general_guidelines + additional_guidelines)}",
             ],
-            "fix format": [
-                "## The format of the fix",
-                "This is the description of the json format in which you should write your fixes (respect this format when calling the commands write_fix and try_fixes):",
+            "test format": [
+                "## The format of the test",
+                "This is the description of the json format in which you should write your tests (respect this format when calling the commands write_test and try_tests):",
                 fix_format
             ]
         }

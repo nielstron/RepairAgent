@@ -28,7 +28,7 @@ generate_method_desc = "AI_generates_method_code: This function allows to use an
 ### also write fix
 
 ## collect information to understand the bug
-extract_test_desc = """extract_test_code: This function allows you to extract the code of the failing test cases which will help you understand the test case that led to failure for example by looking at the assertions and the given input and expected output, params: (project_name: string, bug_index: integer, test_file_path: string). You are allowed to execute this command for once only, unless it returns an error message, in which case you can try again with different arguments."""
+# extract_test_desc = """extract_test_code: This function allows you to extract the code of the failing test cases which will help you understand the test case that led to failure for example by looking at the assertions and the given input and expected output, params: (project_name: string, bug_index: integer, test_file_path: string). You are allowed to execute this command for once only, unless it returns an error message, in which case you can try again with different arguments."""
 
 ### also read range
 
@@ -40,7 +40,7 @@ commands_dict = {
     "collect information to reproduce the bug": "\n".join(["{}. {}".format(i+1, t) for i, t in enumerate(
         [search_code_desc, get_classes_desc, get_similar_desc, extract_method_desc, write_fix_desc, read_range_desc, generate_method_desc])]),
     "collect information to understand the bug": "\n".join(["{}. {}".format(i+1, t) for i, t in enumerate(
-        [extract_test_desc, express_hypo_desc, read_range_desc])])
+        [express_hypo_desc, read_range_desc])])
 }
 
 with open("commands_by_state.json", "w") as cbs:

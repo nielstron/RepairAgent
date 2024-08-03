@@ -2,7 +2,7 @@ import argparse
 
 template=\
 """ai_goals:
-- Locate the Bug: Execute test cases and get info to systematically identify and isolate the bug within the project \"{name}\" and bug index \"{bug_index}\".
+- Locate the Bug: Get info to systematically identify and isolate the bug within the project \"{name}\" and bug index \"{bug_index}\".
 - Perform code Analysis: Analyze the lines of code associated with the bug to discern and comprehend the potentially faulty sections.
 - Try simple tests: Attempt straightforward tests, such as passing numerical or boolean literals, adjusting function arguments, or triggering conditional statements. Explore all plausible and elementary tests relevant to the problematic code.
 - Try complex tests: In instances where simple tests prove ineffective, utilize the information gathered to propose more intricate solutions aimed at reproducing the bug.
