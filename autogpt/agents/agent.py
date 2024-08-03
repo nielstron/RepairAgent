@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+import pathlib
 import time
 import os
 from datetime import datetime
@@ -187,7 +188,9 @@ class Agent(BaseAgent):
         #    exps = eht.read().splitlines()
 
         exps = self.exps
-        with open(os.path.join("experimental_setups", exps[-1], "responses", "model_responses_{}_{}".format(self.project_name, self.bug_index)), "a+") as patf:
+        response_dir = pathlib.Path(os.path.join("experimental_setups", exps[-1], "responses"))
+        response_dir.mkdir(parents=True, exist_ok=True)
+        with open(os.path.join(response_dir, "model_responses_{}_{}".format(self.project_name, self.bug_index)), "a+") as patf:
             patf.write(llm_response.content)
         assistant_reply_dict = extract_dict_from_response(llm_response.content)
 
@@ -248,7 +251,9 @@ class Agent(BaseAgent):
                 # create mutation prompt
                 mutant_prompt = self.construct_mutation_prompt(fix_content, detailed_buggies)
                 # save mutation prompt
-                with open(os.path.join("experimental_setups", exps[-1], "mutations_history", "mutations_prompt_{}_{}".format(self.project_name, self.bug_index)), "a") as mph:
+                mutation_dir = pathlib.Path(os.path.join("experimental_setups", exps[-1], "mutations_history"))
+                mutation_dir.mkdir(parents=True, exist_ok=True)
+                with open(os.path.join(mutation_dir, "mutations_prompt_{}_{}".format(self.project_name, self.bug_index)), "a") as mph:
                     mph.write(mutant_prompt)
                 
                 # Asking main agent for mutants
@@ -258,12 +263,12 @@ class Agent(BaseAgent):
                 
                 exps = self.exps
                 existing_mutants = []
-                mutants_save_path = os.path.join("experimental_setups", exps[-1], "mutations_history", "mutants_{}_{}.json".format(self.project_name, self.bug_index))
+                mutants_save_path = os.path.join(mutation_dir, "mutants_{}_{}.json".format(self.project_name, self.bug_index))
                 
                 if os.path.exists(mutants_save_path):
                     with open(mutants_save_path) as json_file:
                         existing_mutants = json.load(json_file)
-                with open(os.path.join("experimental_setups", exps[-1], "mutations_history", "mutants_raw_{}_{}.json".format(self.project_name, self.bug_index)), "a") as raw_m:
+                with open(os.path.join(mutation_dir, "mutants_raw_{}_{}.json".format(self.project_name, self.bug_index)), "a") as raw_m:
                     raw_m.write(mutants)
                 
                 try:
@@ -285,7 +290,9 @@ class Agent(BaseAgent):
                             if " 0 failing test" in exec_result:
                                 logger.info("PLAUSIBLE PATCH FOUND. REASON = 0 FAILING TESTS.\n\n")
                                 ## writing the plausible patch
-                                with open(os.path.join("experimental_setups", exps[-1], "plausible_patches", "plausible_patches_{}_{}.json".format(self.project_name, self.bug_index)), "a+") as exps:
+                                plausible_patch_dir = pathlib.Path(os.path.join("experimental_setups", exps[-1], "plausible_patches"))
+                                plausible_patch_dir.mkdir(parents=True, exist_ok=True)
+                                with open(os.path.join(plausible_patch_dir, "plausible_patches_{}_{}.json".format(self.project_name, self.bug_index)), "a+") as exps:
                                     exps.write("### PLAUSIBLE FIX\n{}\n".format(str(m)))
                 except Exception as e:
                     logger.info("Error in loading the mutants response: " + str(e) + "\n\n")
