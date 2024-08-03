@@ -71,6 +71,12 @@ OPEN_AI_CHAT_MODELS = {
             completion_token_cost=0.06,
             max_tokens=8192,
         ),
+        ChatModelInfo(
+            name="gpt-4o-mini-2024-07-18",
+            prompt_token_cost=0.15/1000,
+            completion_token_cost=0.6/1000,
+            max_tokens=16384,
+        ),
 
     ]
 }
