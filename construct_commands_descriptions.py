@@ -2,17 +2,17 @@ import json
 
 
 ## trying out candidate fixes
-write_fix_desc = """write_fix: Use this command to implement the fix you came up with. The test cases are run automatically after writing the changes. The changes are reverted automatically if the the test cases fail. This command requires the following params: (project_name: string, bug_index: integer, changes_dicts:list[dict]) where changes_dict is a list of dictionaries in the format defined in section '## The format of the fix'.The list should contain at least one non empty dictionary of changes as defined below. If you are not already in the state 'trying out candidate fixes', by calling this command you will automatically switch that state. [RESPECT LINES NUMBERS AS GIVEN IN THE LIST OF READ LINES SECTIONS]"""
+write_fix_desc = """write_test: Use this command to implement the test you came up with. The test cases are run automatically after writing the changes. This command requires the following params: (project_name: string, bug_index: integer, changes_dicts:list[dict]) where changes_dict is a list of dictionaries in the format defined in section '## The format of the test'.The list should contain at least one non empty dictionary of changes as defined below. If you are not already in the state 'trying out candidate tests', by calling this command you will automatically switch that state. [RESPECT LINES NUMBERS AS GIVEN IN THE LIST OF READ LINES SECTIONS]"""
 
-try_fixes_desc = """try_fixes: This is a very useful command when you want to try multiple fixes quickly. This function allows you to try a list of fixes, the function will execute related tests to see if any of the fixes work. Each fix should respect the fix format defined in section '## The format of the fix'. The list of params to pass to this command are: (project_name: str, bug_index: int, fixes_list: list[fix as defined below])"""
+try_fixes_desc = """try_tests: This is a very useful command when you want to try multiple tests quickly. This function allows you to try a list of tests, the function will execute related tests to see if any of the tests behave as expected. Each test should respect the test format defined in section '## The format of the test'. The list of params to pass to this command are: (project_name: str, bug_index: int, tests_list: list[test as defined below])"""
 
 read_range_desc = """read_range: Read a range of lines in a given file, parms:(project_name:string, bug_index:string, filepath:string, startline: int, endline:int) where project_name is the name of the project and bug_index is the index of the bug"""
 
-go_back_desc = """go_back_to_collect_more_info: This command allows you to go back to the state 'collect information to fix the bug'. Call this command after you have suggested many fixes but none of them worked, params: (reason_for_going_back: string)"""
+go_back_desc = """go_back_to_collect_more_info: This command allows you to go back to the state 'collect information to reproduce the bug'. Call this command after you have suggested many tests but none of them worked, params: (reason_for_going_back: string)"""
 
 discard_hypothesis = """discard_hypothesis: This command allows you to discard the hypothesis that you made earlier about the bug and automatically return back again to the state 'collect information to uderstand the bug' where you can express a new hypothesis, params: (reason_for_discarding: string), calling this command will automatically change the state to 'collect information to understand the bug'"""
 
-goals_accomplished_desc = """goals_accomplished: Call this function when you are sure you fixed the bug and all tests hava passed and give the reason that made you believe that you fixed the bug successfully, params: (reason: string)"""
+goals_accomplished_desc = """goals_accomplished: Call this function when you are sure you reproduced the bug with some test and give the reason that made you believe that you fixed the bug successfully, params: (reason: string)"""
 
 ## collect information to fix the bug
 
@@ -24,7 +24,7 @@ get_similar_desc = """extract_similar_functions_calls: For a provided buggy code
 
 extract_method_desc = """extract_method_code: This command allows you to extract possible implementations of a given method name inside a file. The required params to call this command are: (project_name: string, bug_index: integer, filepath: string, method_name: string)"""
 
-generate_method_desc = "AI_generates_method_code: This function allows to use an AI Large Language model to generate the code of the buggy method. This helps see another implementation of that method given the context before it which would help in 'probably' infering a fix but no garantee. params: (project_name: str, bug_index: str, filepath: str, method_name: str) "
+generate_method_desc = "AI_generates_method_code: This function allows to use an AI Large Language model to generate the code of the buggy method. This helps see another implementation of that method given the context before it which would help in 'probably' infering a test but no garantee. params: (project_name: str, bug_index: str, filepath: str, method_name: str) "
 ### also write fix
 
 ## collect information to understand the bug
@@ -32,12 +32,12 @@ extract_test_desc = """extract_test_code: This function allows you to extract th
 
 ### also read range
 
-express_hypo_desc = """ express_hypothesis: This command allows to express a hypothesis about what exactly is the bug. Call this command after you have collected enough information about the bug in the project, params: (hypothesis: string). By calling this command, you also automatically switch to the state 'collect information to fix the bug'. Before delving into fixing, you should always express a hypothesis."""
+express_hypo_desc = """ express_hypothesis: This command allows to express a hypothesis about what exactly is the bug. Call this command after you have collected enough information about the bug in the project, params: (hypothesis: string). By calling this command, you also automatically switch to the state 'collect information to reproduce the bug'. Before delving into reproduction, you should always express a hypothesis."""
 
 commands_dict = {
-    "trying out candidate fixes": "\n".join(["{}. {}".format(i+1, t) for i, t in enumerate(
+    "trying out candidate tests": "\n".join(["{}. {}".format(i+1, t) for i, t in enumerate(
         [write_fix_desc, read_range_desc, go_back_desc, discard_hypothesis, goals_accomplished_desc])]),
-    "collect information to fix the bug": "\n".join(["{}. {}".format(i+1, t) for i, t in enumerate(
+    "collect information to reproduce the bug": "\n".join(["{}. {}".format(i+1, t) for i, t in enumerate(
         [search_code_desc, get_classes_desc, get_similar_desc, extract_method_desc, write_fix_desc, read_range_desc, generate_method_desc])]),
     "collect information to understand the bug": "\n".join(["{}. {}".format(i+1, t) for i, t in enumerate(
         [extract_test_desc, express_hypo_desc, read_range_desc])])

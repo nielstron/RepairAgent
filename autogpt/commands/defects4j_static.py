@@ -334,9 +334,9 @@ def query_for_fix(query, model=STATIC_MODEL):
 
     messages = [
         SystemMessage(
-            content="You are an automated program repair agent who suggests fixes to given bugs." +\
+            content="You are an automated program repair agent who suggests tests to given bugs." +\
                     "Particularly, you will be given some information about a bug." +\
-                    "Your task is to suggest a list of possible fixes for the given bug. Usually, the given information contains an approximate location of the bug. Respect the fix format described below. Output a json parsable output enclosed in a list."
+                    "Your task is to suggest a list of possible tests for the given bug. Usually, the given information contains an approximate location of the bug. Respect the test format described below. Output a json parsable output enclosed in a list."
                     ),
         HumanMessage(
             content=query
@@ -351,11 +351,11 @@ def query_for_mutants(query, model=STATIC_MODEL):
 
     messages = [
         SystemMessage(
-            content="You are a code assitant and program repair agent who suggests fixes to given bugs." +\
+            content="You are a code assitant and program repair agent who suggests tests to given bugs." +\
                     "Particularly, you will be given some information about a bug." +\
-                    "Your task is to suggest a list of possible mutations of the buggy code. Probably mutating it a little bit would fix the bug."+\
-                    "Use the information that I give you and also your general knowledge of similar code snippets or bug fixes that you know of."+\
-                    "Respect the fix format, described below, for every mutant that you generate."
+                    "Your task is to suggest a list of possible mutations of the buggy code. Probably mutating it a little bit would test the bug."+\
+                    "Use the information that I give you and also your general knowledge of similar code snippets or bug tests that you know of."+\
+                    "Respect the test format, described below, for every mutant that you generate."
                     ),
         HumanMessage(
             content=query
@@ -383,7 +383,7 @@ def construct_fix_command(fix_object, project_name, bug_index):
     return {
             "thoughts": "executing the mutants",
             "command":{
-                "name": "write_fix",
+                "name": "write_test",
                 "args":{
                     "project_name":project_name,
                     "bug_index":bug_index,
@@ -618,7 +618,7 @@ def get_detailed_list_of_buggy_lines(name, index):
         for bl in bug_lines:
             lines.append("Line: "+ bl.split("#")[1] + "#" + bl.split("#")[0])
         
-        ret_val = "Your fix should target all the following lines by at least one edit type (modification, insertion, or deletion):\n"
+        ret_val = "Your test should target all the following lines by at least one edit type (modification, insertion, or deletion):\n"
         for l in lines:
             ret_val += l[0] + " from file: " + l[1] + "\n"
 

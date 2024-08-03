@@ -172,7 +172,7 @@ def undo_changes(project_name: str, bug_index: int, agent: Agent) -> str:
 
 @command(
     "run_tests",
-    "Runs the test cases of the project being analyzed. This command can only be used for one time",
+    "Runs the test cases of the project being analyzed.",
     {
         "project_name": {
             "type": "string",
@@ -181,7 +181,7 @@ def undo_changes(project_name: str, bug_index: int, agent: Agent) -> str:
         },
         "bug_index":{
             "type": "integer",
-            "description": "The index (number) of the bug that you are trying to fix.",
+            "description": "The index (number) of the bug that you are trying to reproduce.",
             "required": True
 
         }
@@ -465,10 +465,10 @@ def read_range(project_name:str, bug_index:str, filepath: str, startline: int, e
     return execute_read_range(project_name, bug_index, filepath, startline, endline, agent)
 
 @command(
-    "try_fixes",
-    """This is a very useful command when you want to try multiple fixes quickly. This function allows you to try a list of fixes, the function will execute related tests to see if any of the fixes work.
+    "try_tests",
+    """This is a very useful command when you want to try multiple tests quickly. This function allows you to try a list of tests, the function will execute it.
     The list that you pass this function should be of the form:
-    fixes_list: [{"project_name":"project name", "bug_index":"bug index", "filepath":"path to file to edit", "changed_lines":{"162": "new code here ..."}}, {...}, ...]""",
+    tests_list: [{"project_name":"project name", "bug_index":"bug index", "filepath":"path to file to edit", "changed_lines":{"162": "new code here ..."}}, {...}, ...]""",
     {
         "project_name": {
             "type": "string",
@@ -481,33 +481,19 @@ def read_range(project_name:str, bug_index:str, filepath: str, startline: int, e
             "required": True
 
         },
-        "fixes_list":  {
+        "tests_list":  {
             "type": "dict",
-            "description": "The list of fixes to try.",
+            "description": "The list of tests to try.",
             "required": True,
         },
     },
 )
-def try_fixes(project_name: str, bug_index:int, fixes_list, agent: Agent):
+def try_tests(project_name: str, bug_index:int, tests_list, agent: Agent):
     fixes_feedback = ""
     sucessful_ones = []
-    if len(fixes_list) == 0:
-        return "The list of fixes you gave is empty. Please try again with a non empty list of fixes."
-    elif isinstance(fixes_list[0], dict):
-        params = {
-            "project_name": project_name,
-            "bug_index": bug_index,
-            "changes_dicts": fixes_list
-        }
-        write_result = write_range(**params)
-        if "0 failing test cases" in write_result:
-            sucessful_ones.append(i)
-        fixes_feedback += "Fix {}: ".format(i) + write_result + "\n"
-
-        return "In summary, we applied all your fixes and {} of them passed. The indexes of the ones that passed are {}.\
-          Here are more details:\n".format(len(sucessful_ones), sucessful_ones) +\
-        fixes_feedback
-    for i, fix in enumerate(fixes_list):
+    if len(tests_list) == 0:
+        return "The list of tests you gave is empty. Please try again with a non empty list of tests."
+    for i, fix in enumerate(tests_list):
         params = {
             "project_name": project_name,
             "bug_index": bug_index,
@@ -518,7 +504,7 @@ def try_fixes(project_name: str, bug_index:int, fixes_list, agent: Agent):
             sucessful_ones.append(i)
         fixes_feedback += "Fix {}: ".format(i) + write_result + "\n"
 
-    return "In summary, we applied all your fixes and {} of them passed. The indexes of the ones that passed are {}.\
+    return "In summary, we applied all your tests and {} of them passed. The indexes of the ones that passed are {}.\
           Here are more details:\n".format(len(sucessful_ones), sucessful_ones) +\
         fixes_feedback
 
@@ -571,8 +557,8 @@ def write_range(project_name:str, bug_index:int, changes_dicts: list, agent: Age
 
 
 @command(
-    "write_fix",
-    "Write a list of lines into a file, the parameter changed_lines is a dictionary that contains lines numbers as keys and the new content of that line as value (only include changed lines). The test cases are run automatically after running the changes. The changes are reverted automatically if the the test cases fail.",
+    "write_test",
+    "Write a list of lines into a file, the parameter changed_lines is a dictionary that contains lines numbers as keys and the new content of that line as value (only include changed lines). The test cases are run automatically after running the changes.",
     {
         "project_name": {
             "type": "string",
@@ -598,7 +584,7 @@ def write_range(project_name:str, bug_index:int, changes_dicts: list, agent: Age
         }
     },
 )
-def write_fix(project_name:str, bug_index:int, changes_dicts: list, agent: Agent) -> str:
+def write_test(project_name:str, bug_index:int, changes_dicts: list, agent: Agent) -> str:
     """Write a list of lines into a file to replace all lines between startline and endline
 
     Args:
@@ -617,8 +603,8 @@ def write_fix(project_name:str, bug_index:int, changes_dicts: list, agent: Agent
     hypothesis = agent.construct_hypothesises_context()
     logger.info("PROBLEM LOCATION 1")
     if len(changes_dicts) == 0:
-        return "The fix you passed is empty. Please provide a non empty implementation of the fix."
-    fix = "The fix consist of the following changes:\n{}".format(
+        return "The test you passed is empty. Please provide a non empty implementation of the test."
+    fix = "The test consist of the following changes:\n{}".format(
         str(changes_dicts))
 
     try:
@@ -639,22 +625,20 @@ def write_fix(project_name:str, bug_index:int, changes_dicts: list, agent: Agent
             run_ret = execute_write_range(project_name, bug_index, deletion_fix, agent)
             logger.info("PROBLEM LOCATION 7")
             agent.dummy_fix = True
-            if " 0 failing test" in run_ret:
-                return "Deleting the buggy lines fixed the problem and passed all the test cases. 0 failing tests."
     if len(missed_lines)!=0:
         logger.info("PROBLEM LOCATION 8")
         fix_template = create_fix_template(project_name, bug_index)
         logger.info("PROBLEM LOCATION 9")
-        return "Your fix did not target all the buggy lines. Here is the list of all the buggy lines: {}. To help you, you can fill out the following the template to generate your fix {}".format(buggy_lines, fix_template)
+        return "Your test did not target all the buggy lines. Here is the list of all the buggy lines: {}. To help you, you can fill out the following the template to generate your test {}".format(buggy_lines, fix_template)
     run_ret = execute_write_range(project_name, bug_index, changes_dicts, agent)
     if 1 == 0:
         validation_result = validate_fix_against_hypothesis(bug_report, hypothesis, fix)
-        return "First, we asked an expert about the fix you made and here is what the expert said:\n" + validation_result +\
-        "\nSecond, we applied your suggested fix and here are the results:\n"+\
+        return "First, we asked an expert about the test you made and here is what the expert said:\n" + validation_result +\
+        "\nSecond, we applied your suggested test and here are the results:\n"+\
         run_ret+\
-        "\n **Note:** You are automatically switched to the state 'trying out candidate fixes'"
+        "\n **Note:** You are automatically switched to the state 'trying out candidate tests'"
     else:
-        return run_ret + "\n **Note:** You are automatically switched to the state 'trying out candidate fixes'"
+        return run_ret + "\n **Note:** You are automatically switched to the state 'trying out candidate tests'"
     
 def execute_read_range(project_name, bug_index, filepath, startline, endline, agent):
     workspace = agent.config.workspace_path
@@ -762,7 +746,7 @@ def extract_lines_range(name, index):
         },
         "bug_index":{
             "type": "integer",
-            "description": "The index (number) of the bug that you are trying to fix.",
+            "description": "The index (number) of the bug that you are trying to reproduce.",
             "required": True
 
         },
@@ -841,7 +825,7 @@ def list_files(start_path='.'):
         },
         "bug_index":{
             "type": "integer",
-            "description": "The index (number) of the bug that you are trying to fix.",
+            "description": "The index (number) of the bug that you are trying to reproduce.",
             "required": True
 
         },
@@ -960,7 +944,7 @@ def extract_failing_test(output_message):
         },
         "bug_index":{
             "type": "integer",
-            "description": "The index (number) of the bug that you are trying to fix.",
+            "description": "The index (number) of the bug that you are trying to reproduce.",
             "required": True
 
         },
@@ -1240,17 +1224,17 @@ def validate_fix_against_hypothesis(bug_report, hypothesis, fix, model = "gpt-3.
         SystemMessage(
             content="You are a helpful assitant in coding and debugging tasks." +\
                     "Particularly, you will be given some information about a bug," +\
-                    "a hypothesis about the bug made by a person and the fix suggested by that person."+\
-                    "Based on the given information, you should check whether the suggested fix is consistent with hypothesis."+\
-                    "In case the fix does not reflect the hypothesis or it contradicts the information given about the bug, you should explain and suggest a better fix."
+                    "a hypothesis about the bug made by a person and a reproducing test suggested by that person."+\
+                    "Based on the given information, you should check whether the suggested test is consistent with hypothesis."+\
+                    "In case the test does not reflect the hypothesis or it contradicts the information given about the bug, you should explain and suggest a better test."
                     ),
         HumanMessage(
             content=bug_report + "\n" +\
                      "## Hypothesis\n"+\
                      f"{hypothesis}\n"+\
-                     "## Suggested fix\n"+\
+                     "## Suggested test\n"+\
                      f"{fix}\n"+\
-                     "Is the fix consistent with the hypothesis? Does the hypothesis about the bug make sense? Also, check if the lines numbers are consistent or not and if some lines are unncessarily changed or rewritten. For example, if the buggy line is line 445, it would make sense to change that line only. If not, explain why and suggest a correction. Keep your answer very short and concise."
+                     "Is the test consistent with the hypothesis? Does the hypothesis about the bug make sense? Keep your answer very short and concise."
             )  
     ]
     response = chat.invoke(messages)
