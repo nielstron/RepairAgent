@@ -932,102 +932,102 @@ def extract_failing_test(output_message):
         return None
 
 
-@command(
-    "extract_test_code",
-    "This function allows you to extract the code of the failing test cases which will help you understand the test case that led to failure\
-    for example by looking at the assertions and the given input and expected output. This command should be executed at most one time",
-    {
-        "project_name": {
-            "type": "string",
-            "description": "The name of the project under scope",
-            "required": True,
-        },
-        "bug_index":{
-            "type": "integer",
-            "description": "The index (number) of the bug that you are trying to reproduce.",
-            "required": True
-
-        },
-        "test_file_path":{
-            "type": "string",
-            "description": "The path to the test file",
-            "required": True
-
-        }
-    }
-)
-def extract_test_code(project_name:str, bug_index:str, test_file_path: str, agent:Agent):
-
-    workspace = agent.config.workspace_path
-    project_dir = "{}_{}_buggy".format(project_name.lower(), bug_index)
-    test_dir = ""
-    all_dirs = os.listdir(os.path.join(workspace, project_dir))
-    test_file_path = test_file_path.split("::")[0]
-    if test_file_path.endswith(".java"):
-        test_file_path = test_file_path[:-5]
-        test_file_path = test_file_path.replace(".", "/")
-        test_file_path += ".java"
-    else:
-        test_file_path = test_file_path.replace(".", "/")
-
-    with open(os.path.join(workspace, project_dir+"_test.txt")) as testf:
-        test_message = testf.read()
-    logger.debug(test_message)
-    result = extract_failing_test(test_message)
-    if not result:
-        return "No test function found, probably the failing test message was not parsed correctly"
-    
-    
-    if not os.path.exists(os.path.join(workspace, project_dir, test_dir, test_file_path)):
-        if not os.path.exists(os.path.join(workspace, project_dir, "files_index.txt")):
-            with open(os.path.join(workspace, project_dir, "files_index.txt"), "w") as fit:
-                fit.write("\n".join(list_java_files(os.path.join(workspace, project_dir))))
-                
-        with open(os.path.join(workspace, project_dir, "files_index.txt")) as fit:
-            files_index = [f for f in fit.read().splitlines() if test_file_path in f]
-
-        if len(files_index) == 1:
-            test_file_path = files_index[0]
-        elif len(files_index) >= 1:
-            raise ValueError("Multiple Candidate Paths. We do not handle this yet!")
-        else:
-            return "The filepath {} does not exist.".format(test_file_path)
-        
-    if not test_file_path:
-        return "You should provide the test file path"
-        class_name = result["class_name"]
-        path = "/".join(class_name.split("."))+".java"
-        logger.debug(path)
-        if os.path.exists(os.path.join(workspace, project_dir, "test", path)):
-            test_file_path = os.path.join(workspace, project_dir, "test", path)
-        elif os.path.exists(os.path.join(workspace, project_dir, "tests", path)):
-            test_file_path = os.path.join(workspace, project_dir, "tests", path)
-        else:
-            results = search_code_base(project_name, bug_index, [class_name], agent)
-            results= json.loads(results.replace("The following matches were found:\n", ""))
-            if results:
-                test_file_path = list(results.keys())[0]
-            else:
-                return "Could not find the test file, something went wrong."
-    
-    else:
-        test_file_path = os.path.join(agent.config.workspace_path, project_dir, test_dir, test_file_path)
-
-
-
-    with open(test_file_path, 'r') as file:
-        file_content = file.read()
-    
-    function_name = result["function_name"]
-    ind = file_content.find("public void {}".format(function_name))
-    if ind == -1:
-        return None
-    file_content = file_content[ind:]
-    ind2 = file_content[len("public void "):].find("public void ")
-    if ind2 == -1:
-        return file_content
-    else:
-        return file_content[:ind2+len("public void ")]
+# @command(
+#     "extract_test_code",
+#     "This function allows you to extract the code of the failing test cases which will help you understand the test case that led to failure\
+#     for example by looking at the assertions and the given input and expected output. This command should be executed at most one time",
+#     {
+#         "project_name": {
+#             "type": "string",
+#             "description": "The name of the project under scope",
+#             "required": True,
+#         },
+#         "bug_index":{
+#             "type": "integer",
+#             "description": "The index (number) of the bug that you are trying to reproduce.",
+#             "required": True
+#
+#         },
+#         "test_file_path":{
+#             "type": "string",
+#             "description": "The path to the test file",
+#             "required": True
+#
+#         }
+#     }
+# )
+# def extract_test_code(project_name:str, bug_index:str, test_file_path: str, agent:Agent):
+#
+#     workspace = agent.config.workspace_path
+#     project_dir = "{}_{}_buggy".format(project_name.lower(), bug_index)
+#     test_dir = ""
+#     all_dirs = os.listdir(os.path.join(workspace, project_dir))
+#     test_file_path = test_file_path.split("::")[0]
+#     if test_file_path.endswith(".java"):
+#         test_file_path = test_file_path[:-5]
+#         test_file_path = test_file_path.replace(".", "/")
+#         test_file_path += ".java"
+#     else:
+#         test_file_path = test_file_path.replace(".", "/")
+#
+#     with open(os.path.join(workspace, project_dir+"_test.txt")) as testf:
+#         test_message = testf.read()
+#     logger.debug(test_message)
+#     result = extract_failing_test(test_message)
+#     if not result:
+#         return "No test function found, probably the failing test message was not parsed correctly"
+#
+#
+#     if not os.path.exists(os.path.join(workspace, project_dir, test_dir, test_file_path)):
+#         if not os.path.exists(os.path.join(workspace, project_dir, "files_index.txt")):
+#             with open(os.path.join(workspace, project_dir, "files_index.txt"), "w") as fit:
+#                 fit.write("\n".join(list_java_files(os.path.join(workspace, project_dir))))
+#
+#         with open(os.path.join(workspace, project_dir, "files_index.txt")) as fit:
+#             files_index = [f for f in fit.read().splitlines() if test_file_path in f]
+#
+#         if len(files_index) == 1:
+#             test_file_path = files_index[0]
+#         elif len(files_index) >= 1:
+#             raise ValueError("Multiple Candidate Paths. We do not handle this yet!")
+#         else:
+#             return "The filepath {} does not exist.".format(test_file_path)
+#
+#     if not test_file_path:
+#         return "You should provide the test file path"
+#         class_name = result["class_name"]
+#         path = "/".join(class_name.split("."))+".java"
+#         logger.debug(path)
+#         if os.path.exists(os.path.join(workspace, project_dir, "test", path)):
+#             test_file_path = os.path.join(workspace, project_dir, "test", path)
+#         elif os.path.exists(os.path.join(workspace, project_dir, "tests", path)):
+#             test_file_path = os.path.join(workspace, project_dir, "tests", path)
+#         else:
+#             results = search_code_base(project_name, bug_index, [class_name], agent)
+#             results= json.loads(results.replace("The following matches were found:\n", ""))
+#             if results:
+#                 test_file_path = list(results.keys())[0]
+#             else:
+#                 return "Could not find the test file, something went wrong."
+#
+#     else:
+#         test_file_path = os.path.join(agent.config.workspace_path, project_dir, test_dir, test_file_path)
+#
+#
+#
+#     with open(test_file_path, 'r') as file:
+#         file_content = file.read()
+#
+#     function_name = result["function_name"]
+#     ind = file_content.find("public void {}".format(function_name))
+#     if ind == -1:
+#         return None
+#     file_content = file_content[ind:]
+#     ind2 = file_content[len("public void "):].find("public void ")
+#     if ind2 == -1:
+#         return file_content
+#     else:
+#         return file_content[:ind2+len("public void ")]
 
 
 def extract_fail_report(name: str, index: str, agent: Agent):
