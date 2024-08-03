@@ -2,10 +2,10 @@
     "budget_control": {
         "name": "FULL-TRACK",
         "params": {
-            "#fixes": 4
+            "#tests": 4
         }
     },
     "repetition_handling": "RESTRICT",
-    "external_fix_strategy": 0,
+    "external_test_strategy": 0,
     "commands_limit": 40
 }
